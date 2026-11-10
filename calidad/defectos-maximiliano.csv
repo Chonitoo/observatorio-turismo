@@ -1,0 +1,4 @@
+fecha,id,tipo,fase_inyeccion,fase_remocion,tiempo_correccion_min,defecto_relacionado,descripcion
+2026-11-10,1,80-Funcion,CODE,TEST,3,,"El CSV de DataTur usa tabuladores y se leyó como una sola columna; se corrigió con sep='\t'"
+2026-11-10,2,50-Interfaz,DLD,TEST,10,,"repodatos.atdt.gob.mx responde 403 a clientes automatizados; se diseñó el estado 'bloqueado' sin evasión y la semilla manual"
+2026-11-10,3,90-Sistema,DLD,CODE,4,,"git core.autocrlf=true habría cambiado los saltos de línea del CSV crudo y su SHA-256; se agregó .gitattributes con data/bronze/** -text"

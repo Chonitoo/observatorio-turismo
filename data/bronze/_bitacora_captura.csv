@@ -1,0 +1,5 @@
+fecha_utc,fuente,url,robots,http,estado,bytes,sha256,archivo,nota
+2026-11-10T21:42:00Z,datatur,https://repodatos.atdt.gob.mx/s_turismo/ocupacion_hotelera/Base70centros.csv,robots.txt HTTP 403 (no disponible),200,nuevo,2740171,a8ca3f9bf34edf46321a45c1abcd3f774363d02db0395f1d6132b8a7c4d7d671,data/bronze/datatur/Base70centros_2026-11-10_manual.csv,Semilla histórica descargada manualmente desde navegador (México); 2016-01 a 2024-12
+2026-11-10T21:48:15Z,datatur,https://repodatos.atdt.gob.mx/s_turismo/ocupacion_hotelera/Base70centros.csv,"robots.txt HTTP 403 (no disponible => permitido, RFC 9309)",403,bloqueado,0,,,El servidor rechazó la petición; no se intenta evadir.
+2026-11-10T21:48:15Z,banxico_tipo_cambio_fix,https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF43718/datos/2016-01-01/2026-11-10,-,,error,0,,,Falta BANXICO_TOKEN (configurar secret)
+2026-11-10T21:48:15Z,banxico_inpc,https://www.banxico.org.mx/SieAPIRest/service/v1/series/SP1/datos/2016-01-01/2026-11-10,-,,error,0,,,Falta BANXICO_TOKEN (configurar secret)

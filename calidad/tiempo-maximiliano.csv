@@ -1,0 +1,7 @@
+fecha,inicio,fin,interrupcion_min,delta_min,fase,entrega,actividad,comentarios
+2026-11-10,15:20,15:40,0,20,PLAN,E0,Selección de sector y región,"Comparación de sectores con datos públicos; se elige turismo en Colima"
+2026-11-10,15:40,15:50,0,10,PLAN,E0,Revisión de fuentes y robots.txt,"datos.gob.mx, repodatos, Banxico e INEGI"
+2026-11-10,15:50,16:05,0,15,DLD,E0,Diseño de la arquitectura Bronce,"Bitácora, SHA-256, inmutabilidad, manejo de bloqueos"
+2026-11-10,16:05,16:25,0,20,CODE,E0,Extractores DataTur y Banxico y orquestador,
+2026-11-10,16:25,16:30,0,5,TEST,E0,Pruebas pytest y corrida local,"5 pruebas OK; DataTur 403 registrado"
+2026-11-10,16:30,16:50,0,20,DOC,E0,Redacción de propuesta.md,"Falta la entrevista de campo"

@@ -38,6 +38,16 @@ python -m src.captura                    # ejecuta los extractores
 - **Trazabilidad:** cada intento queda en `data/bronze/_bitacora_captura.csv` con su HTTP, bytes y SHA-256; los crudos son inmutables, se nombran con la fecha UTC y no se duplican si el hash no cambia.
 - **Secret requerido:** `BANXICO_TOKEN` en *Settings → Secrets and variables → Actions*.
 
+### Evidencia de funcionamiento
+
+Primera corrida automática: [Captura Bronce #1](https://github.com/Chonitoo/observatorio-turismo/actions/runs/42911657807) (2026-11-10, ✅ success). Commit generado por el bot: `bronce: captura automática 2026-11-10T22:08Z`.
+
+| Fuente | Estado | Contenido capturado |
+|---|---|---|
+| DataTur | `bloqueado` (HTTP 403), registrado sin evasión | Se conserva la serie semilla: 108 meses, 2016-01 a 2024-12 |
+| Banxico `SF43718` (tipo de cambio FIX) | `nuevo` (HTTP 200) | 2,731 observaciones diarias, 2016-01-04 a 2026-11-10 |
+| Banxico `SP1` (INPC) | `nuevo` (HTTP 200) | 130 meses, 2016-01 a 2026-10 |
+
 ## Estado conocido y limitaciones
 
 - `repodatos.atdt.gob.mx` responde **403** a clientes automatizados fuera de México, incluido el runner de GitHub. La serie histórica se obtuvo con una descarga manual legítima desde un navegador en México (SHA-256 `a8ca3f9bf34edf46321a45c1abcd3f774363d02db0395f1d6132b8a7c4d7d671`). Los intentos automáticos siguen registrándose sin evadir el bloqueo.

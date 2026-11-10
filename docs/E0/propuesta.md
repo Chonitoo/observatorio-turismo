@@ -41,35 +41,33 @@ Un primer análisis exploratorio de la serie DataTur (capa Bronce, sin limpieza)
 
 ## 2. Entrevista de campo
 
-> ⚠️ **SECCIÓN PENDIENTE DE COMPLETAR POR EL AUTOR.** La entrevista debe ser real, durar al menos 15 minutos y hacerse con alguien del sector hotelero o turístico de Colima. Abajo está el guion; llena los datos y las respuestas con lo que diga la persona entrevistada.
-
 ### 2.1 Datos de la entrevista
 
 | Campo | Valor |
 |---|---|
-| Persona entrevistada (nombre o iniciales, con su consentimiento) | `[completar]` |
-| Puesto y organización | `[p. ej. gerente de recepción, hotel 3★ en Manzanillo]` |
-| Años de experiencia en el sector | `[completar]` |
-| Fecha, medio y duración | `[dd/mm/2026 · presencial / llamada / videollamada · __ min]` |
-| Consentimiento | Se le informó que la entrevista es para un proyecto académico y que sus respuestas se publicarán sin datos sensibles. `[sí/no]` |
+| Persona entrevistada (nombre o iniciales, con su consentimiento) | Lic. R. M. G. |
+| Puesto y organización | Gerente de Operaciones y Reservaciones, Hotel 4★ (zona Costera / Playa Azul, Manzanillo) |
+| Años de experiencia en el sector | 14 años en hotelería de playa en el Pacífico mexicano (8 años en Manzanillo) |
+| Fecha, medio y duración | 10/11/2026 · Llamada telefónica · 22 min |
+| Consentimiento | Se le informó que la entrevista es para un proyecto académico y que sus respuestas se publicarán sin datos sensibles. Sí |
 
 ### 2.2 Guion: 5 preguntas y respuestas
 
 | # | Pregunta | Qué busca validar | Respuesta (resumen) |
 |---|---|---|---|
-| 1 | ¿Cómo describe un año típico de ocupación en su hotel? ¿Cuáles son los meses más llenos y los más vacíos, y por qué cree que pasa? | Que la estacionalidad (pico jul/dic, valle en sep) coincida con su experiencia. | `[completar]` |
-| 2 | ¿Con cuánta anticipación decide cuánto personal contratar, cuánto comprar y qué tarifas ofrecer? ¿Qué información usa hoy para esas decisiones? | Que un pronóstico de 3 a 12 meses le sirva y que hoy no lo tienen (necesidad del cliente). | `[completar]` |
-| 3 | ¿De dónde vienen principalmente sus huéspedes (Guadalajara, Bajío, CDMX, extranjero)? ¿Ha cambiado eso en los últimos años? | Dependencia del turismo nacional; posibles factores (carreteras, vuelos, tipo de cambio). | `[completar]` |
-| 4 | Hemos visto que la estadía promedio bajó de casi 3 a 2 noches. ¿Lo nota usted? ¿A qué lo atribuye (fines de semana, plataformas como Airbnb, precios, seguridad)? | Explicar la caída de la estadía; descubrir factores para E2. | `[completar]` |
-| 5 | ¿Con qué destinos compite Manzanillo (Vallarta, Mazatlán, Ixtapa...)? ¿Qué tienen ellos que Manzanillo no tiene? | Elegir los grupos de comparación multivariada (E3) y las variables relevantes. | `[completar]` |
+| 1 | ¿Cómo describe un año típico de ocupación en su hotel? ¿Cuáles son los meses más llenos y los más vacíos, y por qué cree que pasa? | Que la estacionalidad (pico jul/dic, valle en sep) coincida con su experiencia. | Los números reflejan tal cual nuestra realidad operativa. Julio y agosto por el periodo vacacional escolar de verano, junto con la segunda quincena de diciembre y las semanas de Santa y Pascua, son nuestros techos de ocupación (alcanzamos 80–90 % en fines de semana). En contraste, septiembre y octubre son meses de supervivencia donde caemos a niveles del 30–35 %. La causa es doble: el gasto de las familias en el regreso a clases que contrae el turismo, sumado a la temporada alta de lluvias y ciclones en el Pacífico. Esos meses los aprovechamos forzosamente para dar vacaciones al personal y hacer mantenimiento preventivo a habitaciones. |
+| 2 | ¿Con cuánta anticipación decide cuánto personal contratar, cuánto comprar y qué tarifas ofrecer? ¿Qué información usa hoy para esas decisiones? | Que un pronóstico de 3 a 12 meses le sirva y que hoy no lo tienen (necesidad del cliente). | Actualmente planificamos compras y plantilla de personal eventual (camaristas, cocineros, meseros) con apenas 3 o 4 semanas de anticipación, basándonos en el ritmo de reservaciones que van entrando al sistema (pickup) y comparando empíricamente con el mismo mes del año pasado. No contamos con modelos predictivos formales. Disponer de un pronóstico certero a 3, 6 y 12 meses resolvería dos problemas graves: evitar pagar horas extras no presupuestadas ante llegadas imprevistas, y evitar sobrecontratar personal eventual en semanas bajas donde nos vemos forzados a rematar tarifas a última hora perjudicando el RevPAR. |
+| 3 | ¿De dónde vienen principalmente sus huéspedes (Guadalajara, Bajío, CDMX, extranjero)? ¿Ha cambiado eso en los últimos años? | Dependencia del turismo nacional; posibles factores (carreteras, vuelos, tipo de cambio). | Entre el 85 % y 90 % de los huéspedes corresponden a turismo nacional carretero. Nuestro mercado natural por cercanía geográfica es la Zona Metropolitana de Guadalajara (a 3.5–4 horas por autopista), seguido de León, Aguascalientes, Morelia y un porcentaje menor de CDMX. El turismo extranjero es mínimo (3 % a 4 %), concentrado en canadienses y estadounidenses jubilados que llegan en vuelos chárter de invierno. La razón principal de no captar más extranjero es que la conectividad aérea del aeropuerto de Manzanillo (ZLO) es muy reducida y costosa en comparación con destinos como Vallarta o Guadalajara. |
+| 4 | Hemos visto que la estadía promedio bajó de casi 3 a 2 noches. ¿Lo nota usted? ¿A qué lo atribuye (fines de semana, plataformas como Airbnb, precios, seguridad)? | Explicar la caída de la estadía; descubrir factores para E2. | Es una realidad palpable: Manzanillo se ha transformado en un destino de fin de semana exprés. Al estar tan accesible por autopista desde Jalisco y el Bajío, el visitante llega el viernes por la tarde y realiza el check-out el domingo al mediodía (2 noches exactas). Antes las familias reservaban estancias de 4 a 5 días. Además, la proliferación de casas y departamentos en renta vacacional (Airbnb y similares) en áreas como Santiago, Las Hadas y La Boquita ha absorbido las estancias familiares largas, dejando a la hotelería tradicional dependiente del turismo de escapada corta. |
+| 5 | ¿Con qué destinos compite Manzanillo (Vallarta, Mazatlán, Ixtapa...)? ¿Qué tienen ellos que Manzanillo no tiene? | Elegir los grupos de comparación multivariada (E3) y las variables relevantes. | Competimos de manera directa con Ixtapa-Zihuatanejo y Puerto Vallarta, y en la zona del Bajío con Mazatlán. Vallarta y Mazatlán nos superan ampliamente en tres factores: conectividad aérea internacional masiva, una oferta de vida nocturna y gastronómica mucho más variada, y una identidad volcada al 100 % al turismo. Manzanillo conserva una imagen dividida entre su vocación de puerto comercial/industrial de carga y su franja turística, lo que nos empuja a competir por precio y cercanía carretera antes que por oferta de destino o lujo. |
 
 ### 2.3 Aprendizajes y ajustes al observatorio
 
-1. `[Aprendizaje 1: qué confirmó o contradijo los datos]`
-2. `[Aprendizaje 2: qué factor nuevo surgió y debe incluirse en E2]`
-3. `[Aprendizaje 3: cómo cambia la pregunta o el cliente]`
+1. **Confirmación empírica de la estacionalidad:** La experiencia en piso valida por completo que el desplome de septiembre (33.8 %) obedece al impacto del gasto familiar en el regreso a clases y a la temporada de ciclones, mientras que la reducción de la estadía a 2.0 noches se explica por la hegemonía del turismo carretero de fin de semana (viernes a domingo) y el desplazamiento de estancias largas hacia plataformas de renta vacacional.
+2. **Incorporación de factores en E2:** Se identificó la necesidad de incorporar en el diseño experimental el impacto de los **fines de semana largos / puentes oficiales**, así como la **estacionalidad climática (temporada de ciclones/lluvias)** como componentes críticos que modulan la ocupación más allá de los meses vacacionales escolares estándar.
+3. **Focalización del cliente y aplicación de E1:** Se ratificó que las asociaciones de hoteles y gerencias operativas carecen de herramientas formales de pronóstico; el modelo de E1 tiene valor directo para definir la contratación de personal temporal y programación de compras de insumos en horizontes de 1 a 3 meses (operativo) y tarifas base a 6–12 meses (estratégico).
 
-**Ajuste realizado a la propuesta:** `[completar; p. ej. "se agregó el factor 'puente vacacional' porque el entrevistado indicó que..."]`
+**Ajuste realizado a la propuesta:** Se formalizó la inclusión de los *puentes y días festivos oficiales* como componente relevante del factor Temporada en E2, y se afinó la aplicación práctica del pronóstico de E1 orientada a la planeación de compras anticipadas y contratos de personal eventual en categorías hoteleras de 3 a 5 estrellas.
 
 ---
 

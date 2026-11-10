@@ -12,7 +12,7 @@
 
 | # | Entregable | Ubicación | Estado |
 |---|---|---|---|
-| 1 | Propuesta del observatorio (ficha, entrevista, 3 preguntas analíticas, plan de datos con análisis ético y legal) | [`docs/E0/propuesta.md`](propuesta.md) | ✅ (entrevista: `[completar]`) |
+| 1 | Propuesta del observatorio (ficha, entrevista, 3 preguntas analíticas, plan de datos con análisis ético y legal) | [`docs/E0/propuesta.md`](propuesta.md) | ✅ (completa) |
 | 2a | Extractor ético automático (GitHub Actions) | [`.github/workflows/captura.yml`](../../.github/workflows/captura.yml), [`src/`](../../src) | ✅ |
 | 2b | Serie histórica cruda con al menos 36 periodos | [`data/bronze/datatur/`](../../data/bronze/datatur): 108 meses (2016-01 a 2024-12) | ✅ |
 | 3a | Bitácoras PSP | [`calidad/tiempo-maximiliano.csv`](../../calidad/tiempo-maximiliano.csv), [`calidad/defectos-maximiliano.csv`](../../calidad/defectos-maximiliano.csv) | ✅ |

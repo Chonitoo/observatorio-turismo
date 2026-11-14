@@ -78,12 +78,23 @@ cuando las llegadas son cero (regla O1), y la regla sigue atrapando cualquier ot
 
 ## 6. Aprendizajes
 
-> ✏️ *Sección para que el autor la redacte con su propia reflexión. Ideas de partida:*
+En esta segunda entrega analicé los conjuntos de datos y encontré problemas y discrepancias que no esperaba:
+2 registros con más cuartos ocupados que cuartos disponibles en el hotel, 4 registros con cuartos ocupados pero
+cero turistas y más de 2,400 meses que simplemente no aparecían en el archivo.
 
-- `[Qué aprendí sobre la diferencia entre un dato faltante y un dato que no existe]`
-- `[Por qué validar antes y después de limpiar, y no sólo al final]`
-- `[Qué me sorprendió de los datos de Colima frente a otros destinos]`
-- `[Qué haría distinto si empezara de nuevo]`
+**La Puerta de Calidad.** Para manejar esos problemas implementamos una puerta de seguridad con Pandera, que revisa
+cada registro contra un conjunto de reglas. Los datos que no cumplen los requisitos no se borran: se mandan a una
+carpeta de cuarentena con la descripción del motivo.
+
+**Los datos faltantes.** Al principio no sabía por qué faltaban datos y creía que había que rellenarlos todos para
+no dejar huecos en la estadística. Investigando entendí que primero hay que analizar estadísticamente *por qué*
+faltan, y que de ese análisis depende la decisión correcta: rellenar sólo los huecos que se pueden explicar con la
+información que sí existe y dejar sin rellenar los que no, para que la hipótesis que se construya sea correcta, o lo
+más cercana posible a la realidad.
+
+**La automatización.** Me sorprende cómo el sistema corrige y monitorea los datos por sí solo: filtra y separa
+automáticamente los registros escasos o incoherentes y los manda a cuarentena. Así no se pierden; simplemente quedan
+en un estado inactivo, documentados y disponibles para revisarse.
 
 ## 7. Indicadores del proceso (PSP)
 

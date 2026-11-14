@@ -1,6 +1,6 @@
 {
-  "fecha_utc": "2026-11-14T17:03:46Z",
-  "duracion_s": 2.6,
+  "fecha_utc": "2026-11-14T17:05:05Z",
+  "duracion_s": 5.4,
   "fuentes": {
     "datatur": "data/bronze/datatur/Base70centros_2026-11-10_manual.csv",
     "banxico_tipo_cambio": "data/bronze/banxico_tipo_cambio_fix/SF43718_tipo_cambio_fix_2026-11-14T170344Z.json",

@@ -32,7 +32,7 @@ datos sin borrar nada en silencio.
    aplicaron IQR y Z-Score robusto, con Isolation Forest como contraste multivariado.
 6. **Transformaciones.** Se agregaron jerarquías (tiempo, espacio, producto), discretizaciones, normalización
    Min-Max y Z-Score, y la reducción por agregación y selección.
-7. **Automatización y pruebas.** El pipeline corre en GitHub Actions después de cada captura; 14 pruebas nuevas
+7. **Automatización y pruebas.** El pipeline corre en GitHub Actions después de cada captura; 9 pruebas nuevas (14 en total)
    verifican la puerta, la imputación, los atípicos y las transformaciones.
 
 ## 3. Decisiones difíciles y por qué se tomaron
@@ -61,7 +61,7 @@ cuando las llegadas son cero (regla O1), y la regla sigue atrapando cualquier ot
 |---|---|
 | Los motivos de cuarentena se repetían una vez por cada columna del registro | Las reglas de registro se reportan una sola vez |
 | Un registro imputado violaba la regla R2 | La Puerta 2 lo detectó y lo mandó a cuarentena: la validación también audita la imputación |
-| La inflación de 2016 sale nula | El extractor de Banxico ahora captura desde 2015 |
+| La inflación de 2016 salía nula | El extractor de Banxico se amplió a 2015 y la corrida automática #2 completó el dato |
 | scikit-learn fue bloqueado por el control de aplicaciones de Windows en la primera instalación | Isolation Forest quedó opcional; IQR y Z robusto no dependen de esa librería |
 | Estadías de 44 y 53 noches en Nuevo Nayarit (2020) | Quedaron en cuarentena: con sólo 17–20 llegadas en el mes, la razón noches/llegadas pierde sentido |
 
@@ -89,7 +89,7 @@ cuando las llegadas son cero (regla O1), y la regla sigue atrapando cualquier ot
 
 | Indicador | Meta | Resultado E1 |
 |---|---|---|
-| Q1 · Corridas de Actions en verde | ≥ 95 % | `[completar al cerrar: corridas exitosas / programadas]` |
+| Q1 · Corridas de Actions en verde | ≥ 95 % | 100 % (2 de 2 corridas en verde al cierre de E1) |
 | Q2 · Archivos con trazabilidad completa | 100 % | 100 %: cada salida de Plata y Oro se regenera desde Bronce con reporte en `reports/E1/` |
 | Q3a · Defectos que llegan a `main` | ≤ 10 / KLOC | 0 defectos conocidos en `main` sobre ~1.06 KLOC; 6 defectos registrados y corregidos antes del commit |
 | Q3b · Error de estimación de tiempo | ≤ 25 % | `[completar con la bitácora de tiempo]` |

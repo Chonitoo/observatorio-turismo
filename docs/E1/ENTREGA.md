@@ -48,11 +48,14 @@ mes y cada lunes) o manual: pruebas → captura Bronce → `python -m src.pipeli
 
 ## Resultados de la corrida
 
+Corrida automática de validación: [Captura Bronce y pipeline #2](https://github.com/Chonitoo/observatorio-turismo/actions/runs/43618951677)
+(2026-11-14, ✅ success). Commit del bot: `datos: captura y pipeline automáticos 2026-11-14T17:03Z`.
+
 | Puerta | Fuente | Entrada | Válidos | Cuarentena | Motivos |
 |---|---|---:|---:|---:|---|
 | 1 · entrada | DataTur | 31,147 | 31,141 | 6 | R1 ocupados > disponibles (2); R2 ocupados sin llegadas (4) |
-| 1 · entrada | Banxico FIX | 2,731 | 2,731 | 0 | |
-| 1 · entrada | Banxico INPC | 130 | 130 | 0 | |
+| 1 · entrada | Banxico FIX | 2,985 | 2,985 | 0 | |
+| 1 · entrada | Banxico INPC | 142 | 142 | 0 | |
 | 2 · Plata | DataTur (incluye 147 imputados) | 31,288 | 31,287 | 1 | R2 en un registro imputado (la puerta también valida la imputación) |
 | 3 · Oro | destino × mes | 6,900 | 6,898 | 2 | estadía > 30 noches (Nuevo Nayarit, abr y may 2020) |
 
@@ -83,15 +86,13 @@ En todas las puertas se cumple **válidos + cuarentena = entrada**: ningún regi
 
 ```bash
 pip install -r requirements.txt
-python -m pytest -q                          # 19 pruebas (Bronce + pipeline)
+python -m pytest -q                          # 14 pruebas (5 de Bronce + 9 del pipeline)
 python -m src.pipeline.ejecutar              # Bronce → Plata → Oro (≈ 6 s)
 python -m nbconvert --to notebook --execute --inplace docs/E1/limpieza.ipynb
 ```
 
 ## Limitaciones conocidas
 
-- **Inflación 2016 nula:** la captura de Banxico arrancaba en 2016-01 y la variación anual necesita 12 meses
-  previos. El extractor ya se corrigió para iniciar en 2015-01; la siguiente corrida automática completa el dato.
 - **Semana Santa:** cambia entre marzo y abril, y genera algunos atípicos "sin explicación" en esos meses. Se
   agregará una variable indicadora en la siguiente entrega.
 - **Isolation Forest** depende de scikit-learn. Si el sistema operativo bloquea la librería, el pipeline sigue

@@ -1,0 +1,338 @@
+{
+  "ocupacion_pct": {
+    "iqr": 1009,
+    "z_robusto": 773,
+    "consenso": 773,
+    "consenso_en_choque_conocido": 598,
+    "winsorizados": 175,
+    "pct_winsorizado": 2.54,
+    "ejemplos_winsorizados": [
+      {
+        "centro": "Acapulco",
+        "periodo": "2016-03",
+        "ocupacion_pct": 50.82,
+        "ocupacion_pct_tratada": 47.73
+      },
+      {
+        "centro": "Aguascalientes",
+        "periodo": "2019-08",
+        "ocupacion_pct": 51.38,
+        "ocupacion_pct_tratada": 53.92
+      },
+      {
+        "centro": "Aguascalientes",
+        "periodo": "2021-04",
+        "ocupacion_pct": 37.98,
+        "ocupacion_pct_tratada": 41.88
+      },
+      {
+        "centro": "Bahías de Huatulco",
+        "periodo": "2021-03",
+        "ocupacion_pct": 30.95,
+        "ocupacion_pct_tratada": 37.62
+      },
+      {
+        "centro": "Bahías de Huatulco",
+        "periodo": "2022-01",
+        "ocupacion_pct": 56.38,
+        "ocupacion_pct_tratada": 60.82
+      },
+      {
+        "centro": "Bahías de Huatulco",
+        "periodo": "2022-02",
+        "ocupacion_pct": 61.41,
+        "ocupacion_pct_tratada": 65.7
+      },
+      {
+        "centro": "Campeche",
+        "periodo": "2017-09",
+        "ocupacion_pct": 27.96,
+        "ocupacion_pct_tratada": 31.56
+      },
+      {
+        "centro": "Cancún",
+        "periodo": "2021-03",
+        "ocupacion_pct": 51.05,
+        "ocupacion_pct_tratada": 56.0
+      },
+      {
+        "centro": "Celaya",
+        "periodo": "2023-04",
+        "ocupacion_pct": 42.25,
+        "ocupacion_pct_tratada": 40.11
+      },
+      {
+        "centro": "Chihuahua",
+        "periodo": "2019-05",
+        "ocupacion_pct": 73.72,
+        "ocupacion_pct_tratada": 62.73
+      },
+      {
+        "centro": "Chihuahua",
+        "periodo": "2021-03",
+        "ocupacion_pct": 31.55,
+        "ocupacion_pct_tratada": 34.14
+      },
+      {
+        "centro": "Chihuahua",
+        "periodo": "2021-05",
+        "ocupacion_pct": 34.68,
+        "ocupacion_pct_tratada": 40.18
+      },
+      {
+        "centro": "Ciudad Juárez",
+        "periodo": "2018-02",
+        "ocupacion_pct": 73.32,
+        "ocupacion_pct_tratada": 68.57
+      },
+      {
+        "centro": "Ciudad Juárez",
+        "periodo": "2021-03",
+        "ocupacion_pct": 43.14,
+        "ocupacion_pct_tratada": 45.43
+      },
+      {
+        "centro": "Ciudad Juárez",
+        "periodo": "2021-05",
+        "ocupacion_pct": 48.28,
+        "ocupacion_pct_tratada": 53.71
+      }
+    ],
+    "ejemplos_choque": [
+      {
+        "centro": "Acapulco",
+        "periodo": "2020-03",
+        "ocupacion_pct": 33.96,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2020-04",
+        "ocupacion_pct": 0.79,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2020-05",
+        "ocupacion_pct": 0.09,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2020-06",
+        "ocupacion_pct": 0.14,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2020-07",
+        "ocupacion_pct": 10.01,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2020-08",
+        "ocupacion_pct": 17.45,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2020-12",
+        "ocupacion_pct": 25.64,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2021-01",
+        "ocupacion_pct": 25.02,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2021-02",
+        "ocupacion_pct": 19.23,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2023-11",
+        "ocupacion_pct": 0.17,
+        "evento_conocido": "Huracán Otis (categoría 5, 25-oct-2023)"
+      }
+    ]
+  },
+  "estadia_promedio": {
+    "iqr": 831,
+    "z_robusto": 515,
+    "consenso": 515,
+    "consenso_en_choque_conocido": 209,
+    "winsorizados": 306,
+    "pct_winsorizado": 4.43,
+    "ejemplos_winsorizados": [
+      {
+        "centro": "Acapulco",
+        "periodo": "2017-04",
+        "estadia_promedio": 1.42,
+        "estadia_promedio_tratada": 1.3
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2018-06",
+        "estadia_promedio": 1.49,
+        "estadia_promedio_tratada": 1.36
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2018-07",
+        "estadia_promedio": 1.45,
+        "estadia_promedio_tratada": 1.38
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2024-07",
+        "estadia_promedio": 1.24,
+        "estadia_promedio_tratada": 1.29
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2024-10",
+        "estadia_promedio": 1.47,
+        "estadia_promedio_tratada": 1.43
+      },
+      {
+        "centro": "Aguascalientes",
+        "periodo": "2019-07",
+        "estadia_promedio": 2.56,
+        "estadia_promedio_tratada": 2.46
+      },
+      {
+        "centro": "Bahías de Huatulco",
+        "periodo": "2016-02",
+        "estadia_promedio": 5.48,
+        "estadia_promedio_tratada": 5.09
+      },
+      {
+        "centro": "Bahías de Huatulco",
+        "periodo": "2021-03",
+        "estadia_promedio": 2.91,
+        "estadia_promedio_tratada": 3.23
+      },
+      {
+        "centro": "Bahías de Huatulco",
+        "periodo": "2022-02",
+        "estadia_promedio": 3.31,
+        "estadia_promedio_tratada": 3.51
+      },
+      {
+        "centro": "Campeche",
+        "periodo": "2019-05",
+        "estadia_promedio": 1.69,
+        "estadia_promedio_tratada": 1.66
+      },
+      {
+        "centro": "Campeche",
+        "periodo": "2021-08",
+        "estadia_promedio": 1.67,
+        "estadia_promedio_tratada": 1.64
+      },
+      {
+        "centro": "Campeche",
+        "periodo": "2023-11",
+        "estadia_promedio": 1.31,
+        "estadia_promedio_tratada": 1.39
+      },
+      {
+        "centro": "Campeche",
+        "periodo": "2023-12",
+        "estadia_promedio": 1.41,
+        "estadia_promedio_tratada": 1.44
+      },
+      {
+        "centro": "Campeche",
+        "periodo": "2024-03",
+        "estadia_promedio": 1.42,
+        "estadia_promedio_tratada": 1.46
+      },
+      {
+        "centro": "Campeche",
+        "periodo": "2024-05",
+        "estadia_promedio": 1.76,
+        "estadia_promedio_tratada": 1.65
+      }
+    ],
+    "ejemplos_choque": [
+      {
+        "centro": "Acapulco",
+        "periodo": "2020-05",
+        "estadia_promedio": 1.49,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2020-06",
+        "estadia_promedio": 2.06,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2020-12",
+        "estadia_promedio": 1.43,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Acapulco",
+        "periodo": "2023-12",
+        "estadia_promedio": 2.62,
+        "evento_conocido": "Huracán Otis (categoría 5, 25-oct-2023)"
+      },
+      {
+        "centro": "Aguascalientes",
+        "periodo": "2020-04",
+        "estadia_promedio": 1.86,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Bahías de Huatulco",
+        "periodo": "2020-04",
+        "estadia_promedio": 12.06,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Bahías de Huatulco",
+        "periodo": "2020-07",
+        "estadia_promedio": 2.62,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Bahías de Huatulco",
+        "periodo": "2021-01",
+        "estadia_promedio": 2.94,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Bahías de Huatulco",
+        "periodo": "2021-02",
+        "estadia_promedio": 2.53,
+        "evento_conocido": "Pandemia COVID-19"
+      },
+      {
+        "centro": "Campeche",
+        "periodo": "2020-05",
+        "estadia_promedio": 1.89,
+        "evento_conocido": "Pandemia COVID-19"
+      }
+    ]
+  },
+  "isolation_forest": {
+    "disponible": true,
+    "atipicos": 69,
+    "en_choque_conocido": 21,
+    "contaminacion": 0.01,
+    "variables": [
+      "ocupacion_pct",
+      "estadia_promedio",
+      "densidad",
+      "pct_no_residentes"
+    ]
+  }
+}

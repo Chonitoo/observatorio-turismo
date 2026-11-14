@@ -6,3 +6,10 @@ fecha,inicio,fin,interrupcion_min,delta_min,fase,entrega,actividad,comentarios
 2026-11-10,16:25,16:30,0,5,TEST,E0,Pruebas pytest y corrida local,"5 pruebas OK; DataTur 403 registrado"
 2026-11-10,16:30,16:50,0,20,DOC,E0,Redacción de propuesta.md,"Falta la entrevista de campo"
 2026-11-10,16:05,16:15,0,10,TEST,E0,Configuración de secret y primera corrida de Actions,"Corrida #1 exitosa; Banxico capturado"
+2026-11-14,10:00,10:20,0,20,PLAN,E1,Lectura de requisitos E1 y perfilado de datos Bronce,"Nulos, inconsistencias y faltantes implícitos"
+2026-11-14,10:20,10:35,0,15,DLD,E1,Diseño de capas Plata/Oro y de las 3 puertas,
+2026-11-14,10:35,11:15,0,40,CODE,E1,Puerta de Calidad Pandera y módulos de faltantes e integración,
+2026-11-14,11:15,11:45,0,30,CODE,E1,Atípicos (descomposición + IQR + Z robusto) y transformaciones,"Dos iteraciones del método de atípicos"
+2026-11-14,11:45,12:00,0,15,TEST,E1,Pruebas unitarias del pipeline,"14 pruebas nuevas"
+2026-11-14,12:00,12:25,0,25,DOC,E1,Notebook limpieza.ipynb y figuras,
+2026-11-14,12:25,12:45,0,20,DOC,E1,ENTREGA.md y relatoria-E1.md,

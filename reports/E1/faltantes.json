@@ -1,0 +1,961 @@
+{
+  "faltantes_explicitos": {
+    "turistas_noche_residentes": 1
+  },
+  "detalle_explicitos": [
+    {
+      "anio": 2020,
+      "mes": 3,
+      "centro": "Mexicali",
+      "categoria": "5 estrellas"
+    }
+  ],
+  "rejilla_esperada": 33588,
+  "faltantes_implicitos": 2447,
+  "pct_implicitos": 7.29,
+  "pruebas_independencia": {
+    "anio": {
+      "chi2": 214.31,
+      "gl": 8,
+      "p_valor": 6.13400889757422e-42,
+      "v_cramer": 0.08,
+      "tasa_falta_por_nivel": {
+        "2016": 0.048,
+        "2017": 0.0549,
+        "2018": 0.0544,
+        "2019": 0.056,
+        "2020": 0.0748,
+        "2021": 0.0748,
+        "2022": 0.0882,
+        "2023": 0.0895,
+        "2024": 0.1152
+      }
+    },
+    "categoria": {
+      "chi2": 6386.75,
+      "gl": 5,
+      "p_valor": 0.0,
+      "v_cramer": 0.436,
+      "tasa_falta_por_nivel": {
+        "1 estrella": 0.1667,
+        "2 estrellas": 0.079,
+        "3 estrellas": 0.0065,
+        "4 estrellas": 0.0191,
+        "5 estrellas": 0.0471,
+        "Sin categoría": 0.9352
+      }
+    },
+    "tipo_centro": {
+      "chi2": 141.15,
+      "gl": 1,
+      "p_valor": 1.4911404204673851e-32,
+      "v_cramer": 0.065,
+      "tasa_falta_por_nivel": {
+        "Centros de Playa": 0.0462,
+        "Ciudades": 0.0835
+      }
+    }
+  },
+  "mcar_rechazado": true,
+  "huecos_por_tipo": {
+    "estructural": 2300,
+    "interno_corto": 147
+  },
+  "conclusion": "Se rechaza MCAR: la ausencia depende de la categoría (sobre todo 1★ y 'Sin categoría'), del año (crece después de 2020) y del tipo de centro (más en ciudades). Huecos internos de hasta 3 meses se tratan como MAR y se imputan dentro de su serie; huecos largos o en los extremos son ausencia estructural (MNAR: la categoría no operaba o salió del monitoreo) y no se imputan.",
+  "imputaciones_explicitas": [
+    {
+      "centro": "Mexicali",
+      "categoria": "5 estrellas",
+      "periodo": "2020-03",
+      "columna": "turistas_noche_residentes",
+      "metodo": "razón mediana turistas_noche_residentes/llegada_turistas_residentes ±6 meses",
+      "razon": 1.1282,
+      "valor_imputado": 6852.0
+    }
+  ],
+  "huecos_imputados": 147,
+  "huecos_imputados_detalle": [
+    {
+      "centro": "Acapulco",
+      "categoria": "1 estrella",
+      "anio": 2019,
+      "mes": 2
+    },
+    {
+      "centro": "Campeche",
+      "categoria": "1 estrella",
+      "anio": 2017,
+      "mes": 10
+    },
+    {
+      "centro": "Campeche",
+      "categoria": "1 estrella",
+      "anio": 2017,
+      "mes": 11
+    },
+    {
+      "centro": "Campeche",
+      "categoria": "1 estrella",
+      "anio": 2017,
+      "mes": 12
+    },
+    {
+      "centro": "Campeche",
+      "categoria": "2 estrellas",
+      "anio": 2017,
+      "mes": 2
+    },
+    {
+      "centro": "Campeche",
+      "categoria": "2 estrellas",
+      "anio": 2017,
+      "mes": 3
+    },
+    {
+      "centro": "Campeche",
+      "categoria": "2 estrellas",
+      "anio": 2017,
+      "mes": 4
+    },
+    {
+      "centro": "Cancún",
+      "categoria": "1 estrella",
+      "anio": 2016,
+      "mes": 3
+    },
+    {
+      "centro": "Cancún",
+      "categoria": "5 estrellas",
+      "anio": 2020,
+      "mes": 5
+    },
+    {
+      "centro": "Ciudad Juárez",
+      "categoria": "2 estrellas",
+      "anio": 2016,
+      "mes": 12
+    },
+    {
+      "centro": "Ciudad Juárez",
+      "categoria": "2 estrellas",
+      "anio": 2017,
+      "mes": 1
+    },
+    {
+      "centro": "Ciudad Juárez",
+      "categoria": "2 estrellas",
+      "anio": 2017,
+      "mes": 3
+    },
+    {
+      "centro": "Ciudad Juárez",
+      "categoria": "2 estrellas",
+      "anio": 2017,
+      "mes": 5
+    },
+    {
+      "centro": "Ciudad Juárez",
+      "categoria": "2 estrellas",
+      "anio": 2021,
+      "mes": 7
+    },
+    {
+      "centro": "Ciudad Juárez",
+      "categoria": "2 estrellas",
+      "anio": 2022,
+      "mes": 6
+    },
+    {
+      "centro": "El Fuerte",
+      "categoria": "2 estrellas",
+      "anio": 2020,
+      "mes": 3
+    },
+    {
+      "centro": "El Fuerte",
+      "categoria": "2 estrellas",
+      "anio": 2022,
+      "mes": 9
+    },
+    {
+      "centro": "El Fuerte",
+      "categoria": "3 estrellas",
+      "anio": 2022,
+      "mes": 9
+    },
+    {
+      "centro": "El Fuerte",
+      "categoria": "4 estrellas",
+      "anio": 2017,
+      "mes": 3
+    },
+    {
+      "centro": "El Fuerte",
+      "categoria": "4 estrellas",
+      "anio": 2017,
+      "mes": 4
+    },
+    {
+      "centro": "El Fuerte",
+      "categoria": "4 estrellas",
+      "anio": 2017,
+      "mes": 6
+    },
+    {
+      "centro": "El Fuerte",
+      "categoria": "4 estrellas",
+      "anio": 2017,
+      "mes": 7
+    },
+    {
+      "centro": "El Fuerte",
+      "categoria": "4 estrellas",
+      "anio": 2017,
+      "mes": 8
+    },
+    {
+      "centro": "El Fuerte",
+      "categoria": "4 estrellas",
+      "anio": 2017,
+      "mes": 10
+    },
+    {
+      "centro": "El Fuerte",
+      "categoria": "4 estrellas",
+      "anio": 2017,
+      "mes": 11
+    },
+    {
+      "centro": "El Fuerte",
+      "categoria": "4 estrellas",
+      "anio": 2018,
+      "mes": 3
+    },
+    {
+      "centro": "El Fuerte",
+      "categoria": "5 estrellas",
+      "anio": 2022,
+      "mes": 9
+    },
+    {
+      "centro": "Hermosillo",
+      "categoria": "3 estrellas",
+      "anio": 2021,
+      "mes": 12
+    },
+    {
+      "centro": "Irapuato",
+      "categoria": "5 estrellas",
+      "anio": 2022,
+      "mes": 12
+    },
+    {
+      "centro": "Irapuato",
+      "categoria": "5 estrellas",
+      "anio": 2023,
+      "mes": 1
+    },
+    {
+      "centro": "Ixtapa - Zihuatanejo",
+      "categoria": "3 estrellas",
+      "anio": 2021,
+      "mes": 8
+    },
+    {
+      "centro": "La Paz",
+      "categoria": "2 estrellas",
+      "anio": 2017,
+      "mes": 3
+    },
+    {
+      "centro": "La Paz",
+      "categoria": "2 estrellas",
+      "anio": 2017,
+      "mes": 4
+    },
+    {
+      "centro": "La Paz",
+      "categoria": "2 estrellas",
+      "anio": 2017,
+      "mes": 11
+    },
+    {
+      "centro": "La Paz",
+      "categoria": "2 estrellas",
+      "anio": 2018,
+      "mes": 10
+    },
+    {
+      "centro": "La Paz",
+      "categoria": "2 estrellas",
+      "anio": 2018,
+      "mes": 11
+    },
+    {
+      "centro": "La Paz",
+      "categoria": "2 estrellas",
+      "anio": 2018,
+      "mes": 12
+    },
+    {
+      "centro": "La Paz",
+      "categoria": "3 estrellas",
+      "anio": 2020,
+      "mes": 5
+    },
+    {
+      "centro": "La Paz",
+      "categoria": "5 estrellas",
+      "anio": 2020,
+      "mes": 1
+    },
+    {
+      "centro": "La Paz",
+      "categoria": "5 estrellas",
+      "anio": 2020,
+      "mes": 5
+    },
+    {
+      "centro": "La Paz",
+      "categoria": "5 estrellas",
+      "anio": 2020,
+      "mes": 6
+    },
+    {
+      "centro": "La Paz",
+      "categoria": "5 estrellas",
+      "anio": 2021,
+      "mes": 2
+    },
+    {
+      "centro": "La Paz",
+      "categoria": "5 estrellas",
+      "anio": 2021,
+      "mes": 4
+    },
+    {
+      "centro": "La Paz",
+      "categoria": "5 estrellas",
+      "anio": 2021,
+      "mes": 6
+    },
+    {
+      "centro": "La Paz",
+      "categoria": "5 estrellas",
+      "anio": 2024,
+      "mes": 10
+    },
+    {
+      "centro": "Loreto",
+      "categoria": "1 estrella",
+      "anio": 2024,
+      "mes": 9
+    },
+    {
+      "centro": "Loreto",
+      "categoria": "1 estrella",
+      "anio": 2024,
+      "mes": 11
+    },
+    {
+      "centro": "Loreto",
+      "categoria": "3 estrellas",
+      "anio": 2024,
+      "mes": 10
+    },
+    {
+      "centro": "Loreto",
+      "categoria": "5 estrellas",
+      "anio": 2020,
+      "mes": 4
+    },
+    {
+      "centro": "Loreto",
+      "categoria": "5 estrellas",
+      "anio": 2020,
+      "mes": 5
+    },
+    {
+      "centro": "Loreto",
+      "categoria": "5 estrellas",
+      "anio": 2022,
+      "mes": 3
+    },
+    {
+      "centro": "Loreto",
+      "categoria": "5 estrellas",
+      "anio": 2022,
+      "mes": 4
+    },
+    {
+      "centro": "Loreto",
+      "categoria": "5 estrellas",
+      "anio": 2022,
+      "mes": 5
+    },
+    {
+      "centro": "Los Cabos",
+      "categoria": "1 estrella",
+      "anio": 2024,
+      "mes": 3
+    },
+    {
+      "centro": "Los Mochis",
+      "categoria": "1 estrella",
+      "anio": 2017,
+      "mes": 1
+    },
+    {
+      "centro": "Los Mochis",
+      "categoria": "1 estrella",
+      "anio": 2018,
+      "mes": 12
+    },
+    {
+      "centro": "Los Mochis",
+      "categoria": "1 estrella",
+      "anio": 2021,
+      "mes": 12
+    },
+    {
+      "centro": "Los Mochis",
+      "categoria": "1 estrella",
+      "anio": 2022,
+      "mes": 4
+    },
+    {
+      "centro": "Los Mochis",
+      "categoria": "1 estrella",
+      "anio": 2022,
+      "mes": 9
+    },
+    {
+      "centro": "Los Mochis",
+      "categoria": "2 estrellas",
+      "anio": 2022,
+      "mes": 9
+    },
+    {
+      "centro": "Los Mochis",
+      "categoria": "5 estrellas",
+      "anio": 2017,
+      "mes": 6
+    },
+    {
+      "centro": "Los Mochis",
+      "categoria": "5 estrellas",
+      "anio": 2017,
+      "mes": 7
+    },
+    {
+      "centro": "Los Mochis",
+      "categoria": "5 estrellas",
+      "anio": 2017,
+      "mes": 8
+    },
+    {
+      "centro": "Los Mochis",
+      "categoria": "5 estrellas",
+      "anio": 2017,
+      "mes": 10
+    },
+    {
+      "centro": "Los Mochis",
+      "categoria": "5 estrellas",
+      "anio": 2017,
+      "mes": 11
+    },
+    {
+      "centro": "Los Mochis",
+      "categoria": "5 estrellas",
+      "anio": 2019,
+      "mes": 9
+    },
+    {
+      "centro": "Los Mochis",
+      "categoria": "5 estrellas",
+      "anio": 2020,
+      "mes": 3
+    },
+    {
+      "centro": "Los Mochis",
+      "categoria": "5 estrellas",
+      "anio": 2021,
+      "mes": 3
+    },
+    {
+      "centro": "Los Mochis",
+      "categoria": "5 estrellas",
+      "anio": 2022,
+      "mes": 9
+    },
+    {
+      "centro": "Mazatlán",
+      "categoria": "1 estrella",
+      "anio": 2022,
+      "mes": 11
+    },
+    {
+      "centro": "Mazatlán",
+      "categoria": "1 estrella",
+      "anio": 2022,
+      "mes": 12
+    },
+    {
+      "centro": "Mexicali",
+      "categoria": "1 estrella",
+      "anio": 2020,
+      "mes": 7
+    },
+    {
+      "centro": "Mexicali",
+      "categoria": "1 estrella",
+      "anio": 2020,
+      "mes": 8
+    },
+    {
+      "centro": "Mexicali",
+      "categoria": "2 estrellas",
+      "anio": 2017,
+      "mes": 10
+    },
+    {
+      "centro": "Mexicali",
+      "categoria": "2 estrellas",
+      "anio": 2018,
+      "mes": 12
+    },
+    {
+      "centro": "Monterrey",
+      "categoria": "1 estrella",
+      "anio": 2021,
+      "mes": 1
+    },
+    {
+      "centro": "Monterrey",
+      "categoria": "1 estrella",
+      "anio": 2021,
+      "mes": 2
+    },
+    {
+      "centro": "Monterrey",
+      "categoria": "1 estrella",
+      "anio": 2021,
+      "mes": 3
+    },
+    {
+      "centro": "Monterrey",
+      "categoria": "2 estrellas",
+      "anio": 2021,
+      "mes": 9
+    },
+    {
+      "centro": "Monterrey",
+      "categoria": "2 estrellas",
+      "anio": 2021,
+      "mes": 10
+    },
+    {
+      "centro": "Monterrey",
+      "categoria": "2 estrellas",
+      "anio": 2021,
+      "mes": 11
+    },
+    {
+      "centro": "Monterrey",
+      "categoria": "2 estrellas",
+      "anio": 2022,
+      "mes": 1
+    },
+    {
+      "centro": "Monterrey",
+      "categoria": "2 estrellas",
+      "anio": 2022,
+      "mes": 2
+    },
+    {
+      "centro": "Monterrey",
+      "categoria": "2 estrellas",
+      "anio": 2022,
+      "mes": 3
+    },
+    {
+      "centro": "Monterrey",
+      "categoria": "2 estrellas",
+      "anio": 2022,
+      "mes": 7
+    },
+    {
+      "centro": "Monterrey",
+      "categoria": "2 estrellas",
+      "anio": 2023,
+      "mes": 12
+    },
+    {
+      "centro": "Morelia",
+      "categoria": "1 estrella",
+      "anio": 2024,
+      "mes": 5
+    },
+    {
+      "centro": "Morelia",
+      "categoria": "1 estrella",
+      "anio": 2024,
+      "mes": 8
+    },
+    {
+      "centro": "Morelia",
+      "categoria": "3 estrellas",
+      "anio": 2016,
+      "mes": 7
+    },
+    {
+      "centro": "Morelia",
+      "categoria": "3 estrellas",
+      "anio": 2017,
+      "mes": 7
+    },
+    {
+      "centro": "Morelia",
+      "categoria": "3 estrellas",
+      "anio": 2017,
+      "mes": 11
+    },
+    {
+      "centro": "Morelia",
+      "categoria": "3 estrellas",
+      "anio": 2017,
+      "mes": 12
+    },
+    {
+      "centro": "Morelia",
+      "categoria": "5 estrellas",
+      "anio": 2019,
+      "mes": 6
+    },
+    {
+      "centro": "Nuevo Nayarit",
+      "categoria": "3 estrellas",
+      "anio": 2024,
+      "mes": 2
+    },
+    {
+      "centro": "Nuevo Nayarit",
+      "categoria": "3 estrellas",
+      "anio": 2024,
+      "mes": 4
+    },
+    {
+      "centro": "Nuevo Nayarit",
+      "categoria": "3 estrellas",
+      "anio": 2024,
+      "mes": 7
+    },
+    {
+      "centro": "Nuevo Nayarit",
+      "categoria": "4 estrellas",
+      "anio": 2021,
+      "mes": 12
+    },
+    {
+      "centro": "Pachuca",
+      "categoria": "1 estrella",
+      "anio": 2021,
+      "mes": 4
+    },
+    {
+      "centro": "Pachuca",
+      "categoria": "1 estrella",
+      "anio": 2021,
+      "mes": 8
+    },
+    {
+      "centro": "Pachuca",
+      "categoria": "1 estrella",
+      "anio": 2021,
+      "mes": 9
+    },
+    {
+      "centro": "Pachuca",
+      "categoria": "1 estrella",
+      "anio": 2021,
+      "mes": 10
+    },
+    {
+      "centro": "Pachuca",
+      "categoria": "1 estrella",
+      "anio": 2023,
+      "mes": 11
+    },
+    {
+      "centro": "Pachuca",
+      "categoria": "1 estrella",
+      "anio": 2024,
+      "mes": 1
+    },
+    {
+      "centro": "Pachuca",
+      "categoria": "Sin categoría",
+      "anio": 2021,
+      "mes": 8
+    },
+    {
+      "centro": "Pachuca",
+      "categoria": "Sin categoría",
+      "anio": 2021,
+      "mes": 9
+    },
+    {
+      "centro": "Pachuca",
+      "categoria": "Sin categoría",
+      "anio": 2021,
+      "mes": 10
+    },
+    {
+      "centro": "Playas de Rosarito",
+      "categoria": "1 estrella",
+      "anio": 2016,
+      "mes": 5
+    },
+    {
+      "centro": "Playas de Rosarito",
+      "categoria": "3 estrellas",
+      "anio": 2016,
+      "mes": 5
+    },
+    {
+      "centro": "Querétaro",
+      "categoria": "2 estrellas",
+      "anio": 2021,
+      "mes": 2
+    },
+    {
+      "centro": "Querétaro",
+      "categoria": "2 estrellas",
+      "anio": 2021,
+      "mes": 3
+    },
+    {
+      "centro": "Querétaro",
+      "categoria": "2 estrellas",
+      "anio": 2021,
+      "mes": 4
+    },
+    {
+      "centro": "Querétaro",
+      "categoria": "2 estrellas",
+      "anio": 2021,
+      "mes": 11
+    },
+    {
+      "centro": "Querétaro",
+      "categoria": "2 estrellas",
+      "anio": 2021,
+      "mes": 12
+    },
+    {
+      "centro": "Querétaro",
+      "categoria": "2 estrellas",
+      "anio": 2022,
+      "mes": 9
+    },
+    {
+      "centro": "Querétaro",
+      "categoria": "2 estrellas",
+      "anio": 2022,
+      "mes": 10
+    },
+    {
+      "centro": "Querétaro",
+      "categoria": "2 estrellas",
+      "anio": 2022,
+      "mes": 11
+    },
+    {
+      "centro": "Salamanca",
+      "categoria": "5 estrellas",
+      "anio": 2021,
+      "mes": 6
+    },
+    {
+      "centro": "Salamanca",
+      "categoria": "5 estrellas",
+      "anio": 2022,
+      "mes": 5
+    },
+    {
+      "centro": "Salamanca",
+      "categoria": "5 estrellas",
+      "anio": 2023,
+      "mes": 3
+    },
+    {
+      "centro": "San Felipe",
+      "categoria": "5 estrellas",
+      "anio": 2017,
+      "mes": 1
+    },
+    {
+      "centro": "San Felipe",
+      "categoria": "5 estrellas",
+      "anio": 2017,
+      "mes": 2
+    },
+    {
+      "centro": "San Felipe",
+      "categoria": "5 estrellas",
+      "anio": 2017,
+      "mes": 3
+    },
+    {
+      "centro": "San Juan del Río",
+      "categoria": "1 estrella",
+      "anio": 2021,
+      "mes": 12
+    },
+    {
+      "centro": "San Juan del Río",
+      "categoria": "2 estrellas",
+      "anio": 2022,
+      "mes": 3
+    },
+    {
+      "centro": "San Juan del Río",
+      "categoria": "2 estrellas",
+      "anio": 2024,
+      "mes": 1
+    },
+    {
+      "centro": "San Miguel de Allende",
+      "categoria": "1 estrella",
+      "anio": 2024,
+      "mes": 5
+    },
+    {
+      "centro": "San Miguel de Allende",
+      "categoria": "1 estrella",
+      "anio": 2024,
+      "mes": 6
+    },
+    {
+      "centro": "San Miguel de Allende",
+      "categoria": "1 estrella",
+      "anio": 2024,
+      "mes": 7
+    },
+    {
+      "centro": "San Miguel de Allende",
+      "categoria": "3 estrellas",
+      "anio": 2020,
+      "mes": 4
+    },
+    {
+      "centro": "Tequisquiapan",
+      "categoria": "1 estrella",
+      "anio": 2021,
+      "mes": 10
+    },
+    {
+      "centro": "Tequisquiapan",
+      "categoria": "1 estrella",
+      "anio": 2021,
+      "mes": 11
+    },
+    {
+      "centro": "Tequisquiapan",
+      "categoria": "1 estrella",
+      "anio": 2021,
+      "mes": 12
+    },
+    {
+      "centro": "Tequisquiapan",
+      "categoria": "4 estrellas",
+      "anio": 2024,
+      "mes": 11
+    },
+    {
+      "centro": "Tequisquiapan",
+      "categoria": "5 estrellas",
+      "anio": 2021,
+      "mes": 6
+    },
+    {
+      "centro": "Tequisquiapan",
+      "categoria": "5 estrellas",
+      "anio": 2021,
+      "mes": 10
+    },
+    {
+      "centro": "Tequisquiapan",
+      "categoria": "5 estrellas",
+      "anio": 2021,
+      "mes": 11
+    },
+    {
+      "centro": "Tequisquiapan",
+      "categoria": "5 estrellas",
+      "anio": 2021,
+      "mes": 12
+    },
+    {
+      "centro": "Toluca",
+      "categoria": "2 estrellas",
+      "anio": 2020,
+      "mes": 9
+    },
+    {
+      "centro": "Toluca",
+      "categoria": "2 estrellas",
+      "anio": 2020,
+      "mes": 11
+    },
+    {
+      "centro": "Toluca",
+      "categoria": "2 estrellas",
+      "anio": 2020,
+      "mes": 12
+    },
+    {
+      "centro": "Toluca",
+      "categoria": "2 estrellas",
+      "anio": 2021,
+      "mes": 8
+    },
+    {
+      "centro": "Toluca",
+      "categoria": "2 estrellas",
+      "anio": 2022,
+      "mes": 5
+    },
+    {
+      "centro": "Toluca",
+      "categoria": "2 estrellas",
+      "anio": 2024,
+      "mes": 6
+    },
+    {
+      "centro": "Toluca",
+      "categoria": "Sin categoría",
+      "anio": 2024,
+      "mes": 6
+    },
+    {
+      "centro": "Veracruz-Boca del Río",
+      "categoria": "1 estrella",
+      "anio": 2023,
+      "mes": 8
+    },
+    {
+      "centro": "Zacatecas",
+      "categoria": "1 estrella",
+      "anio": 2024,
+      "mes": 4
+    },
+    {
+      "centro": "Zacatecas",
+      "categoria": "1 estrella",
+      "anio": 2024,
+      "mes": 5
+    }
+  ]
+}

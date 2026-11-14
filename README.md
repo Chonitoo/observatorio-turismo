@@ -17,8 +17,14 @@ src/
   captura.py                    Orquestador
   extractores/datatur.py        SECTUR-DataTur: ocupación hotelera de 70 destinos (CC-BY 4.0)
   extractores/banxico.py        Banxico SIE: tipo de cambio FIX e INPC
+  pipeline/                     Bronce → Plata → Oro: Puerta de Calidad (Pandera), faltantes,
+                                atípicos, integración, jerarquías, normalización
 data/bronze/                    Capa Bronce: datos crudos inmutables + _bitacora_captura.csv
-docs/E0/                        propuesta.md y ENTREGA.md
+data/silver/                    Capa Plata: datos limpios y validados
+data/gold/                      Capa Oro: integrados y listos para analizar
+data/quarantine/                Registros rechazados por la Puerta de Calidad, con motivo
+reports/E1/                     Evidencia de cada etapa del pipeline (JSON)
+docs/E0/, docs/E1/               Documentación de cada entrega
 calidad/                        Bitácoras PSP de tiempo y defectos, objetivos de calidad
 tests/                          Pruebas de integridad de Bronce
 ```
@@ -28,6 +34,7 @@ tests/                          Pruebas de integridad de Bronce
 | Entrega | Tag | Documentos |
 |---|---|---|
 | E0: Arranque | `e0` | [Propuesta](docs/E0/propuesta.md) · [Ficha técnica](docs/E0/ENTREGA.md) |
+| E1: Limpieza y Puerta de Calidad | `e1` | [Notebook](docs/E1/limpieza.ipynb) · [Ficha técnica](docs/E1/ENTREGA.md) · [Relatoría](docs/relatoria-E1.md) |
 
 ## Fuentes y licencias
 

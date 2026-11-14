@@ -1,0 +1,70 @@
+{
+  "fecha_utc": "2026-11-14T16:52:44Z",
+  "duracion_s": 5.6,
+  "fuentes": {
+    "datatur": "data/bronze/datatur/Base70centros_2026-11-10_manual.csv",
+    "banxico_tipo_cambio": "data/bronze/banxico_tipo_cambio_fix/SF43718_tipo_cambio_fix_2026-11-10T220823Z.json",
+    "banxico_inpc": "data/bronze/banxico_inpc/SP1_inpc_2026-11-10T220824Z.json"
+  },
+  "puertas": [
+    {
+      "fuente": "datatur",
+      "etapa": "1_entrada",
+      "esquema": "datatur_entrada",
+      "registros_entrada": 31147,
+      "registros_validos": 31141,
+      "registros_cuarentena": 6,
+      "registros_por_regla": {
+        "R1: cuartos ocupados mayores que cuartos disponibles": 2,
+        "R2: hay cuartos ocupados pero cero llegadas de turistas": 4
+      }
+    },
+    {
+      "fuente": "banxico_tipo_cambio",
+      "etapa": "1_entrada",
+      "esquema": "banxico_tipo_cambio",
+      "registros_entrada": 2731,
+      "registros_validos": 2731,
+      "registros_cuarentena": 0,
+      "registros_por_regla": {}
+    },
+    {
+      "fuente": "banxico_inpc",
+      "etapa": "1_entrada",
+      "esquema": "banxico_inpc",
+      "registros_entrada": 130,
+      "registros_validos": 130,
+      "registros_cuarentena": 0,
+      "registros_por_regla": {}
+    },
+    {
+      "fuente": "datatur",
+      "etapa": "2_plata",
+      "esquema": "datatur_plata",
+      "registros_entrada": 31288,
+      "registros_validos": 31287,
+      "registros_cuarentena": 1,
+      "registros_por_regla": {
+        "R2: hay cuartos ocupados pero cero llegadas de turistas": 1
+      }
+    },
+    {
+      "fuente": "oro_destino_mes",
+      "etapa": "3_oro",
+      "esquema": "oro_destino_mes",
+      "registros_entrada": 6900,
+      "registros_validos": 6898,
+      "registros_cuarentena": 2,
+      "registros_por_regla": {
+        "estadía fuera de 1-30 noches": 2
+      }
+    }
+  ],
+  "cuarentena_total": 9,
+  "salidas": {
+    "plata_datatur": 31287,
+    "oro_destino_mes": 6898,
+    "oro_hotel_categoria_mes": 31287,
+    "oro_serie_colima": 216
+  }
+}

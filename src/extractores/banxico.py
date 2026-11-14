@@ -19,7 +19,7 @@ SERIES = {
     "SF43718": "tipo_cambio_fix",
     "SP1": "inpc",
 }
-FECHA_INICIO = "2016-01-01"  # mismo arranque que la serie de DataTur
+FECHA_INICIO = "2015-01-01"  # un año antes de DataTur: la inflación anual de 2016 necesita el INPC de 2015
 BASE = "https://www.banxico.org.mx/SieAPIRest/service/v1/series/{serie}/datos/{ini}/{fin}"
 
 

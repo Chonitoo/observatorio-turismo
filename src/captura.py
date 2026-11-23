@@ -8,13 +8,13 @@ Un bloqueo de una fuente individual se registra en la bitácora pero no detiene 
 """
 import sys
 
-from src.extractores import banxico, datatur
+from src.extractores import banxico, datatur, inegi
 
 ESTADOS_OK = {"nuevo", "sin_cambios"}
 
 
 def main() -> int:
-    resultados = [datatur.capturar(), *banxico.capturar()]
+    resultados = [datatur.capturar(), *banxico.capturar(), *inegi.capturar()]
     print(f"{'fuente':<24}{'estado':<14}{'http':<6}{'bytes':>10}  archivo / nota")
     for r in resultados:
         print(f"{r.fuente:<24}{r.estado:<14}{str(r.http or ''):<6}{r.bytes:>10}  {r.archivo or r.nota}")

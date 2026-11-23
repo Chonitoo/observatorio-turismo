@@ -1,0 +1,15 @@
+{
+  "registros_linaje": 34505,
+  "ids_oro": 7310,
+  "archivos_bronce": 5,
+  "problemas": [],
+  "integro": true,
+  "registros_oro_sin_linaje": 0,
+  "ejemplos_sin_linaje": [],
+  "por_tabla": {
+    "destino_mes": 6898,
+    "establecimientos_hospedaje": 294,
+    "indicadores_mes": 108,
+    "municipio_hospedaje": 10
+  }
+}

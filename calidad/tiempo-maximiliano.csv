@@ -13,3 +13,10 @@ fecha,inicio,fin,interrupcion_min,delta_min,fase,entrega,actividad,comentarios
 2026-11-14,11:45,12:00,0,15,TEST,E1,Pruebas unitarias del pipeline,"9 pruebas nuevas (14 en total)"
 2026-11-14,12:00,12:25,0,25,DOC,E1,Notebook limpieza.ipynb y figuras,
 2026-11-14,12:25,12:45,0,20,DOC,E1,ENTREGA.md y relatoria-E1.md,
+2026-11-22,19:00,19:20,0,20,PLAN,E2,Lectura de requisitos E2 y evaluación de fuentes (OSM y DENUE),"Overpass descartado por robots.txt"
+2026-11-22,19:20,19:35,0,15,CODE,E2,Extractor INEGI (DENUE y Marco Geoestadístico),
+2026-11-22,19:35,20:05,0,30,CODE,E2,Linaje desde Bronce y tabla linaje_oro,
+2026-11-22,20:05,20:25,0,20,CODE,E2,Rama geoespacial con GeoPandas y Puertas G1/G2,
+2026-11-22,20:25,20:35,0,10,TEST,E2,Pruebas de linaje y privacidad,"21 pruebas en total"
+2026-11-22,20:35,20:55,0,20,DOC,E2,Notebook geoespacial_linaje.ipynb y mapas,
+2026-11-22,20:55,21:20,0,25,DOC,E2,etica-datos.md, ENTREGA.md y relatoria-E2.md,

@@ -7,7 +7,8 @@ from src.pipeline import atipicos, calidad, faltantes, integracion, transformaci
 
 
 def _registro(**cambios):
-    base = dict(archivo_origen="x", fila_origen=2, anio=2019, mes=7, tipo_centro="Centros de Playa",
+    base = dict(id_bronce="datatur:abc:2", archivo_origen="x", fila_origen=2, sha256_bronce="abc",
+                fecha_ingesta="2026-11-10T00:00:00Z", anio=2019, mes=7, tipo_centro="Centros de Playa",
                 subtipo_centro="Otros", centro="Manzanillo", categoria="3 estrellas",
                 cuartos_disponibles=1000.0, cuartos_ocupados_no_residentes=50.0,
                 cuartos_ocupados_residentes=450.0, llegada_turistas_no_residentes=40.0,
@@ -53,7 +54,8 @@ def _serie(meses_presentes):
     filas = []
     for i in meses_presentes:
         anio, mes = 2016 + (i - 1) // 12, (i - 1) % 12 + 1
-        filas.append(_registro(anio=anio, mes=mes, cuartos_disponibles=1000.0 + i))
+        filas.append(_registro(anio=anio, mes=mes, cuartos_disponibles=1000.0 + i,
+                               id_bronce=f"datatur:abc:{i + 1}", fila_origen=i + 1))
     return pd.DataFrame(filas)
 
 
@@ -65,6 +67,9 @@ def test_hueco_interno_corto_se_imputa_y_estructural_no(monkeypatch):
     assert sorted(imputados["mes"]) == [4, 5]
     assert salida["imputado"].sum() == 2
     assert imputados["cuartos_disponibles"].between(1003, 1006).all()   # interpolación lineal
+    # linaje: cada imputado apunta a los registros reales que lo rodean
+    assert imputados["id_bronce"].str.startswith("IMPUTADO").all()
+    assert set(imputados["base_imputacion"]) == {"datatur:abc:4|datatur:abc:7"}
 
 
 def test_imputacion_explicita_por_razon():
@@ -103,7 +108,9 @@ def test_jerarquias_y_periodo_covid():
 
 def test_tipo_cambio_diario_a_mensual():
     tc = pd.DataFrame({"fecha": pd.to_datetime(["2020-01-02", "2020-01-31", "2020-02-03"]),
-                       "tipo_cambio": [18.0, 20.0, 19.0]})
+                       "tipo_cambio": [18.0, 20.0, 19.0], "archivo_origen": "bx.json",
+                       "fila_origen": [0, 1, 2], "fecha_ingesta": "2026-11-14T00:00:00Z"})
     m = integracion.tipo_cambio_mensual(tc)
+    assert m.set_index("periodo").loc["2020-01", "linaje_tipo_cambio"] == "bx.json#datos[0:1]"
     assert m.set_index("periodo").loc["2020-01", "tipo_cambio"] == 19.0
     assert m.set_index("periodo").loc["2020-01", "tipo_cambio_cierre"] == 20.0

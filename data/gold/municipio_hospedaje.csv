@@ -1,0 +1,11 @@
+id_oro,cvegeo,nomgeo,pob_total,area_km2,establecimientos,personal_estimado,pct_micro,anio_alta_mediana,n_Cabañas y villas,n_Campamento o albergue,n_Departamento o casa amueblada,n_Hotel,n_Motel,n_Pensión o casa de huéspedes,n_Grande,n_Mediano,n_Micro,n_Pequeño,establecimientos_por_10k_hab,establecimientos_por_100km2,pct_oferta_estatal,cuartos_datatur_2024,cuartos_por_establecimiento
+municipio|06007,06007,Manzanillo,191031,1378.9,134,2844,69.4,2010.0,12,0,22,85,6,9,4,5,93,32,7.01,9.72,45.6,4313.0,32.2
+municipio|06002,06002,Colima,157048,741.7,54,716,68.5,2011.0,1,0,2,40,7,4,0,3,37,14,3.44,7.28,18.4,1164.0,21.6
+municipio|06009,06009,Tecomán,116305,923.5,46,369,82.6,2010.0,0,0,1,31,13,1,0,0,38,8,3.96,4.98,15.6,,
+municipio|06001,06001,Armería,27626,417.3,27,174,85.2,2010.0,4,1,0,17,1,4,0,0,23,4,9.77,6.47,9.2,,
+municipio|06003,06003,Comala,21661,312.2,14,265,71.4,2012.5,6,0,1,6,0,1,0,1,10,3,6.46,4.48,4.8,,
+municipio|06005,06005,Cuauhtémoc,31267,409.7,8,63,75.0,2014.0,0,0,0,4,4,0,0,0,6,2,2.56,1.95,2.7,,
+municipio|06010,06010,Villa de Álvarez,149762,285.9,5,74,60.0,2024.0,0,0,0,4,1,0,0,0,3,2,0.33,1.75,1.7,,
+municipio|06008,06008,Minatitlán,10231,412.5,4,29,75.0,2012.0,0,0,0,2,0,2,0,0,3,1,3.91,0.97,1.4,,
+municipio|06006,06006,Ixtlahuacán,5623,375.0,1,3,100.0,2014.0,0,0,0,0,0,1,0,0,1,0,1.78,0.27,0.3,,
+municipio|06004,06004,Coquimatlán,20837,497.3,1,3,100.0,2014.0,1,0,0,0,0,0,0,0,1,0,0.48,0.2,0.3,,

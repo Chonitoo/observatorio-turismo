@@ -1,10 +1,12 @@
 {
-  "fecha_utc": "2026-11-16T23:17:58Z",
-  "duracion_s": 3.0,
+  "fecha_utc": "2026-11-23T02:37:34Z",
+  "duracion_s": 7.9,
   "fuentes": {
     "datatur": "data/bronze/datatur/Base70centros_2026-11-10_manual.csv",
     "banxico_tipo_cambio": "data/bronze/banxico_tipo_cambio_fix/SF43718_tipo_cambio_fix_2026-11-14T170344Z.json",
-    "banxico_inpc": "data/bronze/banxico_inpc/SP1_inpc_2026-11-14T170345Z.json"
+    "banxico_inpc": "data/bronze/banxico_inpc/SP1_inpc_2026-11-14T170345Z.json",
+    "inegi_denue_colima": "data/bronze/inegi_denue_colima/denue_06_csv_2026-11-23T022328Z.zip",
+    "inegi_mg_municipios": "data/bronze/inegi_mg_municipios/mgem_06_colima_2026-11-23T022329Z.geojson"
   },
   "puertas": [
     {
@@ -58,6 +60,24 @@
       "registros_por_regla": {
         "estadía fuera de 1-30 noches": 2
       }
+    },
+    {
+      "fuente": "inegi_denue_colima",
+      "etapa": "G1_entrada",
+      "esquema": "denue_hospedaje",
+      "registros_entrada": 294,
+      "registros_validos": 294,
+      "registros_cuarentena": 0,
+      "registros_por_regla": {}
+    },
+    {
+      "fuente": "inegi_denue_colima",
+      "etapa": "G2_plata",
+      "esquema": "denue_hospedaje_plata",
+      "registros_entrada": 294,
+      "registros_validos": 294,
+      "registros_cuarentena": 0,
+      "registros_por_regla": {}
     }
   ],
   "cuarentena_total": 9,
@@ -65,6 +85,10 @@
     "plata_datatur": 31287,
     "oro_destino_mes": 6898,
     "oro_hotel_categoria_mes": 31287,
-    "oro_serie_colima": 216
+    "oro_serie_colima": 216,
+    "plata_denue_hospedaje": 294,
+    "oro_establecimientos_hospedaje": 294,
+    "oro_municipio_hospedaje": 10,
+    "linaje_registros": 34505
   }
 }

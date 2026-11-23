@@ -8,3 +8,9 @@ nbformat==5.11.1
 nbconvert==7.17.1
 ipykernel==7.3.0
 pytest==8.3.3
+geopandas==1.2.0
+shapely==2.2.0
+pyproj==3.8.0
+pyogrio==0.13.0
+folium==1.0.0
+mapclassify==2.11.0

@@ -8,3 +8,8 @@ fecha,id,tipo,fase_inyeccion,fase_remocion,tiempo_correccion_min,defecto_relacio
 2026-11-14,7,80-Funcion,DLD,REV,15,,"El detector de atípicos sin tendencia marcaba los meses previos a la pandemia; se agregó la tendencia sin meses de choque"
 2026-11-14,8,70-Datos,CODE,REV,3,,"El esquema de Banxico rechazaría los datos de 2015 al ampliar la captura; se ajustó la fecha mínima"
 2026-11-14,9,10-Documentacion,DOC,REV,2,,"Los motivos de cuarentena se repetían por columna en las reglas de registro"
+2026-11-22,10,50-Interfaz,PLAN,PLAN,10,,"Overpass API prohibido por robots.txt; se cambió la fuente a DENUE"
+2026-11-22,11,70-Datos,DLD,TEST,10,,"Linaje de Banxico día por día generaba ~38 MB; se rastrea por mes"
+2026-11-22,12,50-Interfaz,CODE,TEST,3,,"Prueba de tipo de cambio sin columnas de linaje tras el cambio de bronce.py"
+2026-11-22,13,80-Funcion,CODE,TEST,4,,"pd.json_normalize con índice no consecutivo fallaba con KeyError 0"
+2026-11-22,14,80-Funcion,CODE,TEST,3,,"GeoPandas no acepta markersize como Serie con índice; se pasó como arreglo"

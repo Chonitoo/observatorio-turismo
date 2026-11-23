@@ -18,16 +18,23 @@ import pandas as pd
 
 def tipo_cambio_mensual(tc: pd.DataFrame) -> pd.DataFrame:
     t = tc.assign(periodo=tc["fecha"].dt.to_period("M").astype(str)).sort_values("fecha")
-    return (t.groupby("periodo")
-            .agg(tipo_cambio=("tipo_cambio", "mean"), tipo_cambio_cierre=("tipo_cambio", "last"),
-                 dias_cotizados=("tipo_cambio", "size"))
-            .round(4).reset_index())
+    m = (t.groupby("periodo")
+         .agg(tipo_cambio=("tipo_cambio", "mean"), tipo_cambio_cierre=("tipo_cambio", "last"),
+              dias_cotizados=("tipo_cambio", "size"), _ini=("fila_origen", "min"), _fin=("fila_origen", "max"),
+              _arch=("archivo_origen", "first"), fecha_ingesta_tipo_cambio=("fecha_ingesta", "first"))
+         .round(4).reset_index())
+    # Linaje: los días del mes ocupan posiciones contiguas en bmx.series[0].datos del archivo crudo
+    m["linaje_tipo_cambio"] = m["_arch"] + "#datos[" + m["_ini"].astype(str) + ":" + m["_fin"].astype(str) + "]"
+    return m.drop(columns=["_ini", "_fin", "_arch"])
 
 
 def inflacion_mensual(inpc: pd.DataFrame) -> pd.DataFrame:
     i = inpc.assign(periodo=inpc["fecha"].dt.to_period("M").astype(str)).sort_values("periodo")
     i["inflacion_anual_pct"] = (i["inpc"].pct_change(12) * 100).round(3)
-    return i[["periodo", "inpc", "inflacion_anual_pct"]]
+    # Linaje: la inflación usa dos registros crudos (el mes y el mismo mes del año anterior)
+    i["linaje_inpc"] = i["id_bronce"].shift(12).fillna("") + "|" + i["id_bronce"]
+    i["fecha_ingesta_inpc"] = i["fecha_ingesta"]
+    return i[["periodo", "inpc", "inflacion_anual_pct", "linaje_inpc", "fecha_ingesta_inpc"]]
 
 
 def agregar_destino(plata: pd.DataFrame) -> pd.DataFrame:
@@ -42,7 +49,10 @@ def agregar_destino(plata: pd.DataFrame) -> pd.DataFrame:
          .agg(cuartos_disponibles=("cuartos_disponibles", "sum"), cuartos_ocupados=("ocupados", "sum"),
               llegadas=("llegadas", "sum"), llegadas_no_residentes=("llegada_turistas_no_residentes", "sum"),
               turistas_noche=("noches", "sum"), categorias_reportadas=("categoria", "nunique"),
-              disp_imputada=("disp_imputada", "sum")))
+              disp_imputada=("disp_imputada", "sum"), registros_imputados=("imputado", "sum"),
+              linaje_datatur=("id_bronce", lambda s: ";".join(sorted(s))),
+              fecha_ingesta_datatur=("fecha_ingesta", "max")))
+    g.insert(0, "id_oro", g["centro"] + "|" + g["periodo"])
     g["ocupacion_pct"] = (100 * g["cuartos_ocupados"] / g["cuartos_disponibles"]).round(3)
     g["estadia_promedio"] = (g["turistas_noche"] / g["llegadas"]).round(4)
     g["densidad"] = (g["turistas_noche"] / g["cuartos_ocupados"]).round(4)
@@ -53,6 +63,7 @@ def agregar_destino(plata: pd.DataFrame) -> pd.DataFrame:
 
 def integrar(destino_mes: pd.DataFrame, tc_mes: pd.DataFrame, infl: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
     out = destino_mes.merge(tc_mes, on="periodo", how="left").merge(infl, on="periodo", how="left")
+    out["id_indicadores"] = "banxico|" + out["periodo"]
     reporte = {
         "registros_datatur_destino_mes": int(len(destino_mes)),
         "registros_integrados": int(len(out)),

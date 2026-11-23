@@ -1,0 +1,65 @@
+{
+  "archivo_denue": "data/bronze/inegi_denue_colima/denue_06_csv_2026-11-23T022328Z.zip",
+  "archivo_marco_geoestadistico": "data/bronze/inegi_mg_municipios/mgem_06_colima_2026-11-23T022329Z.geojson",
+  "denue_hospedaje_bronce": 294,
+  "columnas_descartadas_por_privacidad": [
+    "nom_estab",
+    "raz_social",
+    "telefono",
+    "correoelec",
+    "www",
+    "tipo_vial",
+    "nom_vial",
+    "numero_ext",
+    "numero_int",
+    "letra_ext",
+    "letra_int",
+    "edificio",
+    "edificio_e",
+    "nomb_asent",
+    "manzana"
+  ],
+  "puertas": [
+    {
+      "fuente": "inegi_denue_colima",
+      "etapa": "G1_entrada",
+      "esquema": "denue_hospedaje",
+      "registros_entrada": 294,
+      "registros_validos": 294,
+      "registros_cuarentena": 0,
+      "registros_por_regla": {}
+    },
+    {
+      "fuente": "inegi_denue_colima",
+      "etapa": "G2_plata",
+      "esquema": "denue_hospedaje_plata",
+      "registros_entrada": 294,
+      "registros_validos": 294,
+      "registros_cuarentena": 0,
+      "registros_por_regla": {}
+    }
+  ],
+  "municipio_no_coincide": 1,
+  "ejemplos_no_coincide": [
+    {
+      "id": "6256490",
+      "municipio": "Villa de Álvarez",
+      "municipio_espacial": "Colima",
+      "distancia_colima_m": 0.0
+    }
+  ],
+  "por_tipo": {
+    "Hotel": 189,
+    "Motel": 32,
+    "Departamento o casa amueblada": 26,
+    "Cabañas y villas": 24,
+    "Pensión o casa de huéspedes": 22,
+    "Campamento o albergue": 1
+  },
+  "por_tamano": {
+    "Micro": 215,
+    "Pequeño": 66,
+    "Mediano": 9,
+    "Grande": 4
+  }
+}

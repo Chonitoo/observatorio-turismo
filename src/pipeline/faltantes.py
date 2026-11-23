@@ -133,6 +133,7 @@ def imputar_explicitos(df: pd.DataFrame) -> tuple[pd.DataFrame, list[dict]]:
             valor = float(np.round(r[den] * razon)) if r[den] > 0 else 0.0
             df.loc[i, col] = valor
             df.loc[i, "imputado"] = True
+            df.loc[i, "base_imputacion"] = f"razón {col}/{den} de {len(vecinos)} registros vecinos"
             registro.append({"centro": r.centro, "categoria": r.categoria, "periodo": str(r.periodo),
                              "columna": col, "metodo": f"razón mediana {col}/{den} ±6 meses",
                              "razon": round(razon, 4), "valor_imputado": valor})
@@ -155,9 +156,15 @@ def imputar_huecos(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
         disp = full["cuartos_disponibles"].set_axis(t).interpolate("time")
         tasas = {num: (full[num] / full[den].replace(0, np.nan)).set_axis(t).interpolate("time").fillna(0)
                  for num, den in TASAS.items()}
+        # Linaje: el registro imputado no tiene fila en Bronce; se documentan los registros
+        # reales (antes y después del hueco) de los que se interpoló.
+        id_prev, id_next = full["id_bronce"].ffill(), full["id_bronce"].bfill()
+        ing_prev = full["fecha_ingesta"].ffill()
         for per in huecos["periodo"]:
             ts = per.to_timestamp()
-            fila = {"archivo_origen": "imputado", "fila_origen": pd.NA,
+            fila = {"id_bronce": f"IMPUTADO:{centro}:{cat}:{per}", "archivo_origen": "imputado",
+                    "fila_origen": pd.NA, "sha256_bronce": pd.NA, "fecha_ingesta": ing_prev.loc[per],
+                    "base_imputacion": f"{id_prev.loc[per]}|{id_next.loc[per]}",
                     "anio": per.year, "mes": per.month, "centro": centro, "categoria": cat,
                     "tipo_centro": s["tipo_centro"].iloc[0], "subtipo_centro": s["subtipo_centro"].iloc[0],
                     "cuartos_disponibles": float(round(disp[ts]))}

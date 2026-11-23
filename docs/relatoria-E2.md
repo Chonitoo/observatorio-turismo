@@ -64,12 +64,22 @@ documenta con los dos registros reales de los que se interpoló (`base_imputacio
 
 ## 6. Aprendizajes
 
-> ✏️ *Sección para que el autor la redacte con su propia reflexión. Ideas de partida:*
+**La fuente geoespacial.** En esta etapa agregamos una fuente de mapas: usamos el DENUE del INEGI para localizar
+los 294 hoteles, moteles, cabañas y demás establecimientos de hospedaje de Colima, y determinar de cada uno su
+ubicación, tamaño y municipio. Los límites municipales los obtuvimos del Marco Geoestadístico del INEGI y los
+procesamos con la herramienta GeoPandas.
 
-- `[Por qué revisar robots.txt cambió mi elección de fuente y qué aprendí de eso]`
-- `[Qué significa para mí "privacidad por diseño" después de ver los datos de DENUE]`
-- `[Para qué sirve poder rastrear un número hasta su fila original]`
-- `[Qué me mostró el mapa que no veía en las tablas]`
+**Lo que mostró el mapa.** El mapa mostró que Manzanillo tiene casi la mitad de todo el hospedaje del estado y los
+4 hoteles más grandes; que Armería tiene más hospedaje por habitante debido a sus playas, y que Villa de Álvarez,
+aunque es muy poblado, casi no tiene hoteles.
+
+**La privacidad.** El DENUE trae el nombre, teléfono, correo y dirección de cada negocio. En negocios chicos, como
+una casa de huéspedes, ese nombre puede ser el de una persona. Por eso decidimos eliminar esos datos desde el
+inicio: no los necesitábamos para el análisis y así protegemos a los dueños.
+
+**Las reglas de las fuentes.** Todas las fuentes que consultamos cumplen con sus reglas, licencias y términos de uso.
+En el caso del INEGI, sus términos permiten usar los datos siempre que se cite la fuente, se avise que los datos
+fueron transformados y no se diga que el análisis es de ellos; por eso agregamos esa nota a los mapas.
 
 ## 7. Indicadores del proceso (PSP)
 

@@ -84,7 +84,20 @@ linaje.verificar()                      # integridad completa del linaje
 Además, `destino_mes.csv` incluye columnas de linaje resumido (`linaje_datatur`, `linaje_tipo_cambio`, `linaje_inpc`,
 `fecha_ingesta_*`) y `hotel_categoria_mes.csv` lleva el `id_bronce` de cada fila.
 
-## 3. Calidad
+## 3. Evidencia de ejecución automática
+
+Corrida [Captura Bronce y pipeline #4](https://github.com/Chonitoo/observatorio-turismo/actions/runs/45102579874)
+(2026-11-23, ✅ success), commit del bot `datos: captura y pipeline automáticos 2026-11-23T02:52Z`:
+
+| Fuente | Resultado en GitHub Actions |
+|---|---|
+| INEGI DENUE | HTTP 200 · `sin_cambios` (misma huella SHA-256: no se duplica) |
+| INEGI Marco Geoestadístico | HTTP 200 · `sin_cambios` |
+| Banxico FIX / INPC | HTTP 200 · `nuevo` / `sin_cambios` |
+| DataTur | HTTP 403 · `bloqueado` (registrado sin evasión, como desde E0) |
+| Linaje | 7,310 / 7,310 registros de Oro rastreables, `integro: true` |
+
+## 4. Calidad
 
 | Puerta | Fuente | Entrada | Válidos | Cuarentena |
 |---|---|---:|---:|---:|

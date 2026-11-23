@@ -75,7 +75,7 @@ documenta con los dos registros reales de los que se interpoló (`base_imputacio
 
 | Indicador | Meta | Resultado E2 |
 |---|---|---|
-| Q1 · Corridas de Actions en verde | ≥ 95 % | `[completar al cerrar]` |
+| Q1 · Corridas de Actions en verde | ≥ 95 % | 100 % (4 de 4 corridas en verde al cierre de E2) |
 | Q2 · Trazabilidad completa | 100 % | **100 %**: 7,310 / 7,310 registros de Oro con linaje verificado |
 | Q3a · Defectos que llegan a `main` | ≤ 10 / KLOC | 0 conocidos; 5 registrados y corregidos antes del commit |
 

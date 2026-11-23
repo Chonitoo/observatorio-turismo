@@ -1,9 +1,9 @@
 {
-  "fecha_utc": "2026-11-23T02:37:34Z",
-  "duracion_s": 7.9,
+  "fecha_utc": "2026-11-23T02:52:33Z",
+  "duracion_s": 5.8,
   "fuentes": {
     "datatur": "data/bronze/datatur/Base70centros_2026-11-10_manual.csv",
-    "banxico_tipo_cambio": "data/bronze/banxico_tipo_cambio_fix/SF43718_tipo_cambio_fix_2026-11-14T170344Z.json",
+    "banxico_tipo_cambio": "data/bronze/banxico_tipo_cambio_fix/SF43718_tipo_cambio_fix_2026-11-23T025227Z.json",
     "banxico_inpc": "data/bronze/banxico_inpc/SP1_inpc_2026-11-14T170345Z.json",
     "inegi_denue_colima": "data/bronze/inegi_denue_colima/denue_06_csv_2026-11-23T022328Z.zip",
     "inegi_mg_municipios": "data/bronze/inegi_mg_municipios/mgem_06_colima_2026-11-23T022329Z.geojson"
@@ -25,8 +25,8 @@
       "fuente": "banxico_tipo_cambio",
       "etapa": "1_entrada",
       "esquema": "banxico_tipo_cambio",
-      "registros_entrada": 2985,
-      "registros_validos": 2985,
+      "registros_entrada": 2989,
+      "registros_validos": 2989,
       "registros_cuarentena": 0,
       "registros_por_regla": {}
     },

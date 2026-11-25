@@ -1,9 +1,10 @@
-"""Dashboard del Observatorio de Ocupación Hotelera de Colima.
+"""Tablero del Observatorio de Ocupación Hotelera de Colima — versión para el cliente.
+
+Pensado para hoteleros y para la Secretaría de Turismo: cada sección responde una pregunta de
+negocio en lenguaje simple, con la conclusión escrita arriba de cada gráfica.
 
 Uso (desde la raíz del repositorio):
     .venv\\Scripts\\python -m streamlit run dashboard/app.py
-
-Lee exclusivamente la capa Oro (y los reportes de calidad/linaje) que genera el pipeline.
 """
 from __future__ import annotations
 
@@ -22,16 +23,25 @@ sys.path.insert(0, str(RAIZ))
 from src.pipeline import linaje  # noqa: E402
 
 ORO, PLATA, REP = RAIZ / "data" / "gold", RAIZ / "data" / "silver", RAIZ / "reports"
-AZUL, GRIS, ROJO, NARANJA, VERDE = "#1f4e79", "#9aa5b1", "#c0504d", "#e8853d", "#5b9a68"
-COLOR_GRUPO = {"Pacífico líder": VERDE, "Pacífico intermedio": AZUL, "Pacífico rezagado": ROJO}
+AZUL, ROJO, NARANJA, VERDE, AMARILLO = "#2f6fb5", "#d9534f", "#e8853d", "#4fa36a", "#e0b84c"
+MESES = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
+MESES_LARGO = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre",
+               "octubre", "noviembre", "diciembre"]
 COLOR_TIPO = {"Hotel": "#2f6fb5", "Motel": "#d9534f", "Departamento o casa amueblada": "#7fb33f",
               "Cabañas y villas": "#8e6cc2", "Pensión o casa de huéspedes": "#f0a030",
               "Campamento o albergue": "#3fb6c9"}
 
-st.set_page_config(page_title="Observatorio Hotelero Colima", page_icon="🏨", layout="wide")
+st.set_page_config(page_title="Observatorio Hotelero de Colima", page_icon="🏨", layout="wide")
+st.markdown("""<style>
+.block-container {padding-top: 2.2rem; max-width: 1250px;}
+div[data-testid="stMetricValue"] {font-size: 1.9rem;}
+.tarjeta {border: 1px solid rgba(128,128,128,.35); border-radius: 12px; padding: 14px 16px; margin-bottom: 6px;}
+.tarjeta h4 {margin: 0 0 6px 0; font-size: 1.02rem;}
+.tarjeta p {margin: 0; opacity: .85; font-size: .93rem;}
+</style>""", unsafe_allow_html=True)
 
 
-# ----------------------------------------------------------------------------- datos
+# ============================================================================= datos
 @st.cache_data
 def cargar():
     o = pd.read_csv(ORO / "destino_mes.csv")
@@ -42,7 +52,6 @@ def cargar():
         "est": pd.read_csv(ORO / "establecimientos_hospedaje.csv"),
         "calidad": json.load(open(REP / "E1" / "calidad.json", encoding="utf-8")),
         "faltantes": json.load(open(REP / "E1" / "faltantes.json", encoding="utf-8")),
-        "atipicos": json.load(open(REP / "E1" / "atipicos.json", encoding="utf-8")),
         "linaje": json.load(open(REP / "E2" / "linaje.json", encoding="utf-8")),
         "bitacora": pd.read_csv(RAIZ / "data" / "bronze" / "_bitacora_captura.csv"),
         "cuarentena": pd.concat([pd.read_csv(f) for f in sorted((RAIZ / "data" / "quarantine").glob("*.csv"))],
@@ -53,7 +62,7 @@ def cargar():
 @st.cache_data
 def geo_municipios():
     g = gpd.read_file(PLATA / "municipios_colima.geojson")[["cvegeo", "nomgeo", "geometry"]]
-    g["geometry"] = g.geometry.simplify(0.0008)  # ~90 m: suficiente para el mapa y mucho más ligero
+    g["geometry"] = g.geometry.simplify(0.0008)
     return json.loads(g.to_json())
 
 
@@ -64,193 +73,271 @@ def tabla_linaje():
 
 D = cargar()
 oro = D["oro"]
-ultimo_anio = int(oro["anio"].max())
+ANIO_MAX = int(oro["anio"].max())
+NORMAL = oro["periodo_covid"] != "Pandemia"
 
 
-def kpi(col, titulo, valor, delta=None, help=None):  # noqa: A002 (mismo nombre que st.metric)
-    col.metric(titulo, valor, delta, help=help)
+def ocupacion(d: pd.DataFrame) -> float:
+    """Ocupación ponderada: cuartos ocupados / cuartos disponibles (no promedio de porcentajes)."""
+    return 100 * d["cuartos_ocupados"].sum() / d["cuartos_disponibles"].sum()
 
 
-# ----------------------------------------------------------------------------- navegación
-st.sidebar.title("🏨 Observatorio Hotelero")
-st.sidebar.caption("Colima · Manzanillo y Colima capital")
-pagina = st.sidebar.radio("Sección", ["Resumen", "Ocupación", "Comparación Pacífico", "Mapa de hospedaje",
-                                      "Calidad y linaje"], label_visibility="collapsed")
+def estadia(d: pd.DataFrame) -> float:
+    return d["turistas_noche"].sum() / d["llegadas"].sum()
+
+
+def extranjeros(d: pd.DataFrame) -> float:
+    return 100 * d["llegadas_no_residentes"].sum() / d["llegadas"].sum()
+
+
+def por_mes(d: pd.DataFrame) -> pd.Series:
+    return d.groupby("mes")[["cuartos_ocupados", "cuartos_disponibles"]].apply(ocupacion)
+
+
+def resumen_por(d: pd.DataFrame, col: str) -> pd.DataFrame:
+    g = d.groupby(col)
+    return pd.DataFrame({
+        "ocupacion": g[["cuartos_ocupados", "cuartos_disponibles"]].apply(ocupacion),
+        "estadia": g[["turistas_noche", "llegadas"]].apply(estadia),
+        "extranjeros": g[["llegadas_no_residentes", "llegadas"]].apply(extranjeros),
+    })
+
+
+def conclusion(texto: str):
+    st.info(texto, icon="💡")
+
+
+def que_hacer(texto: str):
+    st.success(texto, icon="✅")
+
+
+def fig_base(fig, alto=360):
+    fig.update_layout(height=alto, margin=dict(t=20, b=10, l=10, r=10), legend=dict(orientation="h", y=1.1))
+    return fig
+
+
+# ============================================================================= menú
+PAGINAS = {
+    "🏠 Inicio": "inicio",
+    "🏨 ¿Cómo le fue a Manzanillo?": "anio",
+    "📅 ¿Cuándo se llenan los hoteles?": "temporadas",
+    "🌊 ¿Cómo vamos contra la competencia?": "competencia",
+    "🗺️ ¿Dónde está la oferta de hospedaje?": "mapa",
+    "🔍 ¿Qué tan confiables son los datos?": "confianza",
+}
+st.sidebar.markdown("## 🏨 Observatorio Hotelero\n**Colima · Manzanillo**")
+pagina = PAGINAS[st.sidebar.radio("Elige una pregunta", list(PAGINAS))]
 st.sidebar.divider()
-st.sidebar.markdown(
-    f"**Datos al:** {oro['periodo'].max()}  \n"
-    f"**Destinos:** {oro['centro'].nunique()} · **Registros Oro:** {len(oro):,}  \n"
-    f"**Última corrida del pipeline:** {D['calidad']['fecha_utc'][:16].replace('T', ' ')} UTC"
-)
-st.sidebar.caption("Fuentes: SECTUR-DataTur (CC-BY 4.0) · Banco de México SIE · "
-                   "INEGI, DENUE y Marco Geoestadístico. Elaboración propia.")
+st.sidebar.caption(f"Datos de ocupación hasta **{MESES_LARGO[int(oro[oro.anio == ANIO_MAX].mes.max()) - 1]} "
+                   f"de {ANIO_MAX}**. Se actualizan solos cada semana.")
+st.sidebar.caption("Fuentes oficiales: SECTUR-DataTur, Banco de México e INEGI. Elaboración propia.")
 
 
-# ============================================================================= RESUMEN
-if pagina == "Resumen":
-    st.title("¿Por qué los hoteles de Manzanillo llenan sólo la mitad de sus cuartos?")
-    st.caption("Indicadores clave de ocupación hotelera · fuente principal SECTUR-DataTur")
-
+# ============================================================================= INICIO
+if pagina == "inicio":
     mz = oro[oro.centro == "Manzanillo"]
-    a, b = mz[mz.anio == ultimo_anio], mz[mz.anio == ultimo_anio - 1]
-    ocup = lambda d: 100 * d.cuartos_ocupados.sum() / d.cuartos_disponibles.sum()
-    est = lambda d: d.turistas_noche.sum() / d.llegadas.sum()
-    playa = oro[(oro.tipo_centro == "Centros de Playa") & (oro.anio == ultimo_anio)]
-    rank = (playa.groupby("centro")[["cuartos_ocupados", "cuartos_disponibles"]].apply(ocup).sort_values(ascending=False).reset_index(name="ocupacion"))
-    pos = int(rank.index[rank.centro == "Manzanillo"][0]) + 1
+    o_actual = ocupacion(mz[mz.anio == ANIO_MAX])
+    meses_mz = por_mes(mz[NORMAL])
+    peor = int(meses_mz.idxmin())
+    pac = oro[(oro.litoral == "Pacífico") & (oro.periodo_covid == "Pospandemia")]
+    rank = resumen_por(pac, "centro")["ocupacion"].sort_values(ascending=False)
+    pos = list(rank.index).index("Manzanillo") + 1
+    est = D["est"]
+    pct_mz = 100 * (est.municipio_espacial == "Manzanillo").mean()
 
-    c = st.columns(5)
-    kpi(c[0], f"Ocupación Manzanillo {ultimo_anio}", f"{ocup(a):.1f} %", f"{ocup(a) - ocup(b):+.1f} pts vs {ultimo_anio - 1}")
-    kpi(c[1], "Llegadas de turistas", f"{a.llegadas.sum() / 1e6:.2f} M",
-        f"{100 * (a.llegadas.sum() / b.llegadas.sum() - 1):+.1f} %")
-    kpi(c[2], "Estadía promedio", f"{est(a):.2f} noches", f"{est(a) - est(b):+.2f}")
-    kpi(c[3], "Turistas extranjeros", f"{100 * a.llegadas_no_residentes.sum() / a.llegadas.sum():.1f} %")
-    kpi(c[4], "Lugar entre centros de playa", f"{pos} de {len(rank)}", help="Por ocupación anual")
+    st.title("Observatorio de Ocupación Hotelera de Colima")
+    st.markdown(f"### De cada 10 cuartos de hotel en Manzanillo, se ocupan **{o_actual / 10:.1f}**.")
+    st.markdown("Este tablero explica **cuándo** se llenan los hoteles, **contra quién compite** Manzanillo y "
+                "**dónde** está la oferta de hospedaje, con datos oficiales que se actualizan solos. Está pensado "
+                "para **hoteleros** y para la **Secretaría de Turismo**.")
 
-    st.subheader("Ocupación mensual: Manzanillo frente a sus pares")
-    pares = oro[oro.centro.isin(["Manzanillo", "Colima", "Puerto Vallarta", "Mazatlán", "Ixtapa - Zihuatanejo"])]
-    fig = px.line(pares, x="fecha", y="ocupacion_pct_suavizada", color="centro",
-                  labels={"ocupacion_pct_suavizada": "Ocupación % (suavizada)", "fecha": "", "centro": ""},
-                  color_discrete_map={"Manzanillo": AZUL, "Colima": NARANJA, "Puerto Vallarta": VERDE,
-                                      "Mazatlán": "#8064a2", "Ixtapa - Zihuatanejo": GRIS})
-    fig.add_vrect(x0="2020-03-01", x1="2021-02-28", fillcolor="#d9d9d9", opacity=.35, line_width=0,
-                  annotation_text="COVID-19", annotation_position="top left")
-    for tr in fig.data:
-        tr.line.width = 3.2 if tr.name == "Manzanillo" else 1.6
-    fig.update_layout(height=380, legend=dict(orientation="h", y=1.08), margin=dict(t=30, b=10))
-    st.plotly_chart(fig, width="stretch")
+    st.markdown("#### ¿Cómo se usa?")
+    c = st.columns(3)
+    pasos = [("1️⃣ Elige una pregunta", "En el menú de la izquierda. Cada sección contesta una duda concreta."),
+             ("2️⃣ Lee el recuadro azul 💡", "Ahí está la respuesta en una frase. La gráfica es la evidencia."),
+             ("3️⃣ Revisa el recuadro verde ✅", "Te sugiere qué decisión tomar con esa información.")]
+    for col, (t, d) in zip(c, pasos):
+        col.markdown(f"<div class='tarjeta'><h4>{t}</h4><p>{d}</p></div>", unsafe_allow_html=True)
+
+    st.markdown("#### Las respuestas en corto")
+    tarjetas = [
+        ("🏨 ¿Cómo le fue a Manzanillo?", f"En {ANIO_MAX} se ocupó el **{o_actual:.0f} %** de los cuartos."),
+        ("📅 ¿Cuándo se llenan?", f"Lo mejor: **{' y '.join(MESES_LARGO[m - 1] for m in sorted(meses_mz.nlargest(2).index))}**. "
+                                 f"Lo peor: **{MESES_LARGO[peor - 1]}** ({meses_mz[peor]:.0f} %)."),
+        ("🌊 ¿Contra la competencia?", f"Manzanillo es **{pos}.º de {len(rank)}** destinos de playa del Pacífico."),
+        ("🗺️ ¿Dónde está la oferta?", f"Manzanillo tiene el **{pct_mz:.0f} %** de todo el hospedaje de Colima."),
+    ]
+    c = st.columns(4)
+    for col, (t, d) in zip(c, tarjetas):
+        with col:
+            st.markdown(f"<div class='tarjeta'><h4>{t}</h4></div>", unsafe_allow_html=True)
+            st.markdown(d)
+    st.caption("La ocupación indica qué parte de los cuartos disponibles se vendió en el periodo.")
+
+
+# ============================================================================= AÑO
+elif pagina == "anio":
+    st.title("🏨 ¿Cómo le fue a Manzanillo?")
+    anio = st.select_slider("Año", options=sorted(int(x) for x in oro.anio.unique()), value=ANIO_MAX)
+    mz = oro[oro.centro == "Manzanillo"]
+    a, b = mz[mz.anio == anio], mz[mz.anio == anio - 1]
+    hay_prev = not b.empty
+
+    c = st.columns(4)
+    c[0].metric("Cuartos ocupados", f"{ocupacion(a):.0f} de cada 100",
+                f"{ocupacion(a) - ocupacion(b):+.1f} vs {anio - 1}" if hay_prev else None)
+    c[1].metric("Turistas que llegaron", f"{a.llegadas.sum() / 1e6:.2f} millones",
+                f"{100 * (a.llegadas.sum() / b.llegadas.sum() - 1):+.0f} % vs {anio - 1}" if hay_prev else None)
+    c[2].metric("Noches que se queda cada turista", f"{estadia(a):.1f}",
+                f"{estadia(a) - estadia(b):+.1f} vs {anio - 1}" if hay_prev else None)
+    c[3].metric("Turistas extranjeros", f"{extranjeros(a):.0f} de cada 100")
+
+    if hay_prev:
+        dif = ocupacion(a) - ocupacion(b)
+        tendencia = "mejor" if dif > 0.5 else "peor" if dif < -0.5 else "casi igual"
+        conclusion(f"En {anio} a Manzanillo le fue **{tendencia}** que en {anio - 1}: se ocupó el "
+                   f"**{ocupacion(a):.0f} %** de los cuartos ({dif:+.1f} puntos). Casi todos los turistas son "
+                   f"mexicanos; los extranjeros son apenas {extranjeros(a):.0f} de cada 100.")
+
+    st.subheader(f"Mes por mes: {anio} contra {anio - 1}" if hay_prev else f"Mes por mes: {anio}")
+    m = pd.DataFrame({"mes": MESES, "actual": por_mes(a).reindex(range(1, 13)).values})
+    fig = go.Figure()
+    if hay_prev:
+        fig.add_bar(x=m.mes, y=por_mes(b).reindex(range(1, 13)).values, name=str(anio - 1), marker_color="#c9d3de")
+    fig.add_bar(x=m.mes, y=m.actual, name=str(anio), marker_color=AZUL, text=m.actual.round(0),
+                textposition="outside")
+    fig.update_yaxes(title="% de cuartos ocupados", range=[0, 100])
+    st.plotly_chart(fig_base(fig), width="stretch")
+
+    st.subheader("¿Va subiendo o bajando? (2016 a hoy)")
+    anual = resumen_por(mz, "anio").reset_index()
+    col1, col2 = st.columns(2)
+    with col1:
+        anual["grupo"] = anual.anio.eq(anio).map({True: "Año elegido", False: "Otros años"})
+        fig = px.bar(anual, x="anio", y="ocupacion", text_auto=".0f", color="grupo",
+                     color_discrete_map={"Año elegido": AZUL, "Otros años": "#c9d3de"},
+                     labels={"ocupacion": "% de cuartos ocupados", "anio": ""})
+        fig.update_layout(showlegend=False)
+        st.plotly_chart(fig_base(fig, 300), width="stretch")
+        st.caption("2020 cae por la pandemia; desde 2023 Manzanillo supera sus niveles de antes.")
+    with col2:
+        fig = px.line(anual, x="anio", y="estadia", markers=True, labels={"estadia": "Noches por turista", "anio": ""})
+        fig.update_traces(line=dict(color=NARANJA, width=3))
+        fig.update_yaxes(range=[0, 3.2])
+        st.plotly_chart(fig_base(fig, 300), width="stretch")
+        st.caption(f"Cada turista se queda menos: {anual.estadia.iloc[0]:.1f} noches en {int(anual.anio.iloc[0])} "
+                   f"contra {anual.estadia.iloc[-1]:.1f} en {int(anual.anio.iloc[-1])}.")
+    que_hacer("Manzanillo se volvió un destino de **fin de semana**. Paquetes de 3 noches o promociones de "
+              "domingo a jueves pueden alargar la estancia y llenar los días entre semana.")
+
+
+# ============================================================================= TEMPORADAS
+elif pagina == "temporadas":
+    st.title("📅 ¿Cuándo se llenan los hoteles?")
+    centros = sorted(oro.centro.unique())
+    destino = st.selectbox("Destino", centros, index=centros.index("Manzanillo"))
+    s = por_mes(oro[(oro.centro == destino) & NORMAL]).reindex(range(1, 13))
+    mejor, peor = int(s.idxmax()), int(s.idxmin())
+    df = pd.DataFrame({"mes": MESES, "ocupacion": s.values})
+    df["nivel"] = df.ocupacion.map(lambda v: "Lleno" if v >= 60 else "Regular" if v >= 40 else "Flojo")
+
+    conclusion(f"En **{destino}** el mejor mes es **{MESES_LARGO[mejor - 1]}** ({s[mejor]:.0f} % de cuartos ocupados) "
+               f"y el peor es **{MESES_LARGO[peor - 1]}** ({s[peor]:.0f} %): en {MESES_LARGO[peor - 1]} se llenan "
+               f"apenas {s[peor] / 10:.0f} de cada 10 cuartos.")
+    fig = px.bar(df, x="mes", y="ocupacion", color="nivel", text_auto=".0f",
+                 color_discrete_map={"Lleno": VERDE, "Regular": AMARILLO, "Flojo": ROJO},
+                 category_orders={"nivel": ["Lleno", "Regular", "Flojo"], "mes": MESES},
+                 labels={"ocupacion": "% de cuartos ocupados (promedio)", "mes": "", "nivel": ""})
+    fig.update_yaxes(range=[0, 100])
+    st.plotly_chart(fig_base(fig, 380), width="stretch")
+    st.caption("🟢 Lleno: 60 % o más · 🟡 Regular: 40–60 % · 🔴 Flojo: menos de 40 %. "
+               "Promedio de 2016 a 2024 sin los meses de pandemia.")
+
+    flojos = [MESES_LARGO[i] for i in range(12) if s.iloc[i] < 40]
+    if flojos:
+        que_hacer(f"Meses flojos: **{', '.join(flojos)}**. Buen momento para promociones, convenios con empresas "
+                  "y escuelas, mantenimiento y vacaciones del personal. En los meses llenos conviene subir tarifas "
+                  "y contratar personal eventual con anticipación.")
+    else:
+        que_hacer("Este destino no tiene meses flojos (menos de 40 %). En los meses de mayor demanda conviene "
+                  "subir tarifas y contratar personal eventual con anticipación.")
+
+    with st.expander("Ver año por año (mapa de calor)"):
+        piv = oro[oro.centro == destino].pivot_table(index="anio", columns="mes", values="ocupacion_pct")
+        piv.columns = [MESES[c - 1] for c in piv.columns]
+        fig = px.imshow(piv, text_auto=".0f", color_continuous_scale="Blues", aspect="auto",
+                        labels=dict(color="% ocupado", x="", y=""))
+        st.plotly_chart(fig_base(fig, 360), width="stretch")
+        st.caption("Más oscuro = más lleno. La franja clara de 2020 es la pandemia.")
+
+
+# ============================================================================= COMPETENCIA
+elif pagina == "competencia":
+    st.title("🌊 ¿Cómo vamos contra la competencia?")
+    st.markdown("Comparamos a Manzanillo con los **destinos de playa del Pacífico mexicano**.")
+    with st.expander("Cambiar periodo"):
+        periodo = st.radio("Periodo", ["Después de la pandemia (2022-2024)", "Antes de la pandemia (2016-2019)"],
+                           label_visibility="collapsed")
+    filtro = "Pospandemia" if periodo.startswith("Después") else "Prepandemia"
+    res = resumen_por(oro[(oro.litoral == "Pacífico") & (oro.periodo_covid == filtro)], "centro")
+    res = res.sort_values("ocupacion").reset_index()
+    res["color"] = res.centro.map(lambda c: "Manzanillo" if c == "Manzanillo" else "Otros")
+    pos = len(res) - int(res.index[res.centro == "Manzanillo"][0])
+    lider, mz = res.iloc[-1], res[res.centro == "Manzanillo"].iloc[0]
+
+    conclusion(f"Manzanillo ocupa el lugar **{pos} de {len(res)}**. El líder, **{lider.centro}**, llena el "
+               f"**{lider.ocupacion:.0f} %** de sus cuartos contra el **{mz.ocupacion:.0f} %** de Manzanillo: "
+               f"una diferencia de **{lider.ocupacion - mz.ocupacion:.0f} puntos**.")
+    fig = px.bar(res, y="centro", x="ocupacion", orientation="h", text_auto=".0f", color="color",
+                 color_discrete_map={"Manzanillo": AZUL, "Otros": "#c9d3de"},
+                 labels={"ocupacion": "% de cuartos ocupados", "centro": ""})
+    fig.update_layout(showlegend=False)
+    fig.update_yaxes(categoryorder="array", categoryarray=list(res.centro))   # el mejor arriba
+    st.plotly_chart(fig_base(fig, 470), width="stretch")
 
     c1, c2 = st.columns(2)
-    with c1:
-        st.subheader("Estacionalidad de Manzanillo")
-        normal = mz[mz.periodo_covid != "Pandemia"]
-        s = normal.groupby("mes")[["cuartos_ocupados", "cuartos_disponibles"]].apply(ocup).reset_index(name="ocupacion")
-        s["mes_nombre"] = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
-        s["temporada"] = s.mes.map({4: "Alta", 7: "Alta", 8: "Alta", 12: "Alta", 9: "Baja", 10: "Baja"}).fillna("Media")
-        fig = px.bar(s, x="mes_nombre", y="ocupacion", color="temporada", text_auto=".0f",
-                     color_discrete_map={"Alta": VERDE, "Media": GRIS, "Baja": ROJO},
-                     labels={"ocupacion": "Ocupación %", "mes_nombre": "", "temporada": "Temporada"})
-        fig.update_layout(height=330, margin=dict(t=10, b=10))
-        st.plotly_chart(fig, width="stretch")
-        st.caption("Promedio 2016-2024 sin meses de pandemia. Septiembre es el mes más débil.")
-    with c2:
-        st.subheader("Llega más gente, pero se queda menos")
-        anual = mz.groupby("anio").agg(llegadas=("llegadas", "sum"), noches=("turistas_noche", "sum")).reset_index()
-        anual["estadia"] = anual.noches / anual.llegadas
-        fig = go.Figure()
-        fig.add_bar(x=anual.anio, y=anual.llegadas / 1e3, name="Llegadas (miles)", marker_color="#c6d4e1")
-        fig.add_scatter(x=anual.anio, y=anual.estadia, name="Estadía (noches)", yaxis="y2",
-                        line=dict(color=AZUL, width=3), mode="lines+markers")
-        fig.update_layout(height=330, margin=dict(t=10, b=10), legend=dict(orientation="h", y=1.1),
-                          yaxis=dict(title="Llegadas (miles)"),
-                          yaxis2=dict(title="Noches", overlaying="y", side="right", rangemode="tozero"))
-        st.plotly_chart(fig, width="stretch")
-        st.caption("La estadía bajó de 2.75 noches (2016) a 2.0: turismo de fin de semana.")
-
-
-# ============================================================================= OCUPACIÓN
-elif pagina == "Ocupación":
-    st.title("Explorador de ocupación hotelera")
-    c1, c2, c3 = st.columns([3, 1.3, 1.3])
-    destinos = c1.multiselect("Destinos", sorted(oro.centro.unique()), default=["Manzanillo", "Colima"])
-    var = c2.selectbox("Indicador", {"ocupacion_pct": "Ocupación %", "estadia_promedio": "Estadía (noches)",
-                                     "pct_no_residentes": "% extranjeros", "llegadas": "Llegadas"}.items(),
-                       format_func=lambda x: x[1])[0]
-    version = c3.radio("Serie", ["Observada", "Tratada", "Suavizada"], horizontal=False,
-                       help="Tratada = atípicos sin explicación winsorizados · Suavizada = mediana móvil 3 meses")
-    col = var + {"Observada": "", "Tratada": "_tratada", "Suavizada": "_suavizada"}[version] \
-        if var in ("ocupacion_pct", "estadia_promedio") else var
-    sel = oro[oro.centro.isin(destinos)]
-    if sel.empty:
-        st.info("Elige al menos un destino.")
-        st.stop()
-    fig = px.line(sel, x="fecha", y=col, color="centro", labels={col: "", "fecha": "", "centro": ""},
-                  color_discrete_sequence=["#4f8fd6", NARANJA, VERDE, "#a98fd8", "#e0c25c", "#5fc4c4", GRIS])
-    fig.add_vrect(x0="2020-03-01", x1="2021-02-28", fillcolor="#d9d9d9", opacity=.35, line_width=0,
-                  annotation_text="COVID-19", annotation_position="top left")
-    if var in ("ocupacion_pct", "estadia_promedio"):
-        at = sel[sel[f"atipico_{var}"]]
-        fig.add_scatter(x=at.fecha, y=at[var], mode="markers", name="Atípico detectado",
-                        marker=dict(color=ROJO, size=7, symbol="x"),
-                        text=at.centro + " · " + at.evento_conocido.fillna("sin explicación"),
-                        hovertemplate="%{text}<br>%{x|%b %Y}: %{y:.1f}<extra></extra>")
-    fig.update_layout(height=420, legend=dict(orientation="h", y=1.08), margin=dict(t=30))
-    st.plotly_chart(fig, width="stretch")
-
-    st.subheader("Mapa de calor mes × año")
-    d1 = st.selectbox("Destino", destinos)
-    piv = oro[oro.centro == d1].pivot_table(index="anio", columns="mes", values="ocupacion_pct")
-    piv.columns = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"][:len(piv.columns)]
-    fig = px.imshow(piv, text_auto=".0f", color_continuous_scale="Blues", aspect="auto",
-                    labels=dict(color="Ocupación %", x="", y=""))
-    fig.update_layout(height=380, margin=dict(t=10))
-    st.plotly_chart(fig, width="stretch")
-
-    st.subheader("Niveles de ocupación por temporada")
-    t = oro[(oro.centro == d1) & (oro.periodo_covid != "Pandemia")]
-    ct = (pd.crosstab(t.temporada, t.ocupacion_nivel, normalize="index") * 100).reindex(
-        index=["Baja", "Media", "Alta"], columns=["Baja", "Media", "Alta"]).fillna(0)
-    fig = px.bar(ct, orientation="h", barmode="stack", text_auto=".0f",
-                 color_discrete_map={"Baja": ROJO, "Media": "#ccb974", "Alta": VERDE},
-                 labels={"value": "% de meses", "temporada": "Temporada", "ocupacion_nivel": "Nivel"})
-    fig.update_layout(height=260, margin=dict(t=10))
-    st.plotly_chart(fig, width="stretch")
-
-
-# ============================================================================= COMPARACIÓN
-elif pagina == "Comparación Pacífico":
-    st.title("Manzanillo frente a los destinos de playa del Pacífico")
-    periodo = st.radio("Periodo", ["Pospandemia (2022-2024)", "Prepandemia (2016-2019)", "Todo"], horizontal=True)
-    f = {"Pospandemia (2022-2024)": oro.periodo_covid == "Pospandemia",
-         "Prepandemia (2016-2019)": oro.periodo_covid == "Prepandemia", "Todo": oro.anio > 0}[periodo]
-    p = oro[f & (oro.grupo_e3 != "Otro")]
-    res = p.groupby(["centro", "grupo_e3"]).agg(
-        ocupacion=("ocupacion_pct", "mean"), estadia=("estadia_promedio", "mean"),
-        extranjeros=("pct_no_residentes", "mean"), cuartos=("cuartos_disponibles", "mean")).reset_index()
-    c1, c2 = st.columns([1.3, 1])
-    with c1:
-        fig = px.scatter(res, x="estadia", y="ocupacion", size="cuartos", color="grupo_e3", text="centro",
-                         color_discrete_map=COLOR_GRUPO, size_max=45,
-                         labels={"estadia": "Estadía promedio (noches)", "ocupacion": "Ocupación promedio %",
-                                 "grupo_e3": "Grupo"})
-        fig.update_traces(textposition="top center")
-        fig.update_layout(height=470, legend=dict(orientation="h", y=1.08))
-        st.plotly_chart(fig, width="stretch")
-        st.caption("Tamaño de la burbuja = cuartos disponibles por mes.")
-    with c2:
-        fig = px.box(p, x="grupo_e3", y="ocupacion_pct", color="grupo_e3", color_discrete_map=COLOR_GRUPO,
-                     category_orders={"grupo_e3": list(COLOR_GRUPO)}, points=False,
-                     labels={"grupo_e3": "", "ocupacion_pct": "Ocupación mensual %"})
-        fig.update_layout(height=470, showlegend=False)
-        st.plotly_chart(fig, width="stretch")
-    st.dataframe(res.sort_values("ocupacion", ascending=False).round(2).rename(columns={
-        "centro": "Destino", "grupo_e3": "Grupo", "ocupacion": "Ocupación %", "estadia": "Estadía",
-        "extranjeros": "% extranjeros", "cuartos": "Cuartos/mes"}), hide_index=True, width="stretch")
+    for col, var, titulo, eje, fmt, colores in [
+        (c1, "estadia", "¿Cuántas noches se quedan?", "Noches por turista", ".1f", (NARANJA, "#e6d3c3")),
+        (c2, "extranjeros", "¿Cuántos turistas son extranjeros?", "% de turistas extranjeros", ".0f",
+         (VERDE, "#cfe3d5"))]:
+        with col:
+            st.subheader(titulo)
+            orden = res.sort_values(var)
+            fig = px.bar(orden, y="centro", x=var, orientation="h", text_auto=fmt, color="color",
+                         color_discrete_map={"Manzanillo": colores[0], "Otros": colores[1]},
+                         labels={var: eje, "centro": ""})
+            fig.update_layout(showlegend=False)
+            fig.update_yaxes(categoryorder="array", categoryarray=list(orden.centro))
+            st.plotly_chart(fig_base(fig, 420), width="stretch")
+    que_hacer(f"Los destinos líderes atraen turismo **extranjero** y estancias **largas**. Manzanillo depende casi "
+              f"por completo del turismo nacional de fin de semana ({mz.extranjeros:.0f} % extranjeros, "
+              f"{mz.estadia:.1f} noches). Más vuelos y promoción en el extranjero son la palanca principal para "
+              "acercarse a los líderes.")
 
 
 # ============================================================================= MAPA
-elif pagina == "Mapa de hospedaje":
-    st.title("Oferta de hospedaje en Colima")
-    st.caption("Fuente: INEGI, DENUE 05/2026 y Marco Geoestadístico dic-2025. Elaboración propia "
-               "(filtro SCIAN 721, unión espacial); no representa una postura del INEGI.")
+elif pagina == "mapa":
+    st.title("🗺️ ¿Dónde está la oferta de hospedaje?")
     mun, est = D["mun"], D["est"]
+    mz = mun[mun.nomgeo == "Manzanillo"].iloc[0]
+    renta = est.tipo_alojamiento.isin(["Departamento o casa amueblada", "Cabañas y villas"]).sum()
     c = st.columns(4)
-    kpi(c[0], "Establecimientos de hospedaje", f"{len(est)}")
-    kpi(c[1], "En Manzanillo", f"{100 * (est.municipio_espacial == 'Manzanillo').mean():.0f} %")
-    kpi(c[2], "Micronegocios (0-10 personas)", f"{100 * (est.tamano == 'Micro').mean():.0f} %")
-    kpi(c[3], "Empleo estimado", f"{int(est.personal_estimado.sum()):,}")
+    c[0].metric("Lugares para hospedarse en Colima", f"{len(est)}")
+    c[1].metric("Están en Manzanillo", f"{mz.establecimientos:.0f} ({mz.pct_oferta_estatal:.0f} %)")
+    c[2].metric("Son negocios pequeños", f"{100 * (est.tamano == 'Micro').mean():.0f} %",
+                help="Menos de 10 trabajadores")
+    c[3].metric("Departamentos, casas y cabañas", f"{renta}",
+                help="Oferta tipo renta vacacional que no aparece en las estadísticas de hoteles")
+    top_hab = mun.sort_values("establecimientos_por_10k_hab").iloc[-1].nomgeo
+    conclusion(f"Casi la mitad del hospedaje del estado está en **Manzanillo**. **{top_hab}** tiene más lugares por "
+               "habitante por sus playas, y Villa de Álvarez casi no tiene: sus visitantes duermen en Colima capital.")
 
-    tipos = st.multiselect("Tipo de alojamiento", sorted(est.tipo_alojamiento.unique()),
-                           default=sorted(est.tipo_alojamiento.unique()))
-    metrica = st.radio("Colorear municipios por", ["establecimientos_por_10k_hab", "establecimientos",
-                                                   "establecimientos_por_100km2"], horizontal=True,
-                       format_func=lambda x: {"establecimientos_por_10k_hab": "Por 10 mil habitantes",
-                                              "establecimientos": "Total",
-                                              "establecimientos_por_100km2": "Por 100 km²"}[x])
+    with st.expander("Filtrar por tipo de lugar"):
+        tipos = st.multiselect("Tipo", list(COLOR_TIPO), default=list(COLOR_TIPO), label_visibility="collapsed")
     fig = px.choropleth_map(mun, geojson=geo_municipios(), locations="cvegeo", featureidkey="properties.cvegeo",
-                            color=metrica, color_continuous_scale="Greys", opacity=.55,
-                            hover_name="nomgeo", hover_data={"cvegeo": False, "establecimientos": True,
-                                                             "pct_oferta_estatal": True},
+                            color="establecimientos", color_continuous_scale="Greys", opacity=.45,
+                            hover_name="nomgeo", hover_data={"cvegeo": False, "establecimientos": True},
+                            labels={"establecimientos": "Lugares"},
                             map_style="carto-positron", center={"lat": 19.08, "lon": -104.05}, zoom=8.3)
     e = est[est.tipo_alojamiento.isin(tipos)]
     tam = e.tamano.map({"Micro": 7, "Pequeño": 11, "Mediano": 16, "Grande": 22})
@@ -259,61 +346,62 @@ elif pagina == "Mapa de hospedaje":
                                     marker=dict(size=tam.loc[sub.index], opacity=.9, color=COLOR_TIPO[tipo]),
                                     text=sub.tipo_alojamiento + " · " + sub.per_ocu + " · " + sub.municipio_espacial,
                                     hovertemplate="%{text}<extra></extra>"))
-    fig.update_layout(height=620, margin=dict(l=0, r=0, t=0, b=0),
-                      legend=dict(orientation="h", y=-0.02, bgcolor="rgba(255,255,255,.8)"),
-                      coloraxis_colorbar=dict(title="", thickness=12, len=.5))
+    fig.update_layout(height=600, margin=dict(l=0, r=0, t=0, b=0), coloraxis_showscale=False,
+                      legend=dict(orientation="h", y=-0.02))
     st.plotly_chart(fig, width="stretch")
-    st.dataframe(mun[["nomgeo", "establecimientos", "pct_oferta_estatal", "establecimientos_por_10k_hab",
-                      "personal_estimado", "pct_micro", "cuartos_datatur_2024", "cuartos_por_establecimiento"]]
-                 .rename(columns={"nomgeo": "Municipio", "establecimientos": "Establecimientos",
-                                  "pct_oferta_estatal": "% del estado", "establecimientos_por_10k_hab": "Por 10k hab.",
-                                  "personal_estimado": "Empleo est.", "pct_micro": "% micro",
-                                  "cuartos_datatur_2024": "Cuartos DataTur 2024",
-                                  "cuartos_por_establecimiento": "Cuartos/estab."}),
-                 hide_index=True, width="stretch")
+    st.caption("Cada punto es un lugar de hospedaje; el tamaño indica cuántas personas trabajan ahí. "
+               "Pasa el mouse para ver el detalle. Fuente: INEGI, DENUE 2026; elaboración propia.")
+    que_hacer("Hay departamentos, casas y cabañas que compiten con los hoteles pero no aparecen en las estadísticas "
+              "oficiales de ocupación. Conviene considerarlos al fijar precios, sobre todo en temporada alta.")
 
 
-# ============================================================================= CALIDAD Y LINAJE
+# ============================================================================= CONFIANZA
 else:
-    st.title("Calidad de datos y linaje")
-    cal, lin = D["calidad"], D["linaje"]
-    c = st.columns(4)
-    kpi(c[0], "Registros en cuarentena", f"{cal['cuarentena_total']}", help="Nunca se borran; quedan con su motivo")
-    kpi(c[1], "Huecos imputados (MAR)", f"{D['faltantes']['huecos_imputados']}",
-        help=f"{D['faltantes']['huecos_por_tipo'].get('estructural', 0)} huecos estructurales sin imputar")
-    kpi(c[2], "Atípicos winsorizados", f"{D['atipicos']['ocupacion_pct']['pct_winsorizado']} %")
-    kpi(c[3], "Registros Oro con linaje", f"{lin['ids_oro'] - lin['registros_oro_sin_linaje']:,} / {lin['ids_oro']:,}",
-        "íntegro" if lin["integro"] else "con problemas")
+    st.title("🔍 ¿Qué tan confiables son los datos?")
+    cal, lin, fal = D["calidad"], D["linaje"], D["faltantes"]
+    total = sum(p["registros_entrada"] for p in cal["puertas"] if p["etapa"].endswith("entrada"))
+    c = st.columns(3)
+    c[0].metric("Registros revisados automáticamente", f"{total:,}")
+    c[1].metric("Separados por tener errores", f"{cal['cuarentena_total']}",
+                help="No se borran: quedan guardados con su motivo")
+    c[2].metric("Datos que se pueden rastrear a su origen",
+                f"{100 * (lin['ids_oro'] - lin['registros_oro_sin_linaje']) / lin['ids_oro']:.0f} %")
+    conclusion(f"Todos los datos vienen de **fuentes oficiales** (SECTUR, Banco de México e INEGI). Antes de mostrarse, "
+               f"un sistema revisa automáticamente {total:,} registros y aparta los que tienen errores, por ejemplo "
+               f"más cuartos ocupados que cuartos en el hotel. Sólo {cal['cuarentena_total']} tuvieron problemas.")
 
-    t1, t2, t3 = st.tabs(["Puertas de Calidad", "Captura (Bronce)", "Rastrear un registro"])
-    with t1:
-        pu = pd.DataFrame(cal["puertas"])[["etapa", "fuente", "registros_entrada", "registros_validos",
-                                           "registros_cuarentena"]]
-        st.dataframe(pu, hide_index=True, width="stretch")
-        st.markdown("**Registros en cuarentena**")
+    st.subheader("¿De dónde salen los datos?")
+    st.dataframe(pd.DataFrame([
+        ["🏨 Ocupación de hoteles", "Secretaría de Turismo (DataTur)", "Mensual"],
+        ["💵 Tipo de cambio e inflación", "Banco de México", "Diaria / mensual"],
+        ["🗺️ Lugares de hospedaje y mapas", "INEGI (DENUE y Marco Geoestadístico)", "Anual"],
+    ], columns=["Dato", "Fuente oficial", "Frecuencia"]), hide_index=True, width="stretch")
+    st.markdown(f"- Los datos se descargan y revisan **solos cada semana**.\n"
+                f"- Cuando faltaban meses aislados se estimaron con los meses vecinos ({fal['huecos_imputados']} casos); "
+                "cuando una categoría de hotel no existía, **no se inventó**.\n"
+                "- La pandemia y el huracán Otis se conservan tal cual: son hechos reales, no errores.")
+
+    with st.expander("Ver los registros con errores"):
         q = D["cuarentena"]
-        cols = [x for x in ["etapa", "fuente", "periodo", "anio", "mes", "centro", "categoria", "motivo"] if x in q]
-        st.dataframe(q[cols], hide_index=True, width="stretch")
-    with t2:
-        b = D["bitacora"].sort_values("fecha_utc", ascending=False)
-        st.dataframe(b[["fecha_utc", "fuente", "http", "estado", "bytes", "robots", "archivo"]].head(40),
+        st.dataframe(q[[x for x in ["periodo", "anio", "mes", "centro", "categoria", "motivo"] if x in q]],
                      hide_index=True, width="stretch")
-        st.caption("Cada intento de descarga queda registrado. DataTur aparece 'bloqueado': el servidor rechaza "
-                   "clientes fuera de México y el extractor no evade el bloqueo.")
-    with t3:
-        st.markdown("Escribe un identificador de la capa Oro y verás las filas crudas de las que salió, "
-                    "con su archivo, fila y fecha de ingesta.")
-        ejemplos = ["Manzanillo|2024-07", "Colima|2020-04", "municipio|06007", D["est"]["id_oro"].iloc[0]]
+    with st.expander("Para auditores: rastrear un dato hasta su archivo original"):
+        st.markdown("Escribe el destino y el mes (por ejemplo `Manzanillo|2024-07`) y verás de qué filas exactas "
+                    "de los archivos oficiales salió ese dato y cuándo se descargaron.")
         c1, c2 = st.columns([2, 3])
-        ej = c1.selectbox("Ejemplos", ejemplos)
-        id_oro = c2.text_input("id_oro", ej, key=f"id_oro_{ej}")
+        ej = c1.selectbox("Ejemplos", ["Manzanillo|2024-07", "Colima|2020-04", "municipio|06007"])
+        id_oro = c2.text_input("Dato a rastrear", ej, key=f"id_oro_{ej}")
         if id_oro:
-            r = linaje.rastrear(id_oro.strip(), tabla_linaje(), limite=6)
+            r = linaje.rastrear(id_oro.strip(), tabla_linaje(), limite=5)
             if r.empty:
-                st.warning("No hay linaje para ese identificador.")
+                st.warning("No encontré ese dato. Revisa que el formato sea Destino|AAAA-MM.")
             else:
-                st.dataframe(r[["fuente", "rol", "archivo_origen", "fila_origen", "fecha_ingesta"]],
+                st.dataframe(r[["fuente", "rol", "archivo_origen", "fila_origen", "fecha_ingesta"]]
+                             .rename(columns={"fuente": "Fuente", "rol": "Qué se hizo", "archivo_origen": "Archivo",
+                                              "fila_origen": "Fila", "fecha_ingesta": "Descargado"}),
                              hide_index=True, width="stretch")
-                st.markdown("**Contenido crudo de las filas**")
-                st.dataframe(pd.json_normalize(r["registro_crudo"].tolist()), hide_index=True,
-                             width="stretch")
+    with st.expander("Historial de descargas"):
+        b = D["bitacora"].sort_values("fecha_utc", ascending=False)
+        st.dataframe(b[["fecha_utc", "fuente", "estado"]].head(20), hide_index=True, width="stretch")
+        st.caption("'bloqueado' = el servidor de SECTUR no permite descargas automáticas desde fuera de México; "
+                   "el sistema lo respeta y usa la última versión descargada.")

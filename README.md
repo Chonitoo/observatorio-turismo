@@ -10,8 +10,9 @@ Observatorio de datos del sector turístico de Colima: pronóstico de la ocupaci
 
 ## Dashboard
 
-Tablero interactivo (Streamlit) que lee la capa Oro: resumen de Manzanillo, explorador de ocupación con atípicos,
-comparación con el Pacífico, mapa de hospedaje (DENUE) y calidad/linaje con rastreador de registros.
+Tablero para el cliente (hoteleros y Secretaría de Turismo), organizado por preguntas de negocio y en lenguaje simple:
+cómo le fue a Manzanillo, cuándo se llenan los hoteles, cómo va contra la competencia, dónde está la oferta y qué tan
+confiables son los datos. Cada gráfica trae su conclusión (💡) y una recomendación (✅).
 
 ```bash
 python -m venv .venv

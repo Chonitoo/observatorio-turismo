@@ -8,6 +8,19 @@ Observatorio de datos del sector turístico de Colima: pronóstico de la ocupaci
 
 **Autor:** Maximiliano Encarnación Velázquez Rodríguez (`@Chonitoo`)
 
+## Dashboard
+
+Tablero interactivo (Streamlit) que lee la capa Oro: resumen de Manzanillo, explorador de ocupación con atípicos,
+comparación con el Pacífico, mapa de hospedaje (DENUE) y calidad/linaje con rastreador de registros.
+
+```bash
+python -m venv .venv
+.venv\Scripts\python -m pip install -r requirements.txt -r requirements-dashboard.txt
+.venv\Scripts\python -m streamlit run dashboard/app.py
+```
+
+Se abre en http://localhost:8501.
+
 ## Estructura
 
 ```
@@ -20,6 +33,7 @@ src/
   extractores/inegi.py          INEGI: DENUE (hospedaje) y Marco Geoestadístico (municipios)
   pipeline/                     Bronce → Plata → Oro: Puerta de Calidad (Pandera), faltantes,
                                 atípicos, integración, jerarquías, normalización
+dashboard/app.py                Tablero interactivo (Streamlit)
 data/bronze/                    Capa Bronce: datos crudos inmutables + _bitacora_captura.csv
 data/silver/                    Capa Plata: datos limpios y validados
 data/gold/                      Capa Oro: integrados y listos para analizar

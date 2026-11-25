@@ -1,0 +1,5 @@
+# Dashboard (además de requirements.txt). Se recomienda instalar en un entorno virtual:
+#   python -m venv .venv
+#   .venv\Scripts\python -m pip install -r requirements.txt -r requirements-dashboard.txt
+streamlit==1.67.0
+plotly==7.2.0

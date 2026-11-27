@@ -1,0 +1,104 @@
+{
+  "etiqueta": "despues",
+  "fecha_utc": "2026-11-27T19:10:13Z",
+  "commit": "cd68304",
+  "modo": "A/B intercalado contra d8ba5e4",
+  "entorno": {
+    "python": "3.12.10",
+    "so": "Windows-11-10.0.26200-SP0",
+    "cpu": "AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",
+    "nucleos": 12
+  },
+  "repeticiones": 7,
+  "tiempo_s": {
+    "mediana": 7.164,
+    "min": 4.856,
+    "max": 9.697,
+    "todas": [
+      7.164,
+      9.697,
+      6.177,
+      9.362,
+      5.921,
+      9.654,
+      4.856
+    ]
+  },
+  "tiempo_por_etapa_s": {
+    "lectura_bronce": 3.275,
+    "puertas_calidad": 4.402,
+    "faltantes": 4.186,
+    "integracion": 5.656,
+    "atipicos": 17.643,
+    "transformacion": 2.557,
+    "geoespacial": 0.468,
+    "linaje": 2.142,
+    "escritura": 0.22
+  },
+  "tiempo_por_etapa_pct": {
+    "lectura_bronce": 7.3,
+    "puertas_calidad": 9.8,
+    "faltantes": 9.3,
+    "integracion": 12.6,
+    "atipicos": 39.2,
+    "transformacion": 5.7,
+    "geoespacial": 1.0,
+    "linaje": 4.8,
+    "escritura": 0.5
+  },
+  "tiempo_instrumentado_s": 45.0,
+  "memoria_mb": {
+    "pico_rss_mediana": 315.1,
+    "pico_python_mediana": 171.1
+  },
+  "errores": {
+    "avisos_total": 0,
+    "avisos_por_tipo": {},
+    "avisos_distintos": [],
+    "archivos_que_cambian_sin_datos_nuevos": [],
+    "n_archivos_que_cambian_sin_datos_nuevos": 0,
+    "cuarentena_por_puerta": {
+      "1_entrada/datatur": 8,
+      "1_entrada/banxico_tipo_cambio": 0,
+      "1_entrada/banxico_inpc": 0,
+      "2_plata/datatur": 0,
+      "3_oro/oro_destino_mes": 0,
+      "G1_entrada/inegi_denue_colima": 0,
+      "G2_plata/inegi_denue_colima": 0
+    },
+    "registros_invalidos_generados_por_el_pipeline": 0,
+    "errores_detectados_hasta_oro": 0
+  },
+  "tamano_salidas_mb": {
+    "data/silver": 9.85,
+    "data/gold": 23.55,
+    "data/quarantine": 0.0
+  },
+  "funciones_mas_lentas_s": {
+    "main": 44.898,
+    "detectar": 17.643,
+    "_find_and_load": 6.552,
+    "_find_and_load_unlocked": 6.548,
+    "_load_unlocked": 6.493,
+    "_call_with_frames_removed": 6.49,
+    "exec_module": 6.486,
+    "apply": 5.575,
+    "agregar_destino": 5.292,
+    "puerta": 4.402,
+    "aggregate": 4.358,
+    "agg_series": 4.262,
+    "_aggregate_series_pure_python": 4.26,
+    "fit_predict": 4.21,
+    "validate": 4.204,
+    "_validate": 4.187,
+    "wrapper": 4.04,
+    "fit": 4.036,
+    "_handle_fromlist": 4.008,
+    "astype": 3.575,
+    "__call__": 3.508,
+    "_get_sequential_output": 3.506,
+    "astype_array_safe": 3.42,
+    "astype_array": 3.418,
+    "imputar_huecos": 3.236
+  }
+}

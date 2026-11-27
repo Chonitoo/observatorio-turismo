@@ -157,7 +157,7 @@
         "centro": "Acapulco",
         "periodo": "2023-11",
         "ocupacion_pct": 0.17,
-        "evento_conocido": "Huracán Otis (categoría 5, 25-oct-2023)"
+        "evento_conocido": "Huracán Otis (categoría 5; 25-oct-2023)"
       }
     ]
   },
@@ -283,7 +283,7 @@
         "centro": "Acapulco",
         "periodo": "2023-12",
         "estadia_promedio": 2.62,
-        "evento_conocido": "Huracán Otis (categoría 5, 25-oct-2023)"
+        "evento_conocido": "Huracán Otis (categoría 5; 25-oct-2023)"
       },
       {
         "centro": "Aguascalientes",

@@ -1,0 +1,107 @@
+{
+  "etiqueta": "antes",
+  "fecha_utc": "2026-11-27T19:10:13Z",
+  "commit": "d8ba5e4",
+  "modo": "A/B intercalado contra d8ba5e4",
+  "entorno": {
+    "python": "3.12.10",
+    "so": "Windows-11-10.0.26200-SP0",
+    "cpu": "AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",
+    "nucleos": 12
+  },
+  "repeticiones": 7,
+  "tiempo_s": {
+    "mediana": 11.984,
+    "min": 7.334,
+    "max": 18.032,
+    "todas": [
+      11.984,
+      18.032,
+      7.634,
+      13.598,
+      7.626,
+      13.801,
+      7.334
+    ]
+  },
+  "tiempo_por_etapa_s": {
+    "lectura_bronce": 8.981,
+    "puertas_calidad": 5.484,
+    "faltantes": 11.919,
+    "integracion": 2.743,
+    "atipicos": 10.767,
+    "transformacion": 1.752,
+    "geoespacial": 0.411,
+    "linaje": 3.836,
+    "escritura": 10.433
+  },
+  "tiempo_por_etapa_pct": {
+    "lectura_bronce": 15.3,
+    "puertas_calidad": 9.4,
+    "faltantes": 20.3,
+    "integracion": 4.7,
+    "atipicos": 18.4,
+    "transformacion": 3.0,
+    "geoespacial": 0.7,
+    "linaje": 6.5,
+    "escritura": 17.8
+  },
+  "tiempo_instrumentado_s": 58.61,
+  "memoria_mb": {
+    "pico_rss_mediana": 352.1,
+    "pico_python_mediana": 244.6
+  },
+  "errores": {
+    "avisos_total": 0,
+    "avisos_por_tipo": {},
+    "avisos_distintos": [],
+    "archivos_que_cambian_sin_datos_nuevos": [
+      "data/quarantine/datatur_cuarentena.csv",
+      "data/quarantine/oro_destino_mes_cuarentena.csv"
+    ],
+    "n_archivos_que_cambian_sin_datos_nuevos": 2,
+    "cuarentena_por_puerta": {
+      "1_entrada/datatur": 6,
+      "1_entrada/banxico_tipo_cambio": 0,
+      "1_entrada/banxico_inpc": 0,
+      "2_plata/datatur": 1,
+      "3_oro/oro_destino_mes": 2,
+      "G1_entrada/inegi_denue_colima": 0,
+      "G2_plata/inegi_denue_colima": 0
+    },
+    "registros_invalidos_generados_por_el_pipeline": 1,
+    "errores_detectados_hasta_oro": 2
+  },
+  "tamano_salidas_mb": {
+    "data/silver": 9.78,
+    "data/gold": 22.12,
+    "data/quarantine": 0.01
+  },
+  "funciones_mas_lentas_s": {
+    "main": 58.496,
+    "detectar": 10.767,
+    "wrapper": 10.413,
+    "to_csv": 10.271,
+    "save": 10.26,
+    "_save": 10.2,
+    "_save_body": 10.198,
+    "_save_chunk": 10.093,
+    "apply": 9.386,
+    "imputar_huecos": 7.178,
+    "leer_datatur": 5.765,
+    "puerta": 5.484,
+    "fit_predict": 5.463,
+    "fit": 5.238,
+    "validate": 5.231,
+    "_validate": 5.213,
+    "get_values_for_csv": 5.173,
+    "__call__": 5.132,
+    "_get_sequential_output": 5.13,
+    "_get_values_for_csv": 4.792,
+    "_fit": 4.691,
+    "_parallel_build_estimators": 4.686,
+    "_periodo": 4.267,
+    "from_fields": 4.261,
+    "_from_fields": 4.26
+  }
+}

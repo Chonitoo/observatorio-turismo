@@ -1,0 +1,173 @@
+{
+  "antes": {
+    "commit": "d8ba5e4",
+    "fecha": "2026-11-27T19:10:13Z"
+  },
+  "despues": {
+    "commit": "cd68304",
+    "fecha": "2026-11-27T19:10:13Z"
+  },
+  "entorno": {
+    "python": "3.12.10",
+    "so": "Windows-11-10.0.26200-SP0",
+    "cpu": "AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",
+    "nucleos": 12
+  },
+  "repeticiones": 7,
+  "metricas": [
+    {
+      "metrica": "Tiempo total (mediana)",
+      "antes": 11.984,
+      "despues": 7.164,
+      "unidad": "s",
+      "cambio_pct": -40.2,
+      "mejora": true
+    },
+    {
+      "metrica": "Memoria pico del proceso (RSS)",
+      "antes": 352.1,
+      "despues": 315.1,
+      "unidad": "MB",
+      "cambio_pct": -10.5,
+      "mejora": true
+    },
+    {
+      "metrica": "Memoria pico de Python (tracemalloc)",
+      "antes": 244.6,
+      "despues": 171.1,
+      "unidad": "MB",
+      "cambio_pct": -30.0,
+      "mejora": true
+    },
+    {
+      "metrica": "Avisos durante la ejecución",
+      "antes": 0,
+      "despues": 0,
+      "unidad": "avisos",
+      "cambio_pct": 0.0,
+      "mejora": false
+    },
+    {
+      "metrica": "Registros inválidos generados por el pipeline",
+      "antes": 1,
+      "despues": 0,
+      "unidad": "registros",
+      "cambio_pct": -100.0,
+      "mejora": true
+    },
+    {
+      "metrica": "Errores detectados hasta la capa Oro",
+      "antes": 2,
+      "despues": 0,
+      "unidad": "registros",
+      "cambio_pct": -100.0,
+      "mejora": true
+    },
+    {
+      "metrica": "Archivos que cambian sin datos nuevos",
+      "antes": 2,
+      "despues": 0,
+      "unidad": "archivos",
+      "cambio_pct": -100.0,
+      "mejora": true
+    },
+    {
+      "metrica": "Tamaño en disco: data/silver",
+      "antes": 9.78,
+      "despues": 9.85,
+      "unidad": "MB",
+      "cambio_pct": 0.7,
+      "mejora": false
+    },
+    {
+      "metrica": "Tamaño en disco: data/gold",
+      "antes": 22.12,
+      "despues": 23.55,
+      "unidad": "MB",
+      "cambio_pct": 6.5,
+      "mejora": false
+    },
+    {
+      "metrica": "Tamaño en disco: data/quarantine",
+      "antes": 0.01,
+      "despues": 0.0,
+      "unidad": "MB",
+      "cambio_pct": -100.0,
+      "mejora": true
+    }
+  ],
+  "etapas": [
+    {
+      "metrica": "Etapa: lectura_bronce",
+      "antes": 8.981,
+      "despues": 3.275,
+      "unidad": "s (instrumentado)",
+      "cambio_pct": -63.5,
+      "mejora": true
+    },
+    {
+      "metrica": "Etapa: puertas_calidad",
+      "antes": 5.484,
+      "despues": 4.402,
+      "unidad": "s (instrumentado)",
+      "cambio_pct": -19.7,
+      "mejora": true
+    },
+    {
+      "metrica": "Etapa: faltantes",
+      "antes": 11.919,
+      "despues": 4.186,
+      "unidad": "s (instrumentado)",
+      "cambio_pct": -64.9,
+      "mejora": true
+    },
+    {
+      "metrica": "Etapa: integracion",
+      "antes": 2.743,
+      "despues": 5.656,
+      "unidad": "s (instrumentado)",
+      "cambio_pct": 106.2,
+      "mejora": false
+    },
+    {
+      "metrica": "Etapa: atipicos",
+      "antes": 10.767,
+      "despues": 17.643,
+      "unidad": "s (instrumentado)",
+      "cambio_pct": 63.9,
+      "mejora": false
+    },
+    {
+      "metrica": "Etapa: transformacion",
+      "antes": 1.752,
+      "despues": 2.557,
+      "unidad": "s (instrumentado)",
+      "cambio_pct": 45.9,
+      "mejora": false
+    },
+    {
+      "metrica": "Etapa: geoespacial",
+      "antes": 0.411,
+      "despues": 0.468,
+      "unidad": "s (instrumentado)",
+      "cambio_pct": 13.9,
+      "mejora": false
+    },
+    {
+      "metrica": "Etapa: linaje",
+      "antes": 3.836,
+      "despues": 2.142,
+      "unidad": "s (instrumentado)",
+      "cambio_pct": -44.2,
+      "mejora": true
+    },
+    {
+      "metrica": "Etapa: escritura",
+      "antes": 10.433,
+      "despues": 0.22,
+      "unidad": "s (instrumentado)",
+      "cambio_pct": -97.9,
+      "mejora": true
+    }
+  ]
+}

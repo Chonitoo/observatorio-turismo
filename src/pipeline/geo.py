@@ -160,7 +160,7 @@ def ejecutar(plata_datatur: pd.DataFrame) -> dict:
                            fuente="inegi_denue_colima", rol="conteo por unión espacial punto→municipio")
     mg = pd.DataFrame(municipios.drop(columns="geometry"))
     lin_mun_m = mg.assign(id_oro="municipio|" + mg["cvegeo"], tabla_oro="municipio_hospedaje",
-                          fuente="inegi_mg_municipios", rol="polígono, área y población (Censo 2020)")
+                          fuente="inegi_mg_municipios", rol="polígono + área + población (Censo 2020)")
     cols = ["id_oro", "tabla_oro", "fuente", "id_bronce", "archivo_origen", "fila_origen",
             "sha256_bronce", "fecha_ingesta", "rol"]
     linaje = pd.concat([x[cols] for x in (lin_est, lin_mun_d, lin_mun_m)], ignore_index=True)

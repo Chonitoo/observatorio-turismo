@@ -34,7 +34,7 @@ Z_ROBUSTO_UMBRAL = 3.5      # Iglewicz & Hoaglin (1993)
 # Choques exógenos conocidos: los atípicos en estos meses son reales y NO se corrigen.
 MESES_COVID = [f"2020-{m:02d}" for m in range(3, 13)] + ["2021-01", "2021-02"]  # cierres y semáforo rojo
 EVENTOS_CONOCIDOS = {  # centro → (inicio, fin, descripción)
-    "Acapulco": ("2023-10", "2024-06", "Huracán Otis (categoría 5, 25-oct-2023)"),
+    "Acapulco": ("2023-10", "2024-06", "Huracán Otis (categoría 5; 25-oct-2023)"),
 }
 VENTANA_TENDENCIA = 13      # meses de la mediana móvil centrada que estima la tendencia
 

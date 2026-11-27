@@ -1,0 +1,87 @@
+tabla,columna,tipo,unidad,descripcion
+ocupacion_destino_mes,id_registro,string,,Identificador único: '<destino>|<AAAA-MM>'. Permite rastrear el registro en el repositorio (linaje).
+ocupacion_destino_mes,periodo,string,AAAA-MM,Mes de referencia en formato año-mes.
+ocupacion_destino_mes,anio,integer,año,Año calendario del registro.
+ocupacion_destino_mes,mes,integer,1-12,"Mes calendario (1 = enero, 12 = diciembre)."
+ocupacion_destino_mes,destino,string,,Centro turístico monitoreado por DataTur (64 destinos).
+ocupacion_destino_mes,estado,string,,Entidad federativa del destino.
+ocupacion_destino_mes,region,string,,"Región económica (regionalización del Banco de México): Norte, Centro Norte, Centro, Sur."
+ocupacion_destino_mes,tipo_destino,string,,Centros de Playa o Ciudades (clasificación DataTur).
+ocupacion_destino_mes,subtipo_destino,string,,"Subclasificación DataTur (Integralmente Planeados, Tradicionales, Interior, Fronterizas, etc.)."
+ocupacion_destino_mes,litoral,string,,"Pacífico, Golfo-Caribe o 'No aplica' (ciudades)."
+ocupacion_destino_mes,temporada,string,,"Alta (abr, jul, ago, dic), Media o Baja (sep, oct)."
+ocupacion_destino_mes,periodo_covid,string,,"Prepandemia (hasta feb-2020), Pandemia (mar-2020 a dic-2021) o Pospandemia."
+ocupacion_destino_mes,cuartos_disponibles,number,cuartos-noche,Oferta del mes: suma de cuartos disponibles por noche de las categorías reportadas.
+ocupacion_destino_mes,cuartos_ocupados,number,cuartos-noche,Cuartos ocupados (residentes + no residentes).
+ocupacion_destino_mes,llegadas,number,personas,Llegadas de turistas (residentes + no residentes).
+ocupacion_destino_mes,llegadas_extranjeros,number,personas,Llegadas de turistas no residentes en México.
+ocupacion_destino_mes,turistas_noche,number,personas-noche,Turistas-noche (residentes + no residentes).
+ocupacion_destino_mes,ocupacion_pct,number,%,Ocupación hotelera = cuartos ocupados / cuartos disponibles × 100.
+ocupacion_destino_mes,ocupacion_pct_tratada,number,%,Ocupación con los atípicos sin explicación winsorizados (los choques reales se conservan).
+ocupacion_destino_mes,ocupacion_nivel,string,,"Discretización: Baja (<40 %), Media (40-60 %), Alta (≥60 %)."
+ocupacion_destino_mes,estadia_promedio,number,noches,Turistas-noche / llegadas. Vacío si no hubo llegadas.
+ocupacion_destino_mes,densidad,number,personas por cuarto,Turistas-noche / cuartos ocupados. Vacío si no hubo ocupación.
+ocupacion_destino_mes,pct_extranjeros,number,%,Llegadas de no residentes / llegadas × 100.
+ocupacion_destino_mes,atipico,boolean,,Atípico por consenso IQR + Z-score robusto sobre el residuo sin tendencia ni estacionalidad.
+ocupacion_destino_mes,evento_conocido,string,,"Choque exógeno conocido en ese mes (pandemia COVID-19, huracán Otis), si aplica."
+ocupacion_destino_mes,categorias_reportadas,integer,,"Número de categorías hoteleras (1★-5★, sin categoría) reportadas ese mes."
+ocupacion_destino_mes,registros_imputados,integer,,Cuántas de esas categorías fueron imputadas (huecos internos ≤ 3 meses).
+ocupacion_destino_mes,pct_oferta_imputada,number,%,Porcentaje de los cuartos disponibles que proviene de registros imputados.
+ocupacion_destino_mes,tipo_cambio,number,MXN por USD,"Promedio mensual del tipo de cambio FIX (Banco de México, serie SF43718)."
+ocupacion_destino_mes,inflacion_anual_pct,number,%,"Variación anual del INPC (Banco de México, serie SP1)."
+ocupacion_destino_mes,fecha_ingesta,string,UTC ISO 8601,Fecha en que el archivo crudo de DataTur entró al repositorio.
+ocupacion_categoria_mes,id_registro,string,,Identificador único: 'hc|<destino>|<categoría>|<AAAA-MM>'.
+ocupacion_categoria_mes,periodo,string,AAAA-MM,Mes de referencia en formato año-mes.
+ocupacion_categoria_mes,anio,integer,año,Año calendario del registro.
+ocupacion_categoria_mes,mes,integer,1-12,"Mes calendario (1 = enero, 12 = diciembre)."
+ocupacion_categoria_mes,destino,string,,Centro turístico DataTur.
+ocupacion_categoria_mes,tipo_destino,string,,Centros de Playa o Ciudades.
+ocupacion_categoria_mes,estado,string,,Entidad federativa.
+ocupacion_categoria_mes,region,string,,Región económica (Banco de México).
+ocupacion_categoria_mes,categoria,string,,"Categoría hotelera: 1 estrella … 5 estrellas, Sin categoría."
+ocupacion_categoria_mes,segmento,string,,"Económico (1-2★), Medio (3★), Superior (4-5★), Sin clasificar."
+ocupacion_categoria_mes,temporada,string,,"Alta, Media o Baja."
+ocupacion_categoria_mes,periodo_covid,string,,"Prepandemia, Pandemia o Pospandemia."
+ocupacion_categoria_mes,cuartos_disponibles,number,cuartos-noche,Cuartos disponibles por noche en el mes.
+ocupacion_categoria_mes,ocupacion_pct,number,%,Ocupación de la categoría en el mes.
+ocupacion_categoria_mes,imputado,boolean,,True si el registro fue imputado (hueco interno ≤ 3 meses; nunca en meses de pandemia).
+ocupacion_categoria_mes,id_bronce,string,,Identificador del registro crudo de origen ('IMPUTADO:…' si fue imputado).
+hospedaje_establecimientos,id_registro,string,,Identificador: 'denue|<id DENUE>'.
+hospedaje_establecimientos,id_denue,string,,Identificador del establecimiento en el DENUE (INEGI).
+hospedaje_establecimientos,clee,string,,Clave Única del Establecimiento (INEGI).
+hospedaje_establecimientos,codigo_scian,string,,Código SCIAN 2023 de la actividad (721xxx = alojamiento temporal).
+hospedaje_establecimientos,actividad,string,,Nombre de la actividad SCIAN.
+hospedaje_establecimientos,tipo_alojamiento,string,,"Hotel, Motel, Departamento o casa amueblada, Cabañas y villas, Pensión o casa de huéspedes, Campamento o albergue."
+hospedaje_establecimientos,estrato_personal,string,personas,Estrato de personal ocupado declarado en el DENUE.
+hospedaje_establecimientos,tamano,string,,"Micro (0-10), Pequeño (11-50), Mediano (51-250), Grande (251+)."
+hospedaje_establecimientos,personal_estimado,integer,personas,Punto medio del estrato (aproximación).
+hospedaje_establecimientos,clave_municipio,string,,Clave geoestadística del municipio donde cae el punto (unión espacial).
+hospedaje_establecimientos,municipio,string,,Municipio donde cae el punto.
+hospedaje_establecimientos,localidad,string,,Localidad declarada en el DENUE.
+hospedaje_establecimientos,latitud,number,grados (WGS84),Latitud del establecimiento.
+hospedaje_establecimientos,longitud,number,grados (WGS84),Longitud del establecimiento.
+hospedaje_establecimientos,anio_alta,integer,año,Año de alta en el DENUE (NO es el año de apertura).
+hospedaje_establecimientos,municipio_coincide,boolean,,False si el municipio declarado difiere del municipio donde cae el punto.
+hospedaje_municipios,id_registro,string,,Identificador: 'municipio|<clave>'.
+hospedaje_municipios,clave_municipio,string,,Clave geoestadística INEGI (06001-06010).
+hospedaje_municipios,municipio,string,,Nombre del municipio.
+hospedaje_municipios,poblacion_2020,integer,personas,Población total (Censo de Población y Vivienda 2020).
+hospedaje_municipios,area_km2,number,km²,"Área del municipio (Marco Geoestadístico, proyección EPSG:6372)."
+hospedaje_municipios,establecimientos,integer,,Establecimientos de hospedaje (SCIAN 721) en el municipio.
+hospedaje_municipios,pct_oferta_estatal,number,%,Porcentaje de los establecimientos del estado.
+hospedaje_municipios,establecimientos_por_10k_hab,number,por 10 mil habitantes,Densidad por población.
+hospedaje_municipios,establecimientos_por_100km2,number,por 100 km²,Densidad por superficie.
+hospedaje_municipios,personal_estimado,integer,personas,Suma del personal estimado.
+hospedaje_municipios,pct_micro,number,%,Porcentaje de micronegocios (0-10 personas).
+hospedaje_municipios,hoteles,integer,,Establecimientos tipo hotel (SCIAN 721111 y 721112).
+hospedaje_municipios,moteles,integer,,Moteles (721113).
+hospedaje_municipios,departamentos_casas,integer,,Departamentos y casas amueblados con servicios de hotelería (721312).
+hospedaje_municipios,cabanas_villas,integer,,"Cabañas, villas y similares (721190)."
+hospedaje_municipios,pensiones,integer,,Pensiones y casas de huéspedes (721311).
+hospedaje_municipios,cuartos_datatur_2024,number,cuartos por noche,Promedio de cuartos por noche reportados a DataTur en 2024 (sólo Manzanillo y Colima).
+indicadores_macro_mes,periodo,string,AAAA-MM,Mes de referencia en formato año-mes.
+indicadores_macro_mes,tipo_cambio,number,MXN por USD,Promedio mensual del FIX (SF43718).
+indicadores_macro_mes,tipo_cambio_cierre,number,MXN por USD,Último FIX publicado en el mes.
+indicadores_macro_mes,dias_cotizados,integer,días,Días hábiles con cotización.
+indicadores_macro_mes,inpc,number,índice (2Q jul-2018 = 100),Índice Nacional de Precios al Consumidor (SP1).
+indicadores_macro_mes,inflacion_anual_pct,number,%,Variación del INPC respecto al mismo mes del año anterior.

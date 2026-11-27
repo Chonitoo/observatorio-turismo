@@ -1,0 +1,617 @@
+{
+  "profile": "tabular-data-package",
+  "name": "observatorio-hotelero-colima",
+  "version": "1.0.0",
+  "title": "Observatorio de Ocupación Hotelera de Colima — dataset curado",
+  "description": "Ocupación hotelera mensual de 64 destinos turísticos de México (2016-2024) con énfasis en Colima (Manzanillo y Colima capital), integrada con tipo de cambio e inflación, y oferta de hospedaje georreferenciada de Colima. Datos limpios, validados y trazables.",
+  "homepage": "https://github.com/Chonitoo/observatorio-turismo",
+  "created": "2026-11-27T19:31:56Z",
+  "contributors": [
+    {
+      "title": "Maximiliano Encarnación Velázquez Rodríguez",
+      "role": "author"
+    }
+  ],
+  "keywords": [
+    "turismo",
+    "ocupación hotelera",
+    "Colima",
+    "Manzanillo",
+    "DataTur",
+    "DENUE",
+    "México"
+  ],
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "sources": [
+    {
+      "title": "SECTUR, DataTur: Ocupación hotelera en los 70 destinos principales (CC-BY 4.0)",
+      "path": "https://www.datos.gob.mx/dataset/ocupacion_hotelera_70_destinos_principales_monitoreados_datatur"
+    },
+    {
+      "title": "Banco de México, Sistema de Información Económica: SF43718 (FIX) y SP1 (INPC)",
+      "path": "https://www.banxico.org.mx/SieAPIRest/service/v1/"
+    },
+    {
+      "title": "INEGI, Directorio Estadístico Nacional de Unidades Económicas (DENUE) 05/2026",
+      "path": "https://www.inegi.org.mx/app/descarga/?ti=6"
+    },
+    {
+      "title": "INEGI, Marco Geoestadístico dic-2025; Censo de Población y Vivienda 2020",
+      "path": "https://gaia.inegi.org.mx/wscatgeo/v2/geo/mgem/06"
+    }
+  ],
+  "resources": [
+    {
+      "profile": "tabular-data-resource",
+      "name": "ocupacion_destino_mes",
+      "path": "ocupacion_destino_mes.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Ocupación hotelera mensual por destino turístico (64 destinos, 2016-2024), integrada con tipo de cambio e inflación.",
+      "bytes": 1614449,
+      "hash": "sha256:bbe6b96263775a44d4d4330558c777db67c2df5925ba913c4bcd2af8e3ab5bda",
+      "rows": 6900,
+      "schema": {
+        "fields": [
+          {
+            "name": "id_registro",
+            "type": "string",
+            "description": "Identificador único: '<destino>|<AAAA-MM>'. Permite rastrear el registro en el repositorio (linaje)."
+          },
+          {
+            "name": "periodo",
+            "type": "string",
+            "description": "Mes de referencia en formato año-mes.",
+            "unit": "AAAA-MM"
+          },
+          {
+            "name": "anio",
+            "type": "integer",
+            "description": "Año calendario del registro.",
+            "unit": "año"
+          },
+          {
+            "name": "mes",
+            "type": "integer",
+            "description": "Mes calendario (1 = enero, 12 = diciembre).",
+            "unit": "1-12"
+          },
+          {
+            "name": "destino",
+            "type": "string",
+            "description": "Centro turístico monitoreado por DataTur (64 destinos)."
+          },
+          {
+            "name": "estado",
+            "type": "string",
+            "description": "Entidad federativa del destino."
+          },
+          {
+            "name": "region",
+            "type": "string",
+            "description": "Región económica (regionalización del Banco de México): Norte, Centro Norte, Centro, Sur."
+          },
+          {
+            "name": "tipo_destino",
+            "type": "string",
+            "description": "Centros de Playa o Ciudades (clasificación DataTur)."
+          },
+          {
+            "name": "subtipo_destino",
+            "type": "string",
+            "description": "Subclasificación DataTur (Integralmente Planeados, Tradicionales, Interior, Fronterizas, etc.)."
+          },
+          {
+            "name": "litoral",
+            "type": "string",
+            "description": "Pacífico, Golfo-Caribe o 'No aplica' (ciudades)."
+          },
+          {
+            "name": "temporada",
+            "type": "string",
+            "description": "Alta (abr, jul, ago, dic), Media o Baja (sep, oct)."
+          },
+          {
+            "name": "periodo_covid",
+            "type": "string",
+            "description": "Prepandemia (hasta feb-2020), Pandemia (mar-2020 a dic-2021) o Pospandemia."
+          },
+          {
+            "name": "cuartos_disponibles",
+            "type": "number",
+            "description": "Oferta del mes: suma de cuartos disponibles por noche de las categorías reportadas.",
+            "unit": "cuartos-noche"
+          },
+          {
+            "name": "cuartos_ocupados",
+            "type": "number",
+            "description": "Cuartos ocupados (residentes + no residentes).",
+            "unit": "cuartos-noche"
+          },
+          {
+            "name": "llegadas",
+            "type": "number",
+            "description": "Llegadas de turistas (residentes + no residentes).",
+            "unit": "personas"
+          },
+          {
+            "name": "llegadas_extranjeros",
+            "type": "number",
+            "description": "Llegadas de turistas no residentes en México.",
+            "unit": "personas"
+          },
+          {
+            "name": "turistas_noche",
+            "type": "number",
+            "description": "Turistas-noche (residentes + no residentes).",
+            "unit": "personas-noche"
+          },
+          {
+            "name": "ocupacion_pct",
+            "type": "number",
+            "description": "Ocupación hotelera = cuartos ocupados / cuartos disponibles × 100.",
+            "unit": "%"
+          },
+          {
+            "name": "ocupacion_pct_tratada",
+            "type": "number",
+            "description": "Ocupación con los atípicos sin explicación winsorizados (los choques reales se conservan).",
+            "unit": "%"
+          },
+          {
+            "name": "ocupacion_nivel",
+            "type": "string",
+            "description": "Discretización: Baja (<40 %), Media (40-60 %), Alta (≥60 %)."
+          },
+          {
+            "name": "estadia_promedio",
+            "type": "number",
+            "description": "Turistas-noche / llegadas. Vacío si no hubo llegadas.",
+            "unit": "noches"
+          },
+          {
+            "name": "densidad",
+            "type": "number",
+            "description": "Turistas-noche / cuartos ocupados. Vacío si no hubo ocupación.",
+            "unit": "personas por cuarto"
+          },
+          {
+            "name": "pct_extranjeros",
+            "type": "number",
+            "description": "Llegadas de no residentes / llegadas × 100.",
+            "unit": "%"
+          },
+          {
+            "name": "atipico",
+            "type": "boolean",
+            "description": "Atípico por consenso IQR + Z-score robusto sobre el residuo sin tendencia ni estacionalidad."
+          },
+          {
+            "name": "evento_conocido",
+            "type": "string",
+            "description": "Choque exógeno conocido en ese mes (pandemia COVID-19, huracán Otis), si aplica."
+          },
+          {
+            "name": "categorias_reportadas",
+            "type": "integer",
+            "description": "Número de categorías hoteleras (1★-5★, sin categoría) reportadas ese mes."
+          },
+          {
+            "name": "registros_imputados",
+            "type": "integer",
+            "description": "Cuántas de esas categorías fueron imputadas (huecos internos ≤ 3 meses)."
+          },
+          {
+            "name": "pct_oferta_imputada",
+            "type": "number",
+            "description": "Porcentaje de los cuartos disponibles que proviene de registros imputados.",
+            "unit": "%"
+          },
+          {
+            "name": "tipo_cambio",
+            "type": "number",
+            "description": "Promedio mensual del tipo de cambio FIX (Banco de México, serie SF43718).",
+            "unit": "MXN por USD"
+          },
+          {
+            "name": "inflacion_anual_pct",
+            "type": "number",
+            "description": "Variación anual del INPC (Banco de México, serie SP1).",
+            "unit": "%"
+          },
+          {
+            "name": "fecha_ingesta",
+            "type": "string",
+            "description": "Fecha en que el archivo crudo de DataTur entró al repositorio.",
+            "unit": "UTC ISO 8601"
+          }
+        ],
+        "primaryKey": [
+          "id_registro"
+        ]
+      }
+    },
+    {
+      "profile": "tabular-data-resource",
+      "name": "ocupacion_categoria_mes",
+      "path": "ocupacion_categoria_mes.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Ocupación hotelera mensual por destino y categoría (1★-5★), para análisis de factores.",
+      "bytes": 5426034,
+      "hash": "sha256:ccab7d925315a1c7d7b8087672d0764b903b5337fcd349e31bc8461a0abab6e6",
+      "rows": 31265,
+      "schema": {
+        "fields": [
+          {
+            "name": "id_registro",
+            "type": "string",
+            "description": "Identificador único: 'hc|<destino>|<categoría>|<AAAA-MM>'."
+          },
+          {
+            "name": "periodo",
+            "type": "string",
+            "description": "Mes de referencia en formato año-mes.",
+            "unit": "AAAA-MM"
+          },
+          {
+            "name": "anio",
+            "type": "integer",
+            "description": "Año calendario del registro.",
+            "unit": "año"
+          },
+          {
+            "name": "mes",
+            "type": "integer",
+            "description": "Mes calendario (1 = enero, 12 = diciembre).",
+            "unit": "1-12"
+          },
+          {
+            "name": "destino",
+            "type": "string",
+            "description": "Centro turístico DataTur."
+          },
+          {
+            "name": "tipo_destino",
+            "type": "string",
+            "description": "Centros de Playa o Ciudades."
+          },
+          {
+            "name": "estado",
+            "type": "string",
+            "description": "Entidad federativa."
+          },
+          {
+            "name": "region",
+            "type": "string",
+            "description": "Región económica (Banco de México)."
+          },
+          {
+            "name": "categoria",
+            "type": "string",
+            "description": "Categoría hotelera: 1 estrella … 5 estrellas, Sin categoría."
+          },
+          {
+            "name": "segmento",
+            "type": "string",
+            "description": "Económico (1-2★), Medio (3★), Superior (4-5★), Sin clasificar."
+          },
+          {
+            "name": "temporada",
+            "type": "string",
+            "description": "Alta, Media o Baja."
+          },
+          {
+            "name": "periodo_covid",
+            "type": "string",
+            "description": "Prepandemia, Pandemia o Pospandemia."
+          },
+          {
+            "name": "cuartos_disponibles",
+            "type": "number",
+            "description": "Cuartos disponibles por noche en el mes.",
+            "unit": "cuartos-noche"
+          },
+          {
+            "name": "ocupacion_pct",
+            "type": "number",
+            "description": "Ocupación de la categoría en el mes.",
+            "unit": "%"
+          },
+          {
+            "name": "imputado",
+            "type": "boolean",
+            "description": "True si el registro fue imputado (hueco interno ≤ 3 meses; nunca en meses de pandemia)."
+          },
+          {
+            "name": "id_bronce",
+            "type": "string",
+            "description": "Identificador del registro crudo de origen ('IMPUTADO:…' si fue imputado)."
+          }
+        ],
+        "primaryKey": [
+          "id_registro"
+        ]
+      }
+    },
+    {
+      "profile": "tabular-data-resource",
+      "name": "hospedaje_establecimientos",
+      "path": "hospedaje_establecimientos.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Establecimientos de hospedaje de Colima (DENUE 2026) con ubicación, tipo y tamaño. Sin datos de contacto.",
+      "bytes": 86403,
+      "hash": "sha256:d679ca342f2af1d721c6009ef703afe4bebd1e7327ff4b0fae28697497e9ae9c",
+      "rows": 294,
+      "schema": {
+        "fields": [
+          {
+            "name": "id_registro",
+            "type": "string",
+            "description": "Identificador: 'denue|<id DENUE>'."
+          },
+          {
+            "name": "id_denue",
+            "type": "string",
+            "description": "Identificador del establecimiento en el DENUE (INEGI)."
+          },
+          {
+            "name": "clee",
+            "type": "string",
+            "description": "Clave Única del Establecimiento (INEGI)."
+          },
+          {
+            "name": "codigo_scian",
+            "type": "string",
+            "description": "Código SCIAN 2023 de la actividad (721xxx = alojamiento temporal)."
+          },
+          {
+            "name": "actividad",
+            "type": "string",
+            "description": "Nombre de la actividad SCIAN."
+          },
+          {
+            "name": "tipo_alojamiento",
+            "type": "string",
+            "description": "Hotel, Motel, Departamento o casa amueblada, Cabañas y villas, Pensión o casa de huéspedes, Campamento o albergue."
+          },
+          {
+            "name": "estrato_personal",
+            "type": "string",
+            "description": "Estrato de personal ocupado declarado en el DENUE.",
+            "unit": "personas"
+          },
+          {
+            "name": "tamano",
+            "type": "string",
+            "description": "Micro (0-10), Pequeño (11-50), Mediano (51-250), Grande (251+)."
+          },
+          {
+            "name": "personal_estimado",
+            "type": "integer",
+            "description": "Punto medio del estrato (aproximación).",
+            "unit": "personas"
+          },
+          {
+            "name": "clave_municipio",
+            "type": "string",
+            "description": "Clave geoestadística del municipio donde cae el punto (unión espacial)."
+          },
+          {
+            "name": "municipio",
+            "type": "string",
+            "description": "Municipio donde cae el punto."
+          },
+          {
+            "name": "localidad",
+            "type": "string",
+            "description": "Localidad declarada en el DENUE."
+          },
+          {
+            "name": "latitud",
+            "type": "number",
+            "description": "Latitud del establecimiento.",
+            "unit": "grados (WGS84)"
+          },
+          {
+            "name": "longitud",
+            "type": "number",
+            "description": "Longitud del establecimiento.",
+            "unit": "grados (WGS84)"
+          },
+          {
+            "name": "anio_alta",
+            "type": "integer",
+            "description": "Año de alta en el DENUE (NO es el año de apertura).",
+            "unit": "año"
+          },
+          {
+            "name": "municipio_coincide",
+            "type": "boolean",
+            "description": "False si el municipio declarado difiere del municipio donde cae el punto."
+          }
+        ],
+        "primaryKey": [
+          "id_registro"
+        ]
+      }
+    },
+    {
+      "profile": "tabular-data-resource",
+      "name": "hospedaje_municipios",
+      "path": "hospedaje_municipios.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Oferta de hospedaje por municipio de Colima con densidades por población y superficie.",
+      "bytes": 1121,
+      "hash": "sha256:5bb5803cd908a609a697718198773e49564230974728f01f0f3116217a36b7ee",
+      "rows": 10,
+      "schema": {
+        "fields": [
+          {
+            "name": "id_registro",
+            "type": "string",
+            "description": "Identificador: 'municipio|<clave>'."
+          },
+          {
+            "name": "clave_municipio",
+            "type": "string",
+            "description": "Clave geoestadística INEGI (06001-06010)."
+          },
+          {
+            "name": "municipio",
+            "type": "string",
+            "description": "Nombre del municipio."
+          },
+          {
+            "name": "poblacion_2020",
+            "type": "integer",
+            "description": "Población total (Censo de Población y Vivienda 2020).",
+            "unit": "personas"
+          },
+          {
+            "name": "area_km2",
+            "type": "number",
+            "description": "Área del municipio (Marco Geoestadístico, proyección EPSG:6372).",
+            "unit": "km²"
+          },
+          {
+            "name": "establecimientos",
+            "type": "integer",
+            "description": "Establecimientos de hospedaje (SCIAN 721) en el municipio."
+          },
+          {
+            "name": "pct_oferta_estatal",
+            "type": "number",
+            "description": "Porcentaje de los establecimientos del estado.",
+            "unit": "%"
+          },
+          {
+            "name": "establecimientos_por_10k_hab",
+            "type": "number",
+            "description": "Densidad por población.",
+            "unit": "por 10 mil habitantes"
+          },
+          {
+            "name": "establecimientos_por_100km2",
+            "type": "number",
+            "description": "Densidad por superficie.",
+            "unit": "por 100 km²"
+          },
+          {
+            "name": "personal_estimado",
+            "type": "integer",
+            "description": "Suma del personal estimado.",
+            "unit": "personas"
+          },
+          {
+            "name": "pct_micro",
+            "type": "number",
+            "description": "Porcentaje de micronegocios (0-10 personas).",
+            "unit": "%"
+          },
+          {
+            "name": "hoteles",
+            "type": "integer",
+            "description": "Establecimientos tipo hotel (SCIAN 721111 y 721112)."
+          },
+          {
+            "name": "moteles",
+            "type": "integer",
+            "description": "Moteles (721113)."
+          },
+          {
+            "name": "departamentos_casas",
+            "type": "integer",
+            "description": "Departamentos y casas amueblados con servicios de hotelería (721312)."
+          },
+          {
+            "name": "cabanas_villas",
+            "type": "integer",
+            "description": "Cabañas, villas y similares (721190)."
+          },
+          {
+            "name": "pensiones",
+            "type": "integer",
+            "description": "Pensiones y casas de huéspedes (721311)."
+          },
+          {
+            "name": "cuartos_datatur_2024",
+            "type": "number",
+            "description": "Promedio de cuartos por noche reportados a DataTur en 2024 (sólo Manzanillo y Colima).",
+            "unit": "cuartos por noche"
+          }
+        ],
+        "primaryKey": [
+          "id_registro"
+        ]
+      }
+    },
+    {
+      "profile": "tabular-data-resource",
+      "name": "indicadores_macro_mes",
+      "path": "indicadores_macro_mes.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Tipo de cambio FIX e inflación anual (INPC) mensuales.",
+      "bytes": 5940,
+      "hash": "sha256:98354764cca2f70cbc82d6719bcfbe6824a523bb2d2952d5793e8aae2db6d01c",
+      "rows": 143,
+      "schema": {
+        "fields": [
+          {
+            "name": "periodo",
+            "type": "string",
+            "description": "Mes de referencia en formato año-mes.",
+            "unit": "AAAA-MM"
+          },
+          {
+            "name": "tipo_cambio",
+            "type": "number",
+            "description": "Promedio mensual del FIX (SF43718).",
+            "unit": "MXN por USD"
+          },
+          {
+            "name": "tipo_cambio_cierre",
+            "type": "number",
+            "description": "Último FIX publicado en el mes.",
+            "unit": "MXN por USD"
+          },
+          {
+            "name": "dias_cotizados",
+            "type": "integer",
+            "description": "Días hábiles con cotización.",
+            "unit": "días"
+          },
+          {
+            "name": "inpc",
+            "type": "number",
+            "description": "Índice Nacional de Precios al Consumidor (SP1).",
+            "unit": "índice (2Q jul-2018 = 100)"
+          },
+          {
+            "name": "inflacion_anual_pct",
+            "type": "number",
+            "description": "Variación del INPC respecto al mismo mes del año anterior.",
+            "unit": "%"
+          }
+        ],
+        "primaryKey": [
+          "periodo"
+        ]
+      }
+    }
+  ]
+}

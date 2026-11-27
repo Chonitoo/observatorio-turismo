@@ -8,6 +8,16 @@ Observatorio de datos del sector turístico de Colima: pronóstico de la ocupaci
 
 **Autor:** Maximiliano Encarnación Velázquez Rodríguez (`@Chonitoo`)
 
+## Dataset publicado
+
+El dataset curado está en [`dataset/`](dataset) con licencia **CC BY 4.0**: 5 tablas (CSV y Parquet), diccionario de
+datos, `datapackage.json` (Frictionless) y sumas SHA-256. Ficha técnica: [docs/E3/datasheet.md](docs/E3/datasheet.md).
+
+```python
+import pandas as pd
+pd.read_csv("https://raw.githubusercontent.com/Chonitoo/observatorio-turismo/main/dataset/ocupacion_destino_mes.csv")
+```
+
 ## Dashboard
 
 Tablero para el cliente (hoteleros y Secretaría de Turismo), organizado por preguntas de negocio y en lenguaje simple:
@@ -32,9 +42,12 @@ src/
   extractores/datatur.py        SECTUR-DataTur: ocupación hotelera de 70 destinos (CC-BY 4.0)
   extractores/banxico.py        Banxico SIE: tipo de cambio FIX e INPC
   extractores/inegi.py          INEGI: DENUE (hospedaje) y Marco Geoestadístico (municipios)
+  benchmark.py                  Medición A/B del pipeline (tiempo, memoria, errores)
+  publicar.py                   Publicación del dataset curado
   pipeline/                     Bronce → Plata → Oro: Puerta de Calidad (Pandera), faltantes,
                                 atípicos, integración, jerarquías, normalización
 dashboard/app.py                Tablero interactivo (Streamlit)
+dataset/                        Dataset curado publicado (CC BY 4.0)
 data/bronze/                    Capa Bronce: datos crudos inmutables + _bitacora_captura.csv
 data/silver/                    Capa Plata: datos limpios y validados
 data/gold/                      Capa Oro: integrados y listos para analizar
@@ -52,6 +65,7 @@ tests/                          Pruebas de integridad de Bronce
 | E0: Arranque | `e0` | [Propuesta](docs/E0/propuesta.md) · [Ficha técnica](docs/E0/ENTREGA.md) |
 | E1: Limpieza y Puerta de Calidad | `e1` | [Notebook](docs/E1/limpieza.ipynb) · [Ficha técnica](docs/E1/ENTREGA.md) · [Relatoría](docs/relatoria-E1.md) |
 | E2: Fuente geoespacial, linaje y ética | `e2` | [Notebook](docs/E2/geoespacial_linaje.ipynb) · [Ficha técnica](docs/E2/ENTREGA.md) · [Relatoría](docs/relatoria-E2.md) · [Ética](docs/etica-datos.md) |
+| E3: Optimización y publicación del dataset | `e3` | [Comparativa](reports/E3/comparativa.md) · [Datasheet](docs/E3/datasheet.md) · [Ficha técnica](docs/E3/ENTREGA.md) · [Relatoría](docs/relatoria-E3.md) |
 
 ## Fuentes y licencias
 

@@ -264,6 +264,56 @@ def comparar() -> dict:
     return out
 
 
+def graficar(destino_img: Path = RAIZ / "docs" / "E3" / "img" / "comparativa.png") -> Path:
+    """Figura de la comparativa (tiempo, memoria, errores y etapas) para la documentación."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    c = json.loads((DESTINO / "comparativa.json").read_text(encoding="utf-8"))
+    m = {f["metrica"]: f for f in c["metricas"]}
+    gris, azul = "#b8c2cc", "#2f6fb5"
+    fig, ax = plt.subplots(1, 4, figsize=(16, 4.2), gridspec_kw={"width_ratios": [1, 1.4, 1.6, 2.4]})
+
+    def barras(eje, nombres, etiquetas, titulo, unidad):
+        a = [m[n]["antes"] for n in nombres]
+        d = [m[n]["despues"] for n in nombres]
+        x = range(len(nombres))
+        eje.bar([i - .2 for i in x], a, .4, color=gris, label="Antes")
+        eje.bar([i + .2 for i in x], d, .4, color=azul, label="Después")
+        for i, n in enumerate(nombres):
+            eje.text(i + .2, d[i], f"{m[n]['cambio_pct']:+.0f} %", ha="center", va="bottom", fontsize=9,
+                     fontweight="bold", color=azul)
+        eje.set_xticks(list(x), etiquetas, fontsize=9)
+        eje.set_title(titulo, fontsize=11)
+        eje.set_ylabel(unidad)
+        eje.spines[["top", "right"]].set_visible(False)
+
+    barras(ax[0], ["Tiempo total (mediana)"], ["Tiempo total"], "Tiempo de ejecución", "segundos")
+    barras(ax[1], ["Memoria pico del proceso (RSS)", "Memoria pico de Python (tracemalloc)"],
+           ["Proceso (RSS)", "Python"], "Memoria pico", "MB")
+    barras(ax[2], ["Registros inválidos generados por el pipeline", "Errores detectados hasta la capa Oro",
+                   "Archivos que cambian sin datos nuevos"], ["Imputaciones\ninválidas", "Errores\nhasta Oro",
+                                                              "Archivos que\ncambian solos"],
+           "Errores", "conteo")
+    et = c["etapas"]
+    nombres = [e["metrica"].replace("Etapa: ", "") for e in et]
+    y = range(len(et))
+    ax[3].barh([i + .2 for i in y], [e["antes"] for e in et], .4, color=gris, label="Antes")
+    ax[3].barh([i - .2 for i in y], [e["despues"] for e in et], .4, color=azul, label="Después")
+    ax[3].set_yticks(list(y), nombres, fontsize=9)
+    ax[3].invert_yaxis()
+    ax[3].set_title("Tiempo por etapa (instrumentado)", fontsize=11)
+    ax[3].set_xlabel("segundos (con perfilador)")
+    ax[3].spines[["top", "right"]].set_visible(False)
+    ax[3].legend(frameon=False, fontsize=9)
+    fig.suptitle(f"Optimización del pipeline · {c['repeticiones']} corridas intercaladas por versión "
+                 f"(antes {c['antes']['commit']} · después {c['despues']['commit'].split()[0]})", fontsize=12)
+    fig.tight_layout()
+    destino_img.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(destino_img, dpi=140)
+    return destino_img
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--etiqueta", default="despues")
@@ -273,9 +323,11 @@ if __name__ == "__main__":
     args = ap.parse_args()
     if args.comparar:
         comparar()
+        graficar()
     elif args.ab:
         medir_ab(args.ab, args.repeticiones)
         comparar()
+        graficar()
     else:
         r = medir(args.etiqueta, args.repeticiones)
         print(json.dumps({k: r[k] for k in ["tiempo_s", "memoria_mb", "tiempo_por_etapa_s", "tamano_salidas_mb"]},

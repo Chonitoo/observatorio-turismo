@@ -20,3 +20,10 @@ fecha,inicio,fin,interrupcion_min,delta_min,fase,entrega,actividad,comentarios
 2026-11-22,20:25,20:35,0,10,TEST,E2,Pruebas de linaje y privacidad,"21 pruebas en total"
 2026-11-22,20:35,20:55,0,20,DOC,E2,Notebook geoespacial_linaje.ipynb y mapas,
 2026-11-22,20:55,21:20,0,25,DOC,E2,etica-datos.md, ENTREGA.md y relatoria-E2.md,
+2026-11-27,10:00,10:15,0,15,PLAN,E3,Lectura de requisitos E3 y diseño de la medición,
+2026-11-27,10:15,10:45,0,30,CODE,E3,Script de benchmark y línea base,"Se separaron corridas limpias e instrumentadas"
+2026-11-27,10:45,11:00,0,15,TEST,E3,Perfilado con cProfile y tracemalloc,"Cuellos: escritura, lectura, huecos, DENUE"
+2026-11-27,11:00,11:50,0,50,CODE,E3,Optimizaciones de tiempo memoria y errores,"Salidas verificadas idénticas"
+2026-11-27,11:50,12:15,0,25,TEST,E3,Medición A/B intercalada y pruebas nuevas,"31 pruebas"
+2026-11-27,12:15,12:45,0,30,CODE,E3,Publicación del dataset y datapackage,"Validado con Frictionless"
+2026-11-27,12:45,13:30,0,45,DOC,E3,Datasheet ENTREGA y relatoría,

@@ -223,9 +223,14 @@ def publicar() -> dict:
 
     dic = pd.DataFrame([(t, c, ty, u, d) for t, cols in DICCIONARIO.items() for c, ty, u, d in cols],
                        columns=["tabla", "columna", "tipo", "unidad", "descripcion"])
-    dic.to_csv(tmp / "diccionario_datos.csv", index=False)
+    dic.to_csv(tmp / "diccionario_datos.csv", index=False, lineterminator="\n")
 
-    ahora = datetime.now(timezone.utc)
+    # Determinismo: la fecha del paquete es la de la ingesta más reciente de sus fuentes (no la hora de la
+    # corrida), así el dataset sólo cambia cuando cambian los datos.
+    from src.pipeline import bronce
+    ahora = datetime.strptime(max(bronce.captura_vigente(f)["fecha_utc"] for f in
+                                  ["datatur", "banxico_tipo_cambio_fix", "banxico_inpc", "inegi_denue_colima",
+                                   "inegi_mg_municipios"]), "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
     paquete = {
         "profile": "tabular-data-package",
         "name": NOMBRE, "version": VERSION,
@@ -234,7 +239,7 @@ def publicar() -> dict:
                         "Colima (Manzanillo y Colima capital), integrada con tipo de cambio e inflación, y oferta de "
                         "hospedaje georreferenciada de Colima. Datos limpios, validados y trazables."),
         "homepage": REPO,
-        "created": ahora.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "created": ahora.strftime("%Y-%m-%dT%H:%M:%SZ"),  # = ingesta más reciente
         "contributors": [{"title": AUTOR, "role": "author"}],
         "keywords": ["turismo", "ocupación hotelera", "Colima", "Manzanillo", "DataTur", "DENUE", "México"],
         "licenses": [{"name": "CC-BY-4.0", "title": "Creative Commons Attribution 4.0",
@@ -263,7 +268,7 @@ def publicar() -> dict:
                        **({"primaryKey": ["id_registro"]} if "id_registro" in df.columns
                           else {"primaryKey": ["periodo"]})},
         })
-    (tmp / "datapackage.json").write_text(json.dumps(paquete, ensure_ascii=False, indent=2), encoding="utf-8")
+    (tmp / "datapackage.json").write_text(json.dumps(paquete, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
 
     (tmp / "LICENSE.md").write_text(f"""# Licencia
 
@@ -285,11 +290,11 @@ des el crédito correspondiente:
 
 Este dataset es **elaboración propia**: los datos fueron limpiados, validados, imputados (cuando se indica),
 agregados e integrados. No representa una postura oficial de SECTUR, Banco de México ni INEGI, ni implica su aval.
-""", encoding="utf-8")
+""", encoding="utf-8", newline="\n")
 
     sumas = [f"{_sha256(f)}  {f.relative_to(tmp).as_posix()}" for f in sorted(tmp.rglob("*"))
              if f.is_file() and f.name != "SHA256SUMS.txt"]
-    (tmp / "SHA256SUMS.txt").write_text("\n".join(sumas) + "\n", encoding="utf-8")
+    (tmp / "SHA256SUMS.txt").write_text("\n".join(sumas) + "\n", encoding="utf-8", newline="\n")
 
     tabla_md = "\n".join(f"| `{t}.csv` | {filas[t]:,} | {len(DICCIONARIO[t])} | {DESCRIPCION_TABLA[t]} |" for t in tablas)
     (tmp / "README.md").write_text(f"""# Observatorio de Ocupación Hotelera de Colima — dataset curado
@@ -317,7 +322,7 @@ ocupacion = pd.read_csv(base + "ocupacion_destino_mes.csv")
 ## Cita
 
 {AUTOR} ({ahora.year}). *Observatorio de Ocupación Hotelera de Colima — dataset curado* (v{VERSION}). {REPO}
-""", encoding="utf-8")
+""", encoding="utf-8", newline="\n")
 
     shutil.rmtree(DESTINO, ignore_errors=True)
     tmp.rename(DESTINO)

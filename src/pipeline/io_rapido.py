@@ -3,6 +3,7 @@
 `escribir_csv` usa el escritor CSV de PyArrow (C++), varias veces más rápido que `DataFrame.to_csv`.
 Las fechas se escriben como AAAA-MM-DD, los nulos como celda vacía y los booleanos como true/false.
 Si una tabla tiene valores con comas (o tipos mezclados que Arrow no representa) se usa pandas.
+Siempre con saltos de línea LF: el mismo archivo en Windows y en Linux (salidas deterministas).
 
 Robustez: se escribe primero a un archivo temporal en la misma carpeta y luego se reemplaza el
 destino de forma atómica (`os.replace`). Si otro proceso tiene el archivo abierto o mapeado
@@ -51,9 +52,9 @@ def escribir_csv(df: pd.DataFrame, ruta: Path) -> None:
                 # sólo esos valores (mismo formato que antes de la optimización).
                 pacsv.write_csv(tabla, str(tmp), pacsv.WriteOptions(quoting_style="none"))
             except pa.ArrowInvalid:
-                d.to_csv(tmp, index=False)   # comillas sólo en los valores que las necesitan
+                d.to_csv(tmp, index=False, lineterminator="\n")   # comillas sólo donde hacen falta
         except (pa.ArrowInvalid, pa.ArrowTypeError, pa.ArrowNotImplementedError):
-            d.to_csv(tmp, index=False)
+            d.to_csv(tmp, index=False, lineterminator="\n")
         _reemplazar(tmp, ruta)
     finally:
         if tmp.exists():

@@ -5,7 +5,7 @@
   "title": "Observatorio de Ocupación Hotelera de Colima — dataset curado",
   "description": "Ocupación hotelera mensual de 64 destinos turísticos de México (2016-2024) con énfasis en Colima (Manzanillo y Colima capital), integrada con tipo de cambio e inflación, y oferta de hospedaje georreferenciada de Colima. Datos limpios, validados y trazables.",
   "homepage": "https://github.com/Chonitoo/observatorio-turismo",
-  "created": "2026-11-27T22:10:01Z",
+  "created": "2026-11-27T22:12:34Z",
   "contributors": [
     {
       "title": "Maximiliano Encarnación Velázquez Rodríguez",
@@ -350,8 +350,8 @@
       "mediatype": "text/csv",
       "encoding": "utf-8",
       "description": "Establecimientos de hospedaje de Colima (DENUE 2026) con ubicación, tipo y tamaño. Sin datos de contacto.",
-      "bytes": 86695,
-      "hash": "sha256:59054e57c46ccc2572c7d0dafef54d2b1dc6aa4f681dae3c7bc788ebe6d5bac4",
+      "bytes": 86399,
+      "hash": "sha256:a2858c9c6177c4f47495ae36a2d987fc8decfc070caf9849398e5163496862e8",
       "rows": 295,
       "schema": {
         "fields": [

@@ -55,6 +55,10 @@ REGLAS_DATATUR = [
              error=f"R4: más de {C.DENSIDAD_MAX:g} turistas por cuarto ocupado"),
     pa.Check(lambda d: ~d.duplicated(LLAVE_DATATUR, keep=False), name="R5_llave_unica",
              error="R5: registro duplicado (anio, mes, centro, categoria)"),
+    # E3 (shift-left): antes este error sólo aparecía al agregar en Oro (estadía > 30 noches)
+    pa.Check(lambda d: (_llegadas(d) == 0) | _noches(d).isna() | (_noches(d) <= C.ESTADIA_MAX * _llegadas(d)),
+             name="R6_estadia_plausible",
+             error=f"R6: más de {C.ESTADIA_MAX:g} noches por turista (llegadas casi nulas frente a las noches)"),
 ]
 
 

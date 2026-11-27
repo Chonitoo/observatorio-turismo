@@ -95,8 +95,9 @@ def detectar(df: pd.DataFrame, variables: list[str]) -> tuple[pd.DataFrame, dict
         df[f"atipico_{var}"] = consenso
         winsor = consenso & ~choque
         df[f"{var}_tratada"] = np.where(winsor, cols["esperado"] + res.clip(lo, hi), df[var]).round(4)
-        df[f"{var}_suavizada"] = (df.groupby("centro")[var]
-                                  .transform(lambda s: s.rolling(3, center=True, min_periods=1).median()))
+        # E3: rolling agrupado en lugar de transform con lambda (se ejecuta en Cython)
+        df[f"{var}_suavizada"] = (df.groupby("centro")[var].rolling(3, center=True, min_periods=1).median()
+                                  .reset_index(level=0, drop=True))
         resumen[var] = {
             "iqr": int(df[f"atipico_iqr_{var}"].sum()),
             "z_robusto": int(df[f"atipico_z_{var}"].sum()),
@@ -116,7 +117,9 @@ def detectar(df: pd.DataFrame, variables: list[str]) -> tuple[pd.DataFrame, dict
         cols_if = variables + ["densidad", "pct_no_residentes"]
         X = df[cols_if].to_numpy(dtype=float)
         X = (X - np.nanmedian(X, axis=0)) / np.nanstd(X, axis=0)
-        iso = IsolationForest(n_estimators=300, contamination=0.01, random_state=42)
+        # E3: 100 árboles (antes 300). Con max_samples=256 por árbol, la marca de atípicos es estable
+        # a partir de ~100 árboles y el ajuste tarda un tercio.
+        iso = IsolationForest(n_estimators=100, contamination=0.01, random_state=42)
         df["atipico_iforest"] = iso.fit_predict(np.nan_to_num(X)) == -1
         resumen["isolation_forest"] = {"disponible": True, "atipicos": int(df["atipico_iforest"].sum()),
                                        "en_choque_conocido": int((df["atipico_iforest"] & choque).sum()),

@@ -2,23 +2,7 @@
   "archivo_denue": "data/bronze/inegi_denue_colima/denue_06_csv_2026-11-23T022328Z.zip",
   "archivo_marco_geoestadistico": "data/bronze/inegi_mg_municipios/mgem_06_colima_2026-11-23T022329Z.geojson",
   "denue_hospedaje_bronce": 294,
-  "columnas_descartadas_por_privacidad": [
-    "nom_estab",
-    "raz_social",
-    "telefono",
-    "correoelec",
-    "www",
-    "tipo_vial",
-    "nom_vial",
-    "numero_ext",
-    "numero_int",
-    "letra_ext",
-    "letra_int",
-    "edificio",
-    "edificio_e",
-    "nomb_asent",
-    "manzana"
-  ],
+  "columnas_descartadas_por_privacidad": [],
   "puertas": [
     {
       "fuente": "inegi_denue_colima",

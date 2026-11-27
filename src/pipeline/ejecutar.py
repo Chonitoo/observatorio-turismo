@@ -25,6 +25,7 @@ import numpy as np
 import pandas as pd
 
 from . import atipicos, bronce, calidad, faltantes, geo, integracion, linaje, transformacion
+from .io_rapido import escribir_csv
 from . import config as C
 
 
@@ -43,8 +44,10 @@ def _guardar_cuarentena(partes: list[pd.DataFrame]) -> pd.DataFrame:
     if not todas:
         return pd.DataFrame()
     q = pd.concat(todas, ignore_index=True)
-    for fuente, sub in q.groupby("fuente"):
-        sub.dropna(axis=1, how="all").to_csv(C.CUARENTENA / f"{fuente}_cuarentena.csv", index=False)
+    # E3: sin fecha_proceso en el archivo (la fecha de la corrida vive en reports/E1/calidad.json); así el
+    # archivo sólo cambia si cambian los registros en cuarentena y no genera commits espurios.
+    for fuente, sub in q.drop(columns="fecha_proceso", errors="ignore").groupby("fuente"):
+        escribir_csv(sub.dropna(axis=1, how="all"), C.CUARENTENA / f"{fuente}_cuarentena.csv")
     return q
 
 
@@ -70,9 +73,12 @@ def main() -> int:
     resumen_puertas.append(r); cuarentenas.append(in_q)
 
     # ---------------- 3. Faltantes ----------------
-    diag = faltantes.diagnostico(dt_ok)
+    rejilla = faltantes.clasificar_huecos(faltantes.rejilla(dt_ok))   # E3: una sola vez para ambos pasos
+    diag = faltantes.diagnostico(dt_ok, rejilla)
     dt_imp, reg_explicitos = faltantes.imputar_explicitos(dt_ok)
-    dt_imp, huecos = faltantes.imputar_huecos(dt_imp)
+    dt_imp, huecos = faltantes.imputar_huecos(dt_imp, rejilla)
+    diag["huecos_en_choque_no_imputados"] = int((rejilla["tipo_hueco"] == "en_choque").sum())
+    diag["huecos_omitidos_por_inconsistencia"] = huecos.attrs.get("omitidos_inconsistentes", [])
     diag["imputaciones_explicitas"] = reg_explicitos
     diag["huecos_imputados"] = int(len(huecos))
     diag["huecos_imputados_detalle"] = (huecos[["centro", "categoria", "anio", "mes"]].to_dict("records")
@@ -83,9 +89,10 @@ def main() -> int:
     plata, plata_q, r = calidad.puerta(dt_imp, calidad.esquema_datatur("plata"), "datatur", "2_plata")
     resumen_puertas.append(r); cuarentenas.append(plata_q)
     plata = plata.sort_values(["centro", "categoria", "anio", "mes"])
-    plata.to_csv(C.PLATA / "datatur_hoteles.csv", index=False)
-    tc_ok.to_csv(C.PLATA / "banxico_tipo_cambio.csv", index=False, date_format="%Y-%m-%d")
-    in_ok.to_csv(C.PLATA / "banxico_inpc.csv", index=False, date_format="%Y-%m-%d")
+    escribir_csv(plata, C.PLATA / "datatur_hoteles.csv")
+    del dt_raw, dt_ok, dt_imp, rejilla   # E3: libera intermedios grandes antes de las etapas siguientes
+    escribir_csv(tc_ok, C.PLATA / "banxico_tipo_cambio.csv")
+    escribir_csv(in_ok, C.PLATA / "banxico_inpc.csv")
 
     # ---------------- 5. Integración + reducción por agregación ----------------
     destino = integracion.agregar_destino(plata)
@@ -110,7 +117,7 @@ def main() -> int:
     oro, oro_q, r = calidad.puerta(oro, calidad.esquema_oro(), "oro_destino_mes", "3_oro")
     resumen_puertas.append(r); cuarentenas.append(oro_q)
     oro = oro.sort_values(["centro", "periodo"])
-    oro.to_csv(C.ORO / "destino_mes.csv", index=False)
+    escribir_csv(oro, C.ORO / "destino_mes.csv")
     with (C.ORO / "parametros_normalizacion.json").open("w", encoding="utf-8") as f:
         json.dump(params, f, ensure_ascii=False, indent=2)
 
@@ -119,7 +126,7 @@ def main() -> int:
                    + seleccion["seleccionadas"]
                    + ["ocupacion_pct_tratada", "ocupacion_pct_suavizada", "atipico_ocupacion_pct",
                       "id_indicadores", "fecha_ingesta_datatur", "fecha_ingesta_tipo_cambio"])
-    oro[oro["centro"].isin(["Manzanillo", "Colima"])][cols_colima].to_csv(C.ORO / "serie_colima.csv", index=False)
+    escribir_csv(oro[oro["centro"].isin(["Manzanillo", "Colima"])][cols_colima], C.ORO / "serie_colima.csv")
 
     # Nivel categoría para el diseño factorial de E2
     hc = transformacion.agregar_jerarquias(plata.assign(
@@ -131,20 +138,20 @@ def main() -> int:
     hc[["id_oro", "periodo", "anio", "mes", "centro", "tipo_centro", "estado", "region", "categoria", "segmento",
         "temporada", "periodo_covid", "cuartos_disponibles", "ocupacion_pct", "imputado",
         "id_bronce", "archivo_origen", "fila_origen", "fecha_ingesta", "base_imputacion"]
-       ].to_csv(C.ORO / "hotel_categoria_mes.csv", index=False)
+       ].pipe(escribir_csv, C.ORO / "hotel_categoria_mes.csv")
 
     # ---------------- 9. Rama geoespacial (E2): DENUE + Marco Geoestadístico ----------------
     g = geo.ejecutar(plata)
     resumen_puertas += g["puertas"]; cuarentenas += g["cuarentena"]
-    g["plata"].to_csv(C.PLATA / "denue_hospedaje_colima.csv", index=False)
+    escribir_csv(g["plata"], C.PLATA / "denue_hospedaje_colima.csv")
     g["municipios"].to_file(C.PLATA / "municipios_colima.geojson", driver="GeoJSON")
-    g["establecimientos"].to_csv(C.ORO / "establecimientos_hospedaje.csv", index=False)
-    g["municipal"].to_csv(C.ORO / "municipio_hospedaje.csv", index=False)
+    escribir_csv(g["establecimientos"], C.ORO / "establecimientos_hospedaje.csv")
+    escribir_csv(g["municipal"], C.ORO / "municipio_hospedaje.csv")
     _guardar_json(g["resumen"], "geoespacial.json", carpeta="E2")
 
     # ---------------- 10. Linaje Oro → Bronce (E2) ----------------
     lin = linaje.construir(plata, oro, tc_ok, in_ok, extra=[g["linaje"]])
-    lin.to_csv(linaje.ARCHIVO_LINAJE, index=False)
+    escribir_csv(lin, linaje.ARCHIVO_LINAJE)
     ver = linaje.verificar(lin)
     ids_oro = set(oro["id_oro"]) | set(g["establecimientos"]["id_oro"]) | set(g["municipal"]["id_oro"])
     sin_linaje = sorted(ids_oro - set(lin["id_oro"]))

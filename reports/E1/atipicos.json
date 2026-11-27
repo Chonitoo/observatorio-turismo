@@ -1,9 +1,9 @@
 {
   "ocupacion_pct": {
-    "iqr": 1009,
-    "z_robusto": 773,
-    "consenso": 773,
-    "consenso_en_choque_conocido": 598,
+    "iqr": 1010,
+    "z_robusto": 774,
+    "consenso": 774,
+    "consenso_en_choque_conocido": 599,
     "winsorizados": 175,
     "pct_winsorizado": 2.54,
     "ejemplos_winsorizados": [
@@ -83,19 +83,19 @@
         "centro": "Ciudad Juárez",
         "periodo": "2018-02",
         "ocupacion_pct": 73.32,
-        "ocupacion_pct_tratada": 68.57
+        "ocupacion_pct_tratada": 68.04
       },
       {
         "centro": "Ciudad Juárez",
         "periodo": "2021-03",
         "ocupacion_pct": 43.14,
-        "ocupacion_pct_tratada": 45.43
+        "ocupacion_pct_tratada": 46.35
       },
       {
         "centro": "Ciudad Juárez",
         "periodo": "2021-05",
         "ocupacion_pct": 48.28,
-        "ocupacion_pct_tratada": 53.71
+        "ocupacion_pct_tratada": 54.05
       }
     ],
     "ejemplos_choque": [
@@ -162,10 +162,10 @@
     ]
   },
   "estadia_promedio": {
-    "iqr": 831,
-    "z_robusto": 515,
-    "consenso": 515,
-    "consenso_en_choque_conocido": 209,
+    "iqr": 827,
+    "z_robusto": 512,
+    "consenso": 512,
+    "consenso_en_choque_conocido": 206,
     "winsorizados": 306,
     "pct_winsorizado": 4.43,
     "ejemplos_winsorizados": [
@@ -326,7 +326,7 @@
   "isolation_forest": {
     "disponible": true,
     "atipicos": 69,
-    "en_choque_conocido": 21,
+    "en_choque_conocido": 16,
     "contaminacion": 0.01,
     "variables": [
       "ocupacion_pct",

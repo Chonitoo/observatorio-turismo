@@ -54,36 +54,39 @@ def rejilla(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def clasificar_huecos(g: pd.DataFrame) -> pd.DataFrame:
-    """Etiqueta cada hueco como 'interno_corto' (imputable) o 'estructural'."""
-    g = g.sort_values(["centro", "categoria", "periodo"]).copy()
-    g["tipo_hueco"] = pd.NA
-    for _, s in g.groupby(["centro", "categoria"], sort=False):
-        falta = s["falta"].to_numpy()
-        idx = s.index.to_numpy()
-        n, i = len(falta), 0
-        while i < n:
-            if not falta[i]:
-                i += 1
-                continue
-            j = i
-            while j < n and falta[j]:
-                j += 1
-            interno = i > 0 and j < n
-            etiqueta = "interno_corto" if interno and (j - i) <= C.HUECO_MAX_IMPUTABLE else "estructural"
-            g.loc[idx[i:j], "tipo_hueco"] = etiqueta
-            g.loc[idx[i:j], "largo_hueco"] = j - i
-            i = j
+    """Etiqueta cada hueco (racha de meses faltantes) como:
+    * 'interno_corto' - dentro de una serie activa y de hasta HUECO_MAX_IMPUTABLE meses: se imputa (MAR);
+    * 'en_choque'     - interno y corto, pero cae en meses de choque conocido (pandemia): los vecinos no
+                        representan ese periodo, asi que NO se imputa;
+    * 'estructural'   - largo o en los extremos de la serie: no se imputa (MNAR).
+
+    Version vectorizada (E3): identifica rachas con sumas acumuladas en lugar de recorrer fila por fila.
+    """
+    g = g.sort_values(["centro", "categoria", "periodo"]).reset_index(drop=True)
+    serie = g.groupby(["centro", "categoria"], sort=False, observed=True).ngroup()
+    racha = ((g["falta"] != g["falta"].shift()) | (serie != serie.shift())).cumsum()
+    largo = racha.map(racha.value_counts())
+    primera = racha.groupby(serie).transform("min")
+    ultima = racha.groupby(serie).transform("max")
+    interno = (racha != primera) & (racha != ultima)
+    en_choque = g["periodo"].astype(str).isin(C.MESES_COVID).groupby(racha).transform("any")
+    corto = largo <= C.HUECO_MAX_IMPUTABLE
+    tipo = np.select([interno & corto & ~en_choque, interno & corto & en_choque],
+                     ["interno_corto", "en_choque"], "estructural")
+    g["tipo_hueco"] = pd.Series(tipo, index=g.index).where(g["falta"])
+    g["largo_hueco"] = largo.where(g["falta"])
     return g
 
 
-def diagnostico(df: pd.DataFrame) -> dict:
-    """Resumen del mecanismo de faltantes (se guarda en reports/E1/faltantes.json)."""
+def diagnostico(df: pd.DataFrame, g: pd.DataFrame | None = None) -> dict:
+    """Resumen del mecanismo de faltantes (se guarda en reports/E1/faltantes.json).
+    `g` permite reutilizar la rejilla ya clasificada (E3: se calcula una sola vez)."""
     explicitos = {c: int(n) for c, n in df[CONTEOS].isna().sum().items() if n}
     detalle_explicitos = (
         df[df[CONTEOS].isna().any(axis=1)][["anio", "mes", "centro", "categoria"]]
         .to_dict(orient="records")
     )
-    g = clasificar_huecos(rejilla(df))
+    g = clasificar_huecos(rejilla(df)) if g is None else g
     pruebas = {}
     for var in ["anio", "categoria", "tipo_centro"]:
         tabla = pd.crosstab(g[var], g["falta"])
@@ -108,7 +111,8 @@ def diagnostico(df: pd.DataFrame) -> dict:
         "conclusion": (
             "Se rechaza MCAR: la ausencia depende de la categoría (sobre todo 1★ y 'Sin categoría'), "
             "del año (crece después de 2020) y del tipo de centro (más en ciudades). "
-            "Huecos internos de hasta 3 meses se tratan como MAR y se imputan dentro de su serie; "
+            "Huecos internos de hasta 3 meses se tratan como MAR y se imputan dentro de su serie "
+            "(salvo los que caen en meses de pandemia, que no se imputan); "
             "huecos largos o en los extremos son ausencia estructural (MNAR: la categoría no operaba "
             "o salió del monitoreo) y no se imputan."
         ) if mcar_rechazado else "No se rechaza MCAR.",
@@ -121,13 +125,14 @@ def imputar_explicitos(df: pd.DataFrame) -> tuple[pd.DataFrame, list[dict]]:
     df = df.copy()
     df["periodo"] = _periodo(df)
     df["imputado"] = df.get("imputado", False)
+    indice_mes = df["anio"].astype(int) * 12 + df["mes"].astype(int)   # E3: aritmetica entera, sin apply
     registro = []
     for col in [c for c in TASAS if df[c].isna().any()]:
         den = TASAS[col]
         for i in df.index[df[col].isna()]:
             r = df.loc[i]
             vecinos = df[(df.centro == r.centro) & (df.categoria == r.categoria)
-                         & ((df.periodo - r.periodo).apply(lambda x: abs(x.n)) <= 6)
+                         & ((indice_mes - indice_mes[i]).abs() <= 6)
                          & df[col].notna() & (df[den] > 0)]
             razon = float((vecinos[col] / vecinos[den]).median())
             valor = float(np.round(r[den] * razon)) if r[den] > 0 else 0.0
@@ -140,22 +145,39 @@ def imputar_explicitos(df: pd.DataFrame) -> tuple[pd.DataFrame, list[dict]]:
     return df.drop(columns="periodo"), registro
 
 
-def imputar_huecos(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+def _consistente(f: dict) -> bool:
+    """Reglas R1-R4 y R6 de la Puerta de Calidad aplicadas al registro imputado antes de emitirlo."""
+    ocup = f["cuartos_ocupados_residentes"] + f["cuartos_ocupados_no_residentes"]
+    lleg = f["llegada_turistas_residentes"] + f["llegada_turistas_no_residentes"]
+    noch = f["turistas_noche_residentes"] + f["turistas_noche_no_residentes"]
+    return (ocup <= f["cuartos_disponibles"] and (ocup == 0 or lleg > 0) and noch >= lleg
+            and (ocup == 0 or noch <= C.DENSIDAD_MAX * ocup)
+            and (lleg == 0 or noch <= C.ESTADIA_MAX * lleg))
+
+
+def imputar_huecos(df: pd.DataFrame, g: pd.DataFrame | None = None) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Crea los registros de huecos internos cortos interpolando linealmente en el tiempo
-    la oferta (cuartos disponibles) y las tasas de cada serie; los conteos se reconstruyen."""
-    g = clasificar_huecos(rejilla(df))
+    la oferta (cuartos disponibles) y las tasas de cada serie; los conteos se reconstruyen.
+
+    E3: si una tasa no puede interpolarse (vecinos con denominador 0) se usa la mediana de la
+    serie en lugar de 0, y cada registro se valida con R1-R4/R6 antes de emitirse; los que no
+    pasan no se imputan y quedan en `imputados.attrs["omitidos_inconsistentes"]`."""
+    g = clasificar_huecos(rejilla(df)) if g is None else g
     objetivo = g[g["tipo_hueco"] == "interno_corto"]
     if objetivo.empty:
         return df, objetivo
     base = df.assign(periodo=_periodo(df))
-    nuevos = []
+    nuevos, omitidos = [], []
     for (centro, cat), huecos in objetivo.groupby(["centro", "categoria"]):
         s = base[(base.centro == centro) & (base.categoria == cat)].set_index("periodo").sort_index()
         full = s.reindex(pd.period_range(s.index.min(), s.index.max(), freq="M"))
         t = full.index.to_timestamp()
         disp = full["cuartos_disponibles"].set_axis(t).interpolate("time")
-        tasas = {num: (full[num] / full[den].replace(0, np.nan)).set_axis(t).interpolate("time").fillna(0)
-                 for num, den in TASAS.items()}
+        tasas = {}
+        for num, den in TASAS.items():
+            r = (full[num] / full[den].replace(0, np.nan)).set_axis(t)
+            mediana = r.dropna().median() if r.notna().any() else 0.0
+            tasas[num] = r.interpolate("time").fillna(mediana).fillna(0)
         # Linaje: el registro imputado no tiene fila en Bronce; se documentan los registros
         # reales (antes y después del hueco) de los que se interpoló.
         id_prev, id_next = full["id_bronce"].ffill(), full["id_bronce"].bfill()
@@ -176,8 +198,12 @@ def imputar_huecos(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
             for res in ["residentes", "no_residentes"]:
                 fila[f"turistas_noche_{res}"] = max(fila[f"turistas_noche_{res}"], fila[f"llegada_turistas_{res}"])
             fila["imputado"] = True
-            nuevos.append(fila)
+            if _consistente(fila):
+                nuevos.append(fila)
+            else:
+                omitidos.append(f"{centro}|{cat}|{per}")
     imputados = pd.DataFrame(nuevos)
+    imputados.attrs["omitidos_inconsistentes"] = omitidos
     salida = pd.concat([df, imputados], ignore_index=True)
     salida["imputado"] = salida["imputado"].fillna(False).astype(bool)
     return salida, imputados

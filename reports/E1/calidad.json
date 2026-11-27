@@ -1,6 +1,6 @@
 {
-  "fecha_utc": "2026-11-24T01:35:20Z",
-  "duracion_s": 4.2,
+  "fecha_utc": "2026-11-27T18:58:27Z",
+  "duracion_s": 27.4,
   "fuentes": {
     "datatur": "data/bronze/datatur/Base70centros_2026-11-10_manual.csv",
     "banxico_tipo_cambio": "data/bronze/banxico_tipo_cambio_fix/SF43718_tipo_cambio_fix_2026-11-24T013515Z.json",
@@ -14,11 +14,12 @@
       "etapa": "1_entrada",
       "esquema": "datatur_entrada",
       "registros_entrada": 31147,
-      "registros_validos": 31141,
-      "registros_cuarentena": 6,
+      "registros_validos": 31139,
+      "registros_cuarentena": 8,
       "registros_por_regla": {
         "R1: cuartos ocupados mayores que cuartos disponibles": 2,
-        "R2: hay cuartos ocupados pero cero llegadas de turistas": 4
+        "R2: hay cuartos ocupados pero cero llegadas de turistas": 4,
+        "R6: más de 30 noches por turista (llegadas casi nulas frente a las noches)": 2
       }
     },
     {
@@ -43,23 +44,19 @@
       "fuente": "datatur",
       "etapa": "2_plata",
       "esquema": "datatur_plata",
-      "registros_entrada": 31288,
-      "registros_validos": 31287,
-      "registros_cuarentena": 1,
-      "registros_por_regla": {
-        "R2: hay cuartos ocupados pero cero llegadas de turistas": 1
-      }
+      "registros_entrada": 31265,
+      "registros_validos": 31265,
+      "registros_cuarentena": 0,
+      "registros_por_regla": {}
     },
     {
       "fuente": "oro_destino_mes",
       "etapa": "3_oro",
       "esquema": "oro_destino_mes",
       "registros_entrada": 6900,
-      "registros_validos": 6898,
-      "registros_cuarentena": 2,
-      "registros_por_regla": {
-        "estadía fuera de 1-30 noches": 2
-      }
+      "registros_validos": 6900,
+      "registros_cuarentena": 0,
+      "registros_por_regla": {}
     },
     {
       "fuente": "inegi_denue_colima",
@@ -80,15 +77,15 @@
       "registros_por_regla": {}
     }
   ],
-  "cuarentena_total": 9,
+  "cuarentena_total": 8,
   "salidas": {
-    "plata_datatur": 31287,
-    "oro_destino_mes": 6898,
-    "oro_hotel_categoria_mes": 31287,
+    "plata_datatur": 31265,
+    "oro_destino_mes": 6900,
+    "oro_hotel_categoria_mes": 31265,
     "oro_serie_colima": 216,
     "plata_denue_hospedaje": 294,
     "oro_establecimientos_hospedaje": 294,
     "oro_municipio_hospedaje": 10,
-    "linaje_registros": 34505
+    "linaje_registros": 34469
   }
 }

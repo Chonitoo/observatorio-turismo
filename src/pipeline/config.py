@@ -18,6 +18,7 @@ PERIODO_FIN = "2024-12"
 TIPOS_CENTRO = ["Centros de Playa", "Ciudades"]
 CATEGORIAS = ["1 estrella", "2 estrellas", "3 estrellas", "4 estrellas", "5 estrellas", "Sin categoría"]
 DENSIDAD_MAX = 6.0          # turistas-noche por cuarto ocupado (más de 6 personas/cuarto es implausible)
+ESTADIA_MAX = 30.0          # noches por llegada (E3: se valida desde la entrada, no sólo en Oro)
 TIPO_CAMBIO_RANGO = (5.0, 50.0)   # pesos por dólar; fuera de este rango es error de captura
 INPC_RANGO = (50.0, 300.0)        # índice base 2a quincena jul-2018 = 100
 

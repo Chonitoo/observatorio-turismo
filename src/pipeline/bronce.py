@@ -19,7 +19,6 @@ Estas columnas viajan a Plata y se resumen en Oro (ver `linaje.py`).
 from __future__ import annotations
 
 import csv
-import io
 import json
 import zipfile
 
@@ -56,12 +55,17 @@ def _sellar(df: pd.DataFrame, fuente: str, filas) -> pd.DataFrame:
 
 def leer_datatur() -> pd.DataFrame:
     rel = archivo_vigente("datatur")
-    df = pd.read_csv(C.RAIZ / rel, sep="\t", dtype=str, encoding="utf-8")
+    # E3: motor PyArrow (lector CSV en C++, multihilo). Los tipos se infieren; si una columna numérica
+    # trae texto basura llega como objeto y se convierte con coerce (el valor inválido queda nulo y
+    # la Puerta de Calidad lo detecta), igual que antes.
+    df = pd.read_csv(C.RAIZ / rel, sep="\t", encoding="utf-8", engine="pyarrow")
     df.columns = [c.strip().lower() for c in df.columns]
     df = _sellar(df, "datatur", range(2, len(df) + 2))   # fila del archivo crudo (1 = encabezado)
     num = [c for c in df.columns if c.startswith(("cuartos_", "llegada_", "turistas_"))]
     for c in num:
-        df[c] = pd.to_numeric(df[c].str.strip(), errors="coerce")
+        if not pd.api.types.is_numeric_dtype(df[c]):
+            df[c] = pd.to_numeric(df[c].astype(str).str.strip(), errors="coerce")
+        df[c] = df[c].astype(float)
     df["anio"] = pd.to_numeric(df["anio"], errors="coerce").astype("Int64")
     df["mes"] = pd.to_numeric(df["mes"], errors="coerce").astype("Int64")
     for c in ["tipo_centro", "subtipo_centro", "centro", "categoria"]:
@@ -94,12 +98,17 @@ def leer_inpc() -> pd.DataFrame:
 def leer_denue(prefijo_scian: str = "721") -> pd.DataFrame:
     """DENUE de Colima: sólo establecimientos cuyo código SCIAN empieza con `prefijo_scian`
     (721 = servicios de alojamiento temporal). La fila de origen se cuenta sobre el CSV completo."""
+    from .geo import COLS_CONSERVADAS
     rel = archivo_vigente("inegi_denue_colima")
+    # Conflicto de codificación: DENUE viene en latin-1 (DataTur y Banxico en UTF-8).
+    # E3: (1) se lee directo del ZIP como flujo, sin cargar los 22 MB descomprimidos en memoria;
+    #     (2) sólo las columnas que el análisis usa (14 de 42): menos tiempo y memoria, y la
+    #     minimización de datos personales ocurre desde la lectura (los campos de contacto ni se cargan).
     with zipfile.ZipFile(C.RAIZ / rel) as z:
         nombre = next(n for n in z.namelist() if n.startswith("conjunto_de_datos/") and n.endswith(".csv"))
-        raw = z.read(nombre)
-    # Conflicto de codificación: DENUE viene en latin-1 (DataTur y Banxico en UTF-8)
-    df = pd.read_csv(io.BytesIO(raw), dtype=str, encoding="latin-1")
+        with z.open(nombre) as flujo:
+            df = pd.read_csv(flujo, dtype=str, encoding="latin-1",
+                             usecols=lambda c: c.strip() in COLS_CONSERVADAS)
     df.columns = [c.strip() for c in df.columns]
     df = _sellar(df, "inegi_denue_colima", range(2, len(df) + 2))
     df = df[df["codigo_act"].str.startswith(prefijo_scian, na=False)].copy()

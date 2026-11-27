@@ -10,7 +10,7 @@
     "..."
   ],
   "reduccion_agregacion": {
-    "registros_plata": 31287,
+    "registros_plata": 31265,
     "registros_oro": 6900,
     "factor": 4.53
   },
@@ -31,80 +31,80 @@
     "matriz_correlacion": {
       "ocupacion_pct": {
         "ocupacion_pct": 1.0,
-        "estadia_promedio": 0.349,
-        "densidad": 0.043,
-        "pct_no_residentes": 0.379,
-        "cuartos_disponibles": 0.341,
+        "estadia_promedio": 0.481,
+        "densidad": 0.042,
+        "pct_no_residentes": 0.382,
+        "cuartos_disponibles": 0.343,
         "llegadas": 0.429,
-        "tipo_cambio": 0.411,
+        "tipo_cambio": 0.412,
         "inflacion_anual_pct": 0.14
       },
       "estadia_promedio": {
-        "ocupacion_pct": 0.349,
+        "ocupacion_pct": 0.481,
         "estadia_promedio": 1.0,
-        "densidad": 0.155,
-        "pct_no_residentes": 0.496,
-        "cuartos_disponibles": 0.43,
-        "llegadas": 0.24,
-        "tipo_cambio": 0.029,
-        "inflacion_anual_pct": 0.014
+        "densidad": 0.213,
+        "pct_no_residentes": 0.644,
+        "cuartos_disponibles": 0.546,
+        "llegadas": 0.317,
+        "tipo_cambio": 0.006,
+        "inflacion_anual_pct": 0.003
       },
       "densidad": {
-        "ocupacion_pct": 0.043,
-        "estadia_promedio": 0.155,
+        "ocupacion_pct": 0.042,
+        "estadia_promedio": 0.213,
         "densidad": 1.0,
-        "pct_no_residentes": 0.251,
+        "pct_no_residentes": 0.25,
         "cuartos_disponibles": 0.131,
-        "llegadas": 0.2,
-        "tipo_cambio": 0.038,
-        "inflacion_anual_pct": 0.061
+        "llegadas": 0.201,
+        "tipo_cambio": 0.039,
+        "inflacion_anual_pct": 0.062
       },
       "pct_no_residentes": {
-        "ocupacion_pct": 0.379,
-        "estadia_promedio": 0.496,
-        "densidad": 0.251,
+        "ocupacion_pct": 0.382,
+        "estadia_promedio": 0.644,
+        "densidad": 0.25,
         "pct_no_residentes": 1.0,
-        "cuartos_disponibles": 0.487,
-        "llegadas": 0.312,
-        "tipo_cambio": 0.035,
-        "inflacion_anual_pct": 0.017
+        "cuartos_disponibles": 0.488,
+        "llegadas": 0.313,
+        "tipo_cambio": 0.038,
+        "inflacion_anual_pct": 0.018
       },
       "cuartos_disponibles": {
-        "ocupacion_pct": 0.341,
-        "estadia_promedio": 0.43,
+        "ocupacion_pct": 0.343,
+        "estadia_promedio": 0.546,
         "densidad": 0.131,
-        "pct_no_residentes": 0.487,
+        "pct_no_residentes": 0.488,
         "cuartos_disponibles": 1.0,
-        "llegadas": 0.87,
-        "tipo_cambio": 0.002,
-        "inflacion_anual_pct": 0.014
+        "llegadas": 0.871,
+        "tipo_cambio": 0.004,
+        "inflacion_anual_pct": 0.015
       },
       "llegadas": {
         "ocupacion_pct": 0.429,
-        "estadia_promedio": 0.24,
-        "densidad": 0.2,
-        "pct_no_residentes": 0.312,
-        "cuartos_disponibles": 0.87,
+        "estadia_promedio": 0.317,
+        "densidad": 0.201,
+        "pct_no_residentes": 0.313,
+        "cuartos_disponibles": 0.871,
         "llegadas": 1.0,
         "tipo_cambio": 0.111,
         "inflacion_anual_pct": 0.052
       },
       "tipo_cambio": {
-        "ocupacion_pct": 0.411,
-        "estadia_promedio": 0.029,
-        "densidad": 0.038,
-        "pct_no_residentes": 0.035,
-        "cuartos_disponibles": 0.002,
+        "ocupacion_pct": 0.412,
+        "estadia_promedio": 0.006,
+        "densidad": 0.039,
+        "pct_no_residentes": 0.038,
+        "cuartos_disponibles": 0.004,
         "llegadas": 0.111,
         "tipo_cambio": 1.0,
         "inflacion_anual_pct": 0.005
       },
       "inflacion_anual_pct": {
         "ocupacion_pct": 0.14,
-        "estadia_promedio": 0.014,
-        "densidad": 0.061,
-        "pct_no_residentes": 0.017,
-        "cuartos_disponibles": 0.014,
+        "estadia_promedio": 0.003,
+        "densidad": 0.062,
+        "pct_no_residentes": 0.018,
+        "cuartos_disponibles": 0.015,
         "llegadas": 0.052,
         "tipo_cambio": 0.005,
         "inflacion_anual_pct": 1.0

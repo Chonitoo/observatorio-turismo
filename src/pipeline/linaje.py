@@ -95,6 +95,36 @@ def _crudo(archivo: str):
     return pd.DataFrame([ft["properties"] for ft in d["features"]])
 
 
+def _n_filas(archivo: str) -> int:
+    """Número de registros del crudo sin parsearlo completo (E3): cuenta saltos de línea en CSV/ZIP."""
+    ruta = C.RAIZ / archivo
+    if not archivo.endswith((".zip", ".csv")):
+        return len(_crudo(archivo))
+
+    def contar(flujo) -> int:            # por bloques de 1 MB: memoria constante
+        n, ultimo = 0, b"\n"
+        while bloque := flujo.read(1 << 20):
+            n += bloque.count(b"\n")
+            ultimo = bloque[-1:]
+        return n - 1 + (0 if ultimo == b"\n" else 1)
+
+    if archivo.endswith(".zip"):
+        with zipfile.ZipFile(ruta) as z:
+            nombre = next(x for x in z.namelist() if x.startswith("conjunto_de_datos/") and x.endswith(".csv"))
+            with z.open(nombre) as f:
+                return contar(f)
+    with ruta.open("rb") as f:
+        return contar(f)
+
+
+def _sha256(ruta) -> str:
+    h = hashlib.sha256()
+    with open(ruta, "rb") as f:
+        while bloque := f.read(1 << 20):
+            h.update(bloque)
+    return h.hexdigest()
+
+
 def fila_cruda(archivo: str, fila: int) -> dict:
     """Devuelve la fila original del archivo crudo (CSV: fila 2 = primer dato; JSON: posición)."""
     df = _crudo(archivo)
@@ -124,10 +154,10 @@ def verificar(linaje: pd.DataFrame | None = None) -> dict:
         if not ruta.exists():
             problemas.append(f"no existe {a}")
             continue
-        sha = hashlib.sha256(ruta.read_bytes()).hexdigest()
+        sha = _sha256(ruta)
         if a not in cat.index or cat.loc[a, "sha256"] != sha:
             problemas.append(f"huella distinta o no registrada: {a}")
-        n = len(_crudo(a))
+        n = _n_filas(a)
         filas = pd.to_numeric(lin.loc[lin["archivo_origen"] == a, "fila_origen"])
         maximo = n + 1 if a.endswith((".csv", ".zip")) else n - 1
         if filas.max() > maximo:

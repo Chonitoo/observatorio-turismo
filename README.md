@@ -20,9 +20,15 @@ pd.read_csv("https://raw.githubusercontent.com/Chonitoo/observatorio-turismo/mai
 
 ## Dashboard
 
-Tablero para el cliente (hoteleros y Secretaría de Turismo), organizado por preguntas de negocio y en lenguaje simple:
-cómo le fue a Manzanillo, cuándo se llenan los hoteles, cómo va contra la competencia, dónde está la oferta y qué tan
-confiables son los datos. Cada gráfica trae su conclusión (💡) y una recomendación (✅).
+Tablero para el cliente (hoteleros y Secretaría de Turismo), con diseño profesional y en lenguaje simple. Tiene cinco
+pestañas:
+- **Resumen:** indicadores, lo bueno, lo preocupante y la oportunidad.
+- **Planeador de temporadas:** calendario de 12 meses con la acción recomendada y descarga del plan.
+- **Competencia.**
+- **Mapa de hospedaje.**
+- **Confiabilidad.**
+
+Funciona con cualquiera de los 64 destinos. Guía de uso: [docs/GUIA_TABLERO.md](docs/GUIA_TABLERO.md).
 
 ```bash
 python -m venv .venv

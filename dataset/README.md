@@ -6,7 +6,7 @@
 |---|---:|---:|---|
 | `ocupacion_destino_mes.csv` | 6,900 | 31 | Ocupación hotelera mensual por destino turístico (64 destinos, 2016-2024), integrada con tipo de cambio e inflación. |
 | `ocupacion_categoria_mes.csv` | 31,265 | 16 | Ocupación hotelera mensual por destino y categoría (1★-5★), para análisis de factores. |
-| `hospedaje_establecimientos.csv` | 294 | 16 | Establecimientos de hospedaje de Colima (DENUE 2026) con ubicación, tipo y tamaño. Sin datos de contacto. |
+| `hospedaje_establecimientos.csv` | 295 | 16 | Establecimientos de hospedaje de Colima (DENUE 2026) con ubicación, tipo y tamaño. Sin datos de contacto. |
 | `hospedaje_municipios.csv` | 10 | 17 | Oferta de hospedaje por municipio de Colima con densidades por población y superficie. |
 | `indicadores_macro_mes.csv` | 143 | 6 | Tipo de cambio FIX e inflación anual (INPC) mensuales. |
 

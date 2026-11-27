@@ -1,9 +1,9 @@
 "id_registro","clave_municipio","municipio","poblacion_2020","area_km2","establecimientos","pct_oferta_estatal","establecimientos_por_10k_hab","establecimientos_por_100km2","personal_estimado","pct_micro","hoteles","moteles","departamentos_casas","cabanas_villas","pensiones","cuartos_datatur_2024"
-municipio|06007,06007,Manzanillo,191031,1378.9,134,45.6,7.01,9.72,2844,69.4,85,6,22,12,9,4313
-municipio|06002,06002,Colima,157048,741.7,54,18.4,3.44,7.28,716,68.5,40,7,2,1,4,1164
-municipio|06009,06009,Tecomán,116305,923.5,46,15.6,3.96,4.98,369,82.6,31,13,1,0,1,
+municipio|06007,06007,Manzanillo,191031,1378.9,134,45.4,7.01,9.72,2844,69.4,85,6,22,12,9,4313
+municipio|06002,06002,Colima,157048,741.7,54,18.3,3.44,7.28,716,68.5,40,7,2,1,4,1164
+municipio|06009,06009,Tecomán,116305,923.5,47,15.9,4.04,5.09,372,83,32,13,1,0,1,
 municipio|06001,06001,Armería,27626,417.3,27,9.2,9.77,6.47,174,85.2,17,1,0,4,4,
-municipio|06003,06003,Comala,21661,312.2,14,4.8,6.46,4.48,265,71.4,6,0,1,6,1,
+municipio|06003,06003,Comala,21661,312.2,14,4.7,6.46,4.48,265,71.4,6,0,1,6,1,
 municipio|06005,06005,Cuauhtémoc,31267,409.7,8,2.7,2.56,1.95,63,75,4,4,0,0,0,
 municipio|06010,06010,Villa de Álvarez,149762,285.9,5,1.7,0.33,1.75,74,60,4,1,0,0,0,
 municipio|06008,06008,Minatitlán,10231,412.5,4,1.4,3.91,0.97,29,75,2,0,0,0,2,

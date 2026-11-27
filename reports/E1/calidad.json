@@ -1,11 +1,11 @@
 {
-  "fecha_utc": "2026-11-27T19:31:47Z",
-  "duracion_s": 6.3,
+  "fecha_utc": "2026-11-27T22:09:50Z",
+  "duracion_s": 7.4,
   "fuentes": {
     "datatur": "data/bronze/datatur/Base70centros_2026-11-10_manual.csv",
-    "banxico_tipo_cambio": "data/bronze/banxico_tipo_cambio_fix/SF43718_tipo_cambio_fix_2026-11-24T013515Z.json",
+    "banxico_tipo_cambio": "data/bronze/banxico_tipo_cambio_fix/SF43718_tipo_cambio_fix_2026-11-27T214919Z.json",
     "banxico_inpc": "data/bronze/banxico_inpc/SP1_inpc_2026-11-14T170345Z.json",
-    "inegi_denue_colima": "data/bronze/inegi_denue_colima/denue_06_csv_2026-11-23T022328Z.zip",
+    "inegi_denue_colima": "data/bronze/inegi_denue_colima/denue_06_csv_2026-11-27T214923Z.zip",
     "inegi_mg_municipios": "data/bronze/inegi_mg_municipios/mgem_06_colima_2026-11-23T022329Z.geojson"
   },
   "puertas": [
@@ -26,8 +26,8 @@
       "fuente": "banxico_tipo_cambio",
       "etapa": "1_entrada",
       "esquema": "banxico_tipo_cambio",
-      "registros_entrada": 2990,
-      "registros_validos": 2990,
+      "registros_entrada": 2994,
+      "registros_validos": 2994,
       "registros_cuarentena": 0,
       "registros_por_regla": {}
     },
@@ -62,8 +62,8 @@
       "fuente": "inegi_denue_colima",
       "etapa": "G1_entrada",
       "esquema": "denue_hospedaje",
-      "registros_entrada": 294,
-      "registros_validos": 294,
+      "registros_entrada": 295,
+      "registros_validos": 295,
       "registros_cuarentena": 0,
       "registros_por_regla": {}
     },
@@ -71,8 +71,8 @@
       "fuente": "inegi_denue_colima",
       "etapa": "G2_plata",
       "esquema": "denue_hospedaje_plata",
-      "registros_entrada": 294,
-      "registros_validos": 294,
+      "registros_entrada": 295,
+      "registros_validos": 295,
       "registros_cuarentena": 0,
       "registros_por_regla": {}
     }
@@ -83,9 +83,9 @@
     "oro_destino_mes": 6900,
     "oro_hotel_categoria_mes": 31265,
     "oro_serie_colima": 216,
-    "plata_denue_hospedaje": 294,
-    "oro_establecimientos_hospedaje": 294,
+    "plata_denue_hospedaje": 295,
+    "oro_establecimientos_hospedaje": 295,
     "oro_municipio_hospedaje": 10,
-    "linaje_registros": 34469
+    "linaje_registros": 34471
   }
 }

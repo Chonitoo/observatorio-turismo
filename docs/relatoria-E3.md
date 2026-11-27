@@ -74,6 +74,17 @@ menos.
 la mitad. En GitHub Actions nunca había pasado, pero en una computadora real sí puede pasar. Se agregó escritura
 atómica con reintentos.
 
+**El mundo real cambió durante la entrega.** Al validar en GitHub Actions pasaron dos cosas:
+1. Las pruebas fallaron porque PyArrow no estaba declarado en `requirements.txt`. En mi computadora funcionaba
+   porque otro paquete lo había instalado; en el servidor limpio no. Se confirmó instalando en un entorno virtual
+   limpio.
+2. En la siguiente corrida el INEGI publicó **ese mismo día** una edición nueva del DENUE (11/2026) con los nombres
+   de columna en MAYÚSCULAS, y el pipeline se detuvo.
+
+Se normalizaron los nombres y se agregó una verificación explícita de esquema. La edición del DENUE ahora se lee de
+sus metadatos para citarla correctamente. Es la razón de ser de una máquina de captura automática: las fuentes
+cambian sin avisar.
+
 ## 5. Problemas encontrados
 
 | Problema | Solución |
@@ -84,6 +95,8 @@ atómica con reintentos.
 | `RuntimeWarning: Mean of empty slice` al calcular la mediana de una serie vacía | Se protege el caso vacío; el pipeline corre sin avisos incluso con `-W error` |
 | El `datapackage.json` no pasaba la validación de Frictionless | Faltaba declarar cada tabla como `tabular-data-resource` |
 | Git podía cambiar los saltos de línea y romper las sumas SHA-256 publicadas | `dataset/** -text` en `.gitattributes` |
+| Pruebas fallidas en Actions: faltaba `pyarrow` en `requirements.txt` | Se declaró y se verificó en un entorno virtual limpio |
+| El INEGI cambió el esquema del DENUE (encabezados en MAYÚSCULAS) | Normalización de nombres + verificación de esquema con mensaje claro |
 
 ## 6. Aprendizajes
 
@@ -106,7 +119,7 @@ memoria que utiliza.
 |---|---|---|
 | Q1 · Corridas de Actions en verde | ≥ 95 % | `[completar al cerrar]` |
 | Q2 · Trazabilidad completa | 100 % | 100 %: linaje íntegro y dataset con `id_registro` rastreable |
-| Q3a · Defectos que llegan a `main` | ≤ 10 / KLOC | 1 (un cambio al benchmark quedó fuera de un commit y se completó en el siguiente); 8 registrados en total |
+| Q3a · Defectos que llegan a `main` | ≤ 10 / KLOC | 2 (un cambio al benchmark incompleto y `pyarrow` sin declarar) sobre ~2.5 KLOC ≈ 0.8 / KLOC; 10 registrados en total |
 
 ## 8. Siguientes pasos
 

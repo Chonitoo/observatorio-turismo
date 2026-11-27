@@ -85,7 +85,9 @@ def _crudo(archivo: str):
     if archivo.endswith(".zip"):
         with zipfile.ZipFile(ruta) as z:
             n = next(x for x in z.namelist() if x.startswith("conjunto_de_datos/") and x.endswith(".csv"))
-            return pd.read_csv(io.BytesIO(z.read(n)), dtype=str, encoding="latin-1")
+            d = pd.read_csv(io.BytesIO(z.read(n)), dtype=str, encoding="latin-1")
+            d.columns = [c.strip().lower() for c in d.columns]   # el DENUE cambió a MAYÚSCULAS en 11/2026
+            return d
     if archivo.endswith(".csv"):
         return pd.read_csv(ruta, sep="\t", dtype=str, encoding="utf-8")
     with ruta.open(encoding="utf-8") as f:

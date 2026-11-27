@@ -209,6 +209,8 @@ def _tipo_frictionless(t: str) -> str:
 
 
 def publicar() -> dict:
+    edicion = json.loads((C.RAIZ / "reports" / "E2" / "geoespacial.json").read_text(encoding="utf-8")).get(
+        "edicion_denue", "vigente")
     tablas = construir_tablas()
     filas = validar(tablas)
 
@@ -242,7 +244,7 @@ def publicar() -> dict:
              "path": "https://www.datos.gob.mx/dataset/ocupacion_hotelera_70_destinos_principales_monitoreados_datatur"},
             {"title": "Banco de México, Sistema de Información Económica: SF43718 (FIX) y SP1 (INPC)",
              "path": "https://www.banxico.org.mx/SieAPIRest/service/v1/"},
-            {"title": "INEGI, Directorio Estadístico Nacional de Unidades Económicas (DENUE) 05/2026",
+            {"title": f"INEGI, Directorio Estadístico Nacional de Unidades Económicas (DENUE) {edicion}",
              "path": "https://www.inegi.org.mx/app/descarga/?ti=6"},
             {"title": "INEGI, Marco Geoestadístico dic-2025; Censo de Población y Vivienda 2020",
              "path": "https://gaia.inegi.org.mx/wscatgeo/v2/geo/mgem/06"},
@@ -278,7 +280,7 @@ des el crédito correspondiente:
 
 - **SECTUR, DataTur**: *Ocupación hotelera en los 70 destinos principales monitoreados*, datos.gob.mx, CC BY 4.0.
 - **Banco de México**: Sistema de Información Económica (SIE), series SF43718 y SP1.
-- **Fuente: INEGI**, Directorio Estadístico Nacional de Unidades Económicas (DENUE) 05/2026, y Marco
+- **Fuente: INEGI**, Directorio Estadístico Nacional de Unidades Económicas (DENUE) {edicion}, y Marco
   Geoestadístico dic-2025 / Censo de Población y Vivienda 2020 (Términos de Libre Uso de la Información del INEGI).
 
 Este dataset es **elaboración propia**: los datos fueron limpiados, validados, imputados (cuando se indica),

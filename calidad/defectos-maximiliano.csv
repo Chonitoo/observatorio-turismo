@@ -21,3 +21,5 @@ fecha,id,tipo,fase_inyeccion,fase_remocion,tiempo_correccion_min,defecto_relacio
 2026-11-27,20,30-Construccion,CODE,REV,10,,"Un script de cambios falló por escapado y el commit quedó incompleto; se completó en el siguiente"
 2026-11-27,21,10-Documentacion,DOC,REV,3,,"Etiquetas del gráfico de errores encimadas"
 2026-11-27,22,10-Documentacion,DOC,TEST,2,,"Descripciones del diccionario demasiado cortas detectadas por prueba"
+2026-11-27,23,30-Construccion,CODE,TEST,10,,"pyarrow no estaba en requirements.txt: las pruebas fallaron en GitHub Actions; verificado en venv limpio"
+2026-11-27,24,50-Interfaz,DLD,TEST,15,,"El INEGI publicó el DENUE 11/2026 con encabezados en MAYÚSCULAS y el pipeline se detuvo; normalización y verificación de esquema"

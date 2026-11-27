@@ -69,6 +69,7 @@ Tiempo por etapa (instrumentado): escritura **−98 %**, lectura de Bronce **−
 | E2 | Imputación: tasas sin interpolar usan la mediana de la serie (no 0) y **cada registro imputado se valida** antes de emitirse | una imputación creaba un registro con cuartos ocupados y cero llegadas (Ciudad Juárez 2★, may-2017) | imputaciones inválidas: 1 → 0 |
 | E3 | No se imputan huecos en meses de pandemia | se interpolaba entre marzo y junio de 2020, inventando ocupación durante los cierres | 23 huecos dejan de imputarse (corrección de exactitud) |
 | E4 | La cuarentena se escribe sin `fecha_proceso` | los archivos cambiaban en cada corrida y generaban commits espurios | 2 → 0 archivos no deterministas |
+| E6 | Nombres de columna del DENUE normalizados a minúsculas y verificación explícita de esquema | en la validación final en GitHub Actions, el INEGI publicó la edición 11/2026 del DENUE con encabezados en MAYÚSCULAS y el pipeline se detuvo (`KeyError: 'codigo_act'`) | el pipeline acepta la nueva edición (295 establecimientos) y, si falta una columna, se detiene con un mensaje claro de "cambio de esquema" |
 | E5 | Escritura **atómica** con reintentos | durante el benchmark, Windows bloqueó un archivo de salida (WinError 1224) y el pipeline se cayó | el pipeline ya no aborta ni deja archivos a medias |
 
 ### Validación de que la optimización no cambió los resultados
@@ -86,7 +87,7 @@ Tiempo por etapa (instrumentado): escritura **−98 %**, lectura de Bronce **−
 |---|---:|---|
 | `ocupacion_destino_mes.csv` | 6,900 | ocupación por destino y mes, integrada con tipo de cambio e inflación |
 | `ocupacion_categoria_mes.csv` | 31,265 | ocupación por destino, categoría y mes |
-| `hospedaje_establecimientos.csv` | 294 | establecimientos de hospedaje de Colima (sin datos de contacto) |
+| `hospedaje_establecimientos.csv` | 295 | establecimientos de hospedaje de Colima (sin datos de contacto) |
 | `hospedaje_municipios.csv` | 10 | oferta de hospedaje por municipio |
 | `indicadores_macro_mes.csv` | 143 | tipo de cambio FIX e inflación anual |
 

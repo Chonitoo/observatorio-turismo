@@ -1,15 +1,16 @@
 {
-  "archivo_denue": "data/bronze/inegi_denue_colima/denue_06_csv_2026-11-23T022328Z.zip",
+  "archivo_denue": "data/bronze/inegi_denue_colima/denue_06_csv_2026-11-27T214923Z.zip",
   "archivo_marco_geoestadistico": "data/bronze/inegi_mg_municipios/mgem_06_colima_2026-11-23T022329Z.geojson",
-  "denue_hospedaje_bronce": 294,
+  "edicion_denue": "11/2026",
+  "denue_hospedaje_bronce": 295,
   "columnas_descartadas_por_privacidad": [],
   "puertas": [
     {
       "fuente": "inegi_denue_colima",
       "etapa": "G1_entrada",
       "esquema": "denue_hospedaje",
-      "registros_entrada": 294,
-      "registros_validos": 294,
+      "registros_entrada": 295,
+      "registros_validos": 295,
       "registros_cuarentena": 0,
       "registros_por_regla": {}
     },
@@ -17,8 +18,8 @@
       "fuente": "inegi_denue_colima",
       "etapa": "G2_plata",
       "esquema": "denue_hospedaje_plata",
-      "registros_entrada": 294,
-      "registros_validos": 294,
+      "registros_entrada": 295,
+      "registros_validos": 295,
       "registros_cuarentena": 0,
       "registros_por_regla": {}
     }
@@ -33,7 +34,7 @@
     }
   ],
   "por_tipo": {
-    "Hotel": 189,
+    "Hotel": 190,
     "Motel": 32,
     "Departamento o casa amueblada": 26,
     "Cabañas y villas": 24,
@@ -41,7 +42,7 @@
     "Campamento o albergue": 1
   },
   "por_tamano": {
-    "Micro": 215,
+    "Micro": 216,
     "Pequeño": 66,
     "Mediano": 9,
     "Grande": 4

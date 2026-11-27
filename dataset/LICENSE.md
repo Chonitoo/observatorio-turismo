@@ -13,7 +13,7 @@ des el crédito correspondiente:
 
 - **SECTUR, DataTur**: *Ocupación hotelera en los 70 destinos principales monitoreados*, datos.gob.mx, CC BY 4.0.
 - **Banco de México**: Sistema de Información Económica (SIE), series SF43718 y SP1.
-- **Fuente: INEGI**, Directorio Estadístico Nacional de Unidades Económicas (DENUE) 05/2026, y Marco
+- **Fuente: INEGI**, Directorio Estadístico Nacional de Unidades Económicas (DENUE) 11/2026, y Marco
   Geoestadístico dic-2025 / Censo de Población y Vivienda 2020 (Términos de Libre Uso de la Información del INEGI).
 
 Este dataset es **elaboración propia**: los datos fueron limpiados, validados, imputados (cuando se indica),

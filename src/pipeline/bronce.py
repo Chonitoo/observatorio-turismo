@@ -104,17 +104,34 @@ def leer_denue(prefijo_scian: str = "721") -> pd.DataFrame:
     # E3: (1) se lee directo del ZIP como flujo, sin cargar los 22 MB descomprimidos en memoria;
     #     (2) sólo las columnas que el análisis usa (14 de 42): menos tiempo y memoria, y la
     #     minimización de datos personales ocurre desde la lectura (los campos de contacto ni se cargan).
+    #     (3) los nombres se normalizan a minúsculas: la edición 11/2026 del DENUE cambió los
+    #     encabezados a MAYÚSCULAS (CODIGO_ACT) y el pipeline se detuvo en GitHub Actions.
     with zipfile.ZipFile(C.RAIZ / rel) as z:
         nombre = next(n for n in z.namelist() if n.startswith("conjunto_de_datos/") and n.endswith(".csv"))
         with z.open(nombre) as flujo:
             df = pd.read_csv(flujo, dtype=str, encoding="latin-1",
-                             usecols=lambda c: c.strip() in COLS_CONSERVADAS)
-    df.columns = [c.strip() for c in df.columns]
+                             usecols=lambda c: c.strip().lower() in COLS_CONSERVADAS)
+    df.columns = [c.strip().lower() for c in df.columns]
+    faltan = [c for c in COLS_CONSERVADAS if c not in df.columns]
+    if faltan:
+        raise RuntimeError(f"Cambio de esquema en el DENUE ({rel}): faltan las columnas {faltan}. "
+                           "Revisar el diccionario de datos de la nueva edición y actualizar geo.COLS_CONSERVADAS.")
     df = _sellar(df, "inegi_denue_colima", range(2, len(df) + 2))
     df = df[df["codigo_act"].str.startswith(prefijo_scian, na=False)].copy()
     df["latitud"] = pd.to_numeric(df["latitud"], errors="coerce")
     df["longitud"] = pd.to_numeric(df["longitud"], errors="coerce")
     return df
+
+
+def edicion_denue() -> str:
+    """Edición del DENUE vigente según sus metadatos (p. ej. '11/2026'), para citarla correctamente."""
+    import re
+    rel = archivo_vigente("inegi_denue_colima")
+    with zipfile.ZipFile(C.RAIZ / rel) as z:
+        meta = next((n for n in z.namelist() if n.startswith("metadatos/")), None)
+        texto = z.read(meta).decode("latin-1") if meta else ""
+    m = re.search(r"\(DENUE\)\s*(\d{2})_(\d{4})", texto)
+    return f"{m.group(1)}/{m.group(2)}" if m else "edición desconocida"
 
 
 def leer_municipios():

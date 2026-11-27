@@ -40,7 +40,7 @@ PER_OCU = {  # estrato de personal ocupado → (tamaño, punto medio para estima
     "251 y más personas": ("Grande", 300),
 }
 COLS_CONSERVADAS = ["id", "clee", "codigo_act", "nombre_act", "per_ocu", "cve_ent", "cve_mun",
-                    "municipio", "cve_loc", "localidad", "tipoUniEco", "latitud", "longitud", "fecha_alta"]
+                    "municipio", "cve_loc", "localidad", "tipounieco", "latitud", "longitud", "fecha_alta"]
 COLS_DESCARTADAS_PRIVACIDAD = ["nom_estab", "raz_social", "telefono", "correoelec", "www", "tipo_vial",
                                "nom_vial", "numero_ext", "numero_int", "letra_ext", "letra_int",
                                "edificio", "edificio_e", "nomb_asent", "manzana"]
@@ -168,6 +168,7 @@ def ejecutar(plata_datatur: pd.DataFrame) -> dict:
     resumen = {
         "archivo_denue": bronce.archivo_vigente("inegi_denue_colima"),
         "archivo_marco_geoestadistico": bronce.archivo_vigente("inegi_mg_municipios"),
+        "edicion_denue": bronce.edicion_denue(),
         "denue_hospedaje_bronce": int(len(crudo)),
         "columnas_descartadas_por_privacidad": quitadas,
         "puertas": [r1, r2],

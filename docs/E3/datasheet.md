@@ -39,7 +39,7 @@ Nadie: es un proyecto académico sin financiamiento.
 |---|---|---:|---:|---|
 | `ocupacion_destino_mes` | un destino turístico en un mes | 6,900 | 31 | 2016-01 a 2024-12 |
 | `ocupacion_categoria_mes` | una categoría hotelera (1★–5★) de un destino en un mes | 31,265 | 16 | 2016-01 a 2024-12 |
-| `hospedaje_establecimientos` | un establecimiento de hospedaje de Colima | 294 | 16 | DENUE 05/2026 |
+| `hospedaje_establecimientos` | un establecimiento de hospedaje de Colima | 295 | 16 | DENUE 11/2026 |
 | `hospedaje_municipios` | un municipio de Colima | 10 | 17 | DENUE 2026, Censo 2020 |
 | `indicadores_macro_mes` | un mes (indicadores nacionales) | 143 | 6 | 2015-01 a 2026-11 |
 
@@ -99,7 +99,7 @@ establecimiento. No contiene información sobre personas.
 |---|---|---|
 | SECTUR, DataTur (CC BY 4.0) | descarga del CSV `Base70centros.csv`. El servidor bloquea clientes automatizados fuera de México: la serie se descargó manualmente desde un navegador en México (10/11/2026); el bloqueo automático se registra y **no se evade** | mensual |
 | Banco de México, API SIE | API REST con token personal (series SF43718 y SP1) | semanal (GitHub Actions) |
-| INEGI, DENUE 05/2026 | descarga masiva pública `denue_06_csv.zip` | anual; se verifica cada semana por SHA-256 |
+| INEGI, DENUE 11/2026 (la edición se lee de los metadatos del ZIP) | descarga masiva pública `denue_06_csv.zip` | semestral/anual; se verifica cada semana por SHA-256 |
 | INEGI, Marco Geoestadístico dic-2025 | servicio web wscatgeo (GeoJSON) | anual |
 
 **¿Quién participó y cómo?** Un extractor automático que respeta `robots.txt` (RFC 9309), se identifica con un

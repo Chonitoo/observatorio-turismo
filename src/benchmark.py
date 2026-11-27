@@ -35,6 +35,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[1]
 DESTINO = RAIZ / "reports" / "E3"
 CARPETAS_SALIDA = ["data/silver", "data/gold", "data/quarantine"]
+N_PERFIL = 3   # corridas instrumentadas por versión (cProfile + tracemalloc); se reporta la mediana
 
 # Funciones del pipeline cuyo tiempo acumulado se reporta como "etapa"
 ETAPAS = {
@@ -128,16 +129,21 @@ def _corridas(raiz: Path, repeticiones: int, etiqueta: str):
         print(f"  [{etiqueta}] corrida {i + 1}/{repeticiones}: {r['tiempo_s']:.2f} s · "
               f"RSS {r['pico_rss_mb']:.0f} MB · avisos {len(r['avisos'])}", flush=True)
         yield
-    estado["perfil"] = _una_corrida(perfilar=True, raiz=raiz)
+    estado["perfiles"] = []
+    for _ in range(N_PERFIL):   # corridas instrumentadas: se usa la mediana por etapa
+        estado["perfiles"].append(_una_corrida(perfilar=True, raiz=raiz))
+        yield
     yield estado
 
 
 def _resultado(etiqueta: str, raiz: Path, estado: dict, modo: str) -> dict:
-    corridas, perfil, espurios = estado["corridas"], estado["perfil"], estado["espurios"]
+    corridas, perfiles, espurios = estado["corridas"], estado["perfiles"], estado["espurios"]
     tiempos = [c["tiempo_s"] for c in corridas]
-    total_perfil = perfil["tiempo_s"]
-    etapas = {e: round(sum(perfil["funciones"].get(n, 0.0) for n in nombres), 3) for e, nombres in ETAPAS.items()}
+    total_perfil = statistics.median(p["tiempo_s"] for p in perfiles)
+    etapas = {e: round(statistics.median(sum(p["funciones"].get(n, 0.0) for n in nombres) for p in perfiles), 3)
+              for e, nombres in ETAPAS.items()}
     etapas_pct = {e: round(100 * v / total_perfil, 1) for e, v in etapas.items()}
+    perfil = perfiles[-1]
     avisos = corridas[-1]["avisos"]
     tipos = {}
     for cat, *_ in avisos:
@@ -161,7 +167,8 @@ def _resultado(etiqueta: str, raiz: Path, estado: dict, modo: str) -> dict:
         "tiempo_por_etapa_pct": etapas_pct,
         "tiempo_instrumentado_s": round(total_perfil, 2),
         "memoria_mb": {"pico_rss_mediana": round(statistics.median(c["pico_rss_mb"] for c in corridas), 1),
-                       "pico_python_mediana": round(perfil["pico_python_mb"], 1)},
+                       "pico_python_mediana": round(statistics.median(p["pico_python_mb"] for p in perfiles), 1)},
+        "corridas_instrumentadas": len(perfiles),
         "errores": {
             "avisos_total": len(avisos), "avisos_por_tipo": tipos, "avisos_distintos": unicos[:40],
             "archivos_que_cambian_sin_datos_nuevos": espurios[-1] if espurios else [],
@@ -197,7 +204,7 @@ def medir_ab(ref: str, repeticiones: int) -> tuple[dict, dict]:
     try:
         ga, gd = _corridas(wt, repeticiones, "antes"), _corridas(RAIZ, repeticiones, "despues")
         ea = ed = None
-        for _ in range(repeticiones + 1):           # alterna A, B, A, B, ... (+ corrida perfilada final)
+        for _ in range(repeticiones + N_PERFIL + 1):   # alterna A, B, A, B, ... (limpias y luego perfiladas)
             ea = next(ga)
             ed = next(gd)
         antes = _resultado("antes", wt, ea, f"A/B intercalado contra {ref}")
@@ -249,7 +256,9 @@ def comparar() -> dict:
     md = (f"# Comparativa antes vs. después\n\nAntes: commit `{a['commit']}` · Después: commit `{d['commit']}` · "
           f"{d['repeticiones']} repeticiones por versión, cada una en un proceso nuevo · "
           f"{d['entorno']['so']}, Python {d['entorno']['python']}\n\n## Métricas principales\n\n{tabla(filas)}\n\n"
-          f"## Tiempo por etapa (mediana, tiempo acumulado de cProfile)\n\n{tabla(etapas)}\n")
+          f"## Tiempo por etapa (mediana de {N_PERFIL} corridas instrumentadas con cProfile; los valores "
+          f"absolutos están inflados por el perfilador y sirven para comparar entre versiones)\n\n"
+          f"{tabla(etapas)}\n")
     (DESTINO / "comparativa.md").write_text(md, encoding="utf-8")
     print(md)
     return out

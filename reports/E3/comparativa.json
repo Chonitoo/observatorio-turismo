@@ -1,11 +1,11 @@
 {
   "antes": {
     "commit": "d8ba5e4",
-    "fecha": "2026-11-27T19:10:13Z"
+    "fecha": "2026-11-27T19:22:36Z"
   },
   "despues": {
-    "commit": "cd68304",
-    "fecha": "2026-11-27T19:10:13Z"
+    "commit": "230bea0",
+    "fecha": "2026-11-27T19:22:37Z"
   },
   "entorno": {
     "python": "3.12.10",
@@ -17,18 +17,18 @@
   "metricas": [
     {
       "metrica": "Tiempo total (mediana)",
-      "antes": 11.984,
-      "despues": 7.164,
+      "antes": 14.24,
+      "despues": 9.608,
       "unidad": "s",
-      "cambio_pct": -40.2,
+      "cambio_pct": -32.5,
       "mejora": true
     },
     {
       "metrica": "Memoria pico del proceso (RSS)",
-      "antes": 352.1,
-      "despues": 315.1,
+      "antes": 352.4,
+      "despues": 313.3,
       "unidad": "MB",
-      "cambio_pct": -10.5,
+      "cambio_pct": -11.1,
       "mejora": true
     },
     {
@@ -74,18 +74,18 @@
     {
       "metrica": "Tamaño en disco: data/silver",
       "antes": 9.78,
-      "despues": 9.85,
+      "despues": 9.33,
       "unidad": "MB",
-      "cambio_pct": 0.7,
-      "mejora": false
+      "cambio_pct": -4.6,
+      "mejora": true
     },
     {
       "metrica": "Tamaño en disco: data/gold",
       "antes": 22.12,
-      "despues": 23.55,
+      "despues": 21.9,
       "unidad": "MB",
-      "cambio_pct": 6.5,
-      "mejora": false
+      "cambio_pct": -1.0,
+      "mejora": true
     },
     {
       "metrica": "Tamaño en disco: data/quarantine",
@@ -99,74 +99,74 @@
   "etapas": [
     {
       "metrica": "Etapa: lectura_bronce",
-      "antes": 8.981,
-      "despues": 3.275,
+      "antes": 6.084,
+      "despues": 1.778,
       "unidad": "s (instrumentado)",
-      "cambio_pct": -63.5,
+      "cambio_pct": -70.8,
       "mejora": true
     },
     {
       "metrica": "Etapa: puertas_calidad",
-      "antes": 5.484,
-      "despues": 4.402,
+      "antes": 3.815,
+      "despues": 2.895,
       "unidad": "s (instrumentado)",
-      "cambio_pct": -19.7,
+      "cambio_pct": -24.1,
       "mejora": true
     },
     {
       "metrica": "Etapa: faltantes",
-      "antes": 11.919,
-      "despues": 4.186,
+      "antes": 8.228,
+      "despues": 4.235,
       "unidad": "s (instrumentado)",
-      "cambio_pct": -64.9,
+      "cambio_pct": -48.5,
       "mejora": true
     },
     {
       "metrica": "Etapa: integracion",
-      "antes": 2.743,
-      "despues": 5.656,
+      "antes": 3.69,
+      "despues": 3.44,
       "unidad": "s (instrumentado)",
-      "cambio_pct": 106.2,
-      "mejora": false
+      "cambio_pct": -6.8,
+      "mejora": true
     },
     {
       "metrica": "Etapa: atipicos",
-      "antes": 10.767,
-      "despues": 17.643,
+      "antes": 13.063,
+      "despues": 8.621,
       "unidad": "s (instrumentado)",
-      "cambio_pct": 63.9,
-      "mejora": false
+      "cambio_pct": -34.0,
+      "mejora": true
     },
     {
       "metrica": "Etapa: transformacion",
-      "antes": 1.752,
-      "despues": 2.557,
+      "antes": 1.239,
+      "despues": 1.262,
       "unidad": "s (instrumentado)",
-      "cambio_pct": 45.9,
+      "cambio_pct": 1.9,
       "mejora": false
     },
     {
       "metrica": "Etapa: geoespacial",
-      "antes": 0.411,
-      "despues": 0.468,
+      "antes": 0.281,
+      "despues": 0.255,
       "unidad": "s (instrumentado)",
-      "cambio_pct": 13.9,
-      "mejora": false
+      "cambio_pct": -9.3,
+      "mejora": true
     },
     {
       "metrica": "Etapa: linaje",
-      "antes": 3.836,
-      "despues": 2.142,
+      "antes": 2.411,
+      "despues": 1.149,
       "unidad": "s (instrumentado)",
-      "cambio_pct": -44.2,
+      "cambio_pct": -52.3,
       "mejora": true
     },
     {
       "metrica": "Etapa: escritura",
-      "antes": 10.433,
-      "despues": 0.22,
+      "antes": 9.251,
+      "despues": 0.152,
       "unidad": "s (instrumentado)",
-      "cambio_pct": -97.9,
+      "cambio_pct": -98.4,
       "mejora": true
     }
   ]

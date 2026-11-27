@@ -87,12 +87,18 @@ atómica con reintentos.
 
 ## 6. Aprendizajes
 
-> ✏️ *Sección para que el autor la redacte con su propia reflexión. Ideas de partida:*
+**Medir antes de mejorar.** Implementamos herramientas de medición para saber cuánto tarda el sistema en procesar
+los datos, monitorear la memoria que usa y contar los tipos de errores que produce.
 
-- `[Por qué hay que medir antes de optimizar, y qué me sorprendió de dónde se iba el tiempo]`
-- `[La diferencia entre que un programa "no falle" y que "no tenga errores"]`
-- `[Por qué una optimización tiene que demostrar que no cambió los resultados]`
-- `[Qué necesita un dataset para que otra persona lo pueda usar con confianza (licencia, diccionario, datasheet)]`
+**Medir bien no es tan sencillo.** Al principio se me complicó, porque algunas mediciones salían muy extremas: la
+misma herramienta de medición hacía más lento al sistema. Por eso separamos las corridas de medición de las de
+análisis, y corrimos varias veces cada versión para compararlas y obtener resultados confiables.
+
+**Encontrar lo que realmente era lento.** Las comparaciones mostraron qué frenaba al sistema: guardar los archivos
+CSV, calcular los meses faltantes uno por uno y leer completo el DENUE en memoria.
+
+**El resultado.** Con eso pudimos hacer el proceso más sencillo y rápido, reduciendo los segundos de trabajo y la
+memoria que utiliza.
 
 ## 7. Indicadores del proceso (PSP)
 

@@ -117,9 +117,9 @@ memoria que utiliza.
 
 | Indicador | Meta | Resultado E3 |
 |---|---|---|
-| Q1 · Corridas de Actions en verde | ≥ 95 % | `[completar al cerrar]` |
+| Q1 · Corridas de Actions en verde | ≥ 95 % | **75 %** (6 de 8 acumuladas; ⚠️ meta no cumplida). Las 2 fallas (#6 y #7) detectaron problemas reales: `pyarrow` sin declarar y el cambio de esquema del DENUE. Ambos se corrigieron y la corrida #8 salió en verde. Acción: probar en un entorno virtual limpio antes de subir cambios de dependencias. |
 | Q2 · Trazabilidad completa | 100 % | 100 %: linaje íntegro y dataset con `id_registro` rastreable |
-| Q3a · Defectos que llegan a `main` | ≤ 10 / KLOC | 2 (un cambio al benchmark incompleto y `pyarrow` sin declarar) sobre ~2.5 KLOC ≈ 0.8 / KLOC; 10 registrados en total |
+| Q3a · Defectos que llegan a `main` | ≤ 10 / KLOC | 2 (un cambio al benchmark incompleto y `pyarrow` sin declarar) sobre ~2.5 KLOC ≈ 0.8 / KLOC; 11 registrados en total |
 
 ## 8. Siguientes pasos
 

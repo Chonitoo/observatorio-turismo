@@ -124,3 +124,15 @@ oficial del INEGI ni implica su aval. El mismo aviso aparece en los mapas.
 | Credenciales fuera del código | *secret* `BANXICO_TOKEN`, `.gitignore` |
 | Registros inválidos en cuarentena con motivo | `data/quarantine/` |
 | Linaje completo Oro → Bronce | `reports/E2/linaje.json` (`integro: true`, 0 registros sin linaje) |
+
+## 9. Recursos visuales del tablero (fotografías)
+
+- Las fotos del encabezado provienen de **Wikimedia Commons**: dos de Manzanillo (CC BY-SA 4.0 y CC0) y dos de
+  Colima (CC BY-SA 4.0 y CC BY 2.0). El autor y la licencia se citan en el tablero y en
+  `dashboard/assets/CREDITOS.md`.
+- Se descargaron desde las páginas `/wiki/File:` y el servidor `upload.wikimedia.org`, que `robots.txt` permite.
+- **Transparencia:** al buscar las fotos se hizo **una** consulta al API de búsqueda (`/w/api.php`), ruta que el
+  `robots.txt` de Commons prohíbe a clientes automatizados. Al detectarlo se dejó de usar y el resto del proceso
+  se hizo por las rutas permitidas.
+- El diseño visual se **inspiró** en referencias públicas de Dribbble (estilo, no recursos). No se copiaron imágenes,
+  logotipos ni código de esos diseños; el logotipo y las animaciones son propios.

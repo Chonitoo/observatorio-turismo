@@ -1,0 +1,58 @@
+[
+  {
+    "archivo": "manzanillo_bahia_santiago.jpg",
+    "titulo": "Bahía De Santiago en Manzanillo, Colima, México.jpg",
+    "autor": "Ale Ramos M",
+    "licencia": [
+      "CC BY-SA 4.0"
+    ],
+    "fuente": "https://commons.wikimedia.org/wiki/File:Bah%C3%ADa_De_Santiago_en_Manzanillo%2C_Colima%2C_M%C3%A9xico.jpg",
+    "tamano": [
+      1600,
+      898
+    ],
+    "kb": 233
+  },
+  {
+    "archivo": "manzanillo_desde_lo_alto.jpg",
+    "titulo": "Bahia de Manzanillo desde lo alto.jpg",
+    "autor": "Wilfredo R. Rodriguez H.",
+    "licencia": [
+      "CC0 1.0"
+    ],
+    "fuente": "https://commons.wikimedia.org/wiki/File:Bahia_de_Manzanillo_desde_lo_alto.jpg",
+    "tamano": [
+      1139,
+      706
+    ],
+    "kb": 152
+  },
+  {
+    "archivo": "colima_jardin_libertad.jpg",
+    "titulo": "Jardín Libertad, Colima.jpg",
+    "autor": "Irene Soria Guzmán",
+    "licencia": [
+      "CC BY 2.0"
+    ],
+    "fuente": "https://commons.wikimedia.org/wiki/File:Jard%C3%ADn_Libertad%2C_Colima.jpg",
+    "tamano": [
+      1600,
+      1060
+    ],
+    "kb": 521
+  },
+  {
+    "archivo": "colima_volcan.jpg",
+    "titulo": "Volcan de Colima 2016-12-17.jpg",
+    "autor": "Dhatier",
+    "licencia": [
+      "CC BY-SA 4.0"
+    ],
+    "fuente": "https://commons.wikimedia.org/wiki/File:Volcan_de_Colima_2016-12-17.jpg",
+    "tamano": [
+      1600,
+      1067
+    ],
+    "kb": 135
+  }
+]

@@ -1,0 +1,769 @@
+centro,periodo,anio,mes,pronostico_pct,li80,ls80,li95,ls95,metodo,ultimo_dato
+Acapulco,2025-01,2025,1,46.95,36.81,57.09,31.44,62.46,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Acapulco,2025-02,2025,2,43.98,30.55,57.41,23.44,64.52,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Acapulco,2025-03,2025,3,45.49,31.06,59.93,23.41,67.57,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Acapulco,2025-04,2025,4,44.53,29.72,59.33,21.89,67.16,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Acapulco,2025-05,2025,5,40.65,25.71,55.59,17.8,63.5,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Acapulco,2025-06,2025,6,38.6,23.6,53.59,15.67,61.53,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Acapulco,2025-07,2025,7,48.39,33.37,63.4,25.43,71.35,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Acapulco,2025-08,2025,8,42.57,27.55,57.59,19.6,65.55,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Acapulco,2025-09,2025,9,31.01,15.99,46.04,8.04,53.99,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Acapulco,2025-10,2025,10,32.84,17.82,47.87,9.86,55.82,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Acapulco,2025-11,2025,11,38.4,23.38,53.43,15.42,61.38,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Acapulco,2025-12,2025,12,47.5,32.47,62.53,24.52,70.48,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Aguascalientes,2025-01,2025,1,38.71,35.81,41.62,34.26,43.16,Ingenuo estacional (mismo mes del año anterior),2024-12
+Aguascalientes,2025-02,2025,2,42.99,40.09,45.9,38.55,47.44,Ingenuo estacional (mismo mes del año anterior),2024-12
+Aguascalientes,2025-03,2025,3,49.54,46.63,52.44,45.09,53.99,Ingenuo estacional (mismo mes del año anterior),2024-12
+Aguascalientes,2025-04,2025,4,59.54,56.63,62.44,55.09,63.99,Ingenuo estacional (mismo mes del año anterior),2024-12
+Aguascalientes,2025-05,2025,5,57.78,54.88,60.69,53.33,62.23,Ingenuo estacional (mismo mes del año anterior),2024-12
+Aguascalientes,2025-06,2025,6,45.94,43.03,48.85,41.49,50.39,Ingenuo estacional (mismo mes del año anterior),2024-12
+Aguascalientes,2025-07,2025,7,50.63,47.73,53.54,46.18,55.08,Ingenuo estacional (mismo mes del año anterior),2024-12
+Aguascalientes,2025-08,2025,8,47.86,44.96,50.77,43.41,52.31,Ingenuo estacional (mismo mes del año anterior),2024-12
+Aguascalientes,2025-09,2025,9,47.97,45.07,50.88,43.52,52.42,Ingenuo estacional (mismo mes del año anterior),2024-12
+Aguascalientes,2025-10,2025,10,48.62,45.72,51.53,44.17,53.07,Ingenuo estacional (mismo mes del año anterior),2024-12
+Aguascalientes,2025-11,2025,11,49.51,46.61,52.42,45.06,53.96,Ingenuo estacional (mismo mes del año anterior),2024-12
+Aguascalientes,2025-12,2025,12,42.43,39.53,45.34,37.98,46.88,Ingenuo estacional (mismo mes del año anterior),2024-12
+Bahías de Huatulco,2025-01,2025,1,75.03,71.4,78.65,69.48,80.57,Ingenuo estacional (mismo mes del año anterior),2024-12
+Bahías de Huatulco,2025-02,2025,2,77.77,74.15,81.39,72.23,83.32,Ingenuo estacional (mismo mes del año anterior),2024-12
+Bahías de Huatulco,2025-03,2025,3,78.17,74.55,81.8,72.63,83.72,Ingenuo estacional (mismo mes del año anterior),2024-12
+Bahías de Huatulco,2025-04,2025,4,70.42,66.8,74.04,64.88,75.97,Ingenuo estacional (mismo mes del año anterior),2024-12
+Bahías de Huatulco,2025-05,2025,5,61.59,57.97,65.22,56.05,67.14,Ingenuo estacional (mismo mes del año anterior),2024-12
+Bahías de Huatulco,2025-06,2025,6,56.62,53.0,60.25,51.08,62.17,Ingenuo estacional (mismo mes del año anterior),2024-12
+Bahías de Huatulco,2025-07,2025,7,68.69,65.07,72.31,63.14,74.24,Ingenuo estacional (mismo mes del año anterior),2024-12
+Bahías de Huatulco,2025-08,2025,8,62.14,58.52,65.76,56.59,67.69,Ingenuo estacional (mismo mes del año anterior),2024-12
+Bahías de Huatulco,2025-09,2025,9,42.87,39.25,46.49,37.32,48.41,Ingenuo estacional (mismo mes del año anterior),2024-12
+Bahías de Huatulco,2025-10,2025,10,47.08,43.46,50.7,41.53,52.63,Ingenuo estacional (mismo mes del año anterior),2024-12
+Bahías de Huatulco,2025-11,2025,11,70.06,66.44,73.68,64.51,75.6,Ingenuo estacional (mismo mes del año anterior),2024-12
+Bahías de Huatulco,2025-12,2025,12,73.27,69.65,76.9,67.73,78.82,Ingenuo estacional (mismo mes del año anterior),2024-12
+Campeche,2025-01,2025,1,53.24,48.31,58.17,45.69,60.78,Ingenuo estacional (mismo mes del año anterior),2024-12
+Campeche,2025-02,2025,2,53.13,48.2,58.06,45.59,60.68,Ingenuo estacional (mismo mes del año anterior),2024-12
+Campeche,2025-03,2025,3,56.15,51.22,61.08,48.6,63.7,Ingenuo estacional (mismo mes del año anterior),2024-12
+Campeche,2025-04,2025,4,50.51,45.58,55.43,42.96,58.05,Ingenuo estacional (mismo mes del año anterior),2024-12
+Campeche,2025-05,2025,5,49.33,44.4,54.25,41.78,56.87,Ingenuo estacional (mismo mes del año anterior),2024-12
+Campeche,2025-06,2025,6,56.88,51.95,61.81,49.33,64.43,Ingenuo estacional (mismo mes del año anterior),2024-12
+Campeche,2025-07,2025,7,54.81,49.88,59.74,47.27,62.36,Ingenuo estacional (mismo mes del año anterior),2024-12
+Campeche,2025-08,2025,8,49.78,44.85,54.71,42.23,57.33,Ingenuo estacional (mismo mes del año anterior),2024-12
+Campeche,2025-09,2025,9,46.42,41.49,51.35,38.87,53.96,Ingenuo estacional (mismo mes del año anterior),2024-12
+Campeche,2025-10,2025,10,49.57,44.65,54.5,42.03,57.12,Ingenuo estacional (mismo mes del año anterior),2024-12
+Campeche,2025-11,2025,11,54.72,49.79,59.64,47.17,62.26,Ingenuo estacional (mismo mes del año anterior),2024-12
+Campeche,2025-12,2025,12,47.68,42.75,52.61,40.14,55.23,Ingenuo estacional (mismo mes del año anterior),2024-12
+Cancún,2025-01,2025,1,80.83,73.23,88.43,69.21,92.45,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Cancún,2025-02,2025,2,81.85,69.88,93.81,63.55,100.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Cancún,2025-03,2025,3,79.88,65.6,94.15,58.04,100.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Cancún,2025-04,2025,4,71.81,56.07,87.55,47.74,95.88,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Cancún,2025-05,2025,5,68.09,51.38,84.81,42.53,93.65,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Cancún,2025-06,2025,6,72.13,54.74,89.51,45.54,98.72,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Cancún,2025-07,2025,7,77.18,59.32,95.03,49.87,100.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Cancún,2025-08,2025,8,70.92,52.73,89.11,43.1,98.74,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Cancún,2025-09,2025,9,60.49,42.07,78.91,32.31,88.67,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Cancún,2025-10,2025,10,62.4,43.8,80.99,33.96,90.83,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Cancún,2025-11,2025,11,73.17,54.45,91.88,44.54,100.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Cancún,2025-12,2025,12,76.51,57.71,95.31,47.75,100.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Celaya,2025-01,2025,1,28.17,23.02,33.33,20.29,36.06,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Celaya,2025-02,2025,2,30.09,23.95,36.22,20.7,39.47,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Celaya,2025-03,2025,3,31.84,24.94,38.74,21.28,42.39,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Celaya,2025-04,2025,4,33.48,25.96,41.0,21.97,44.99,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Celaya,2025-05,2025,5,35.21,27.17,43.26,22.91,47.51,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Celaya,2025-06,2025,6,31.21,22.73,39.7,18.24,44.19,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Celaya,2025-07,2025,7,34.69,25.83,43.56,21.14,48.25,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Celaya,2025-08,2025,8,31.23,22.04,40.43,17.17,45.29,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Celaya,2025-09,2025,9,30.12,20.63,39.6,15.62,44.62,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Celaya,2025-10,2025,10,33.75,24.02,43.48,18.87,48.64,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Celaya,2025-11,2025,11,36.97,27.01,46.92,21.74,52.19,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Celaya,2025-12,2025,12,30.96,20.81,41.11,15.44,46.48,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Chihuahua,2025-01,2025,1,55.03,50.22,59.84,47.66,62.4,Ingenuo estacional (mismo mes del año anterior),2024-12
+Chihuahua,2025-02,2025,2,59.07,54.26,63.89,51.7,66.44,Ingenuo estacional (mismo mes del año anterior),2024-12
+Chihuahua,2025-03,2025,3,63.28,58.46,68.09,55.91,70.65,Ingenuo estacional (mismo mes del año anterior),2024-12
+Chihuahua,2025-04,2025,4,63.03,58.22,67.84,55.66,70.4,Ingenuo estacional (mismo mes del año anterior),2024-12
+Chihuahua,2025-05,2025,5,62.51,57.7,67.32,55.14,69.88,Ingenuo estacional (mismo mes del año anterior),2024-12
+Chihuahua,2025-06,2025,6,60.71,55.9,65.52,53.34,68.08,Ingenuo estacional (mismo mes del año anterior),2024-12
+Chihuahua,2025-07,2025,7,60.13,55.31,64.94,52.76,67.5,Ingenuo estacional (mismo mes del año anterior),2024-12
+Chihuahua,2025-08,2025,8,59.36,54.55,64.17,51.99,66.73,Ingenuo estacional (mismo mes del año anterior),2024-12
+Chihuahua,2025-09,2025,9,60.04,55.23,64.85,52.67,67.41,Ingenuo estacional (mismo mes del año anterior),2024-12
+Chihuahua,2025-10,2025,10,70.03,65.22,74.85,62.66,77.4,Ingenuo estacional (mismo mes del año anterior),2024-12
+Chihuahua,2025-11,2025,11,66.55,61.73,71.36,59.18,73.91,Ingenuo estacional (mismo mes del año anterior),2024-12
+Chihuahua,2025-12,2025,12,55.89,51.07,60.7,48.52,63.26,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ciudad Juárez,2025-01,2025,1,63.2,54.53,71.86,49.94,76.45,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Ciudad Juárez,2025-02,2025,2,70.13,58.83,81.43,52.85,87.41,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Ciudad Juárez,2025-03,2025,3,68.38,55.44,81.31,48.59,88.16,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Ciudad Juárez,2025-04,2025,4,63.1,49.03,77.17,41.58,84.62,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Ciudad Juárez,2025-05,2025,5,66.53,51.65,81.41,43.77,89.29,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Ciudad Juárez,2025-06,2025,6,67.55,52.07,83.03,43.87,91.23,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Ciudad Juárez,2025-07,2025,7,63.49,47.56,79.42,39.13,87.85,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Ciudad Juárez,2025-08,2025,8,64.28,48.01,80.54,39.4,89.15,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Ciudad Juárez,2025-09,2025,9,64.76,48.24,81.28,39.5,90.03,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Ciudad Juárez,2025-10,2025,10,63.47,46.75,80.18,37.91,89.02,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Ciudad Juárez,2025-11,2025,11,62.94,46.08,79.8,37.15,88.72,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Ciudad Juárez,2025-12,2025,12,57.12,40.15,74.09,31.17,83.08,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Ciudad de México,2025-01,2025,1,50.72,46.96,54.48,44.96,56.48,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ciudad de México,2025-02,2025,2,60.88,57.12,64.65,55.12,66.65,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ciudad de México,2025-03,2025,3,59.71,55.95,63.48,53.95,65.48,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ciudad de México,2025-04,2025,4,59.7,55.94,63.46,53.94,65.46,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ciudad de México,2025-05,2025,5,56.73,52.97,60.49,50.97,62.49,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ciudad de México,2025-06,2025,6,55.56,51.8,59.32,49.8,61.32,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ciudad de México,2025-07,2025,7,59.97,56.21,63.73,54.21,65.73,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ciudad de México,2025-08,2025,8,59.76,55.99,63.52,53.99,65.52,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ciudad de México,2025-09,2025,9,62.28,58.51,66.04,56.51,68.04,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ciudad de México,2025-10,2025,10,64.6,60.83,68.36,58.83,70.36,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ciudad de México,2025-11,2025,11,69.56,65.8,73.32,63.8,75.32,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ciudad de México,2025-12,2025,12,54.42,50.66,58.18,48.66,60.18,Ingenuo estacional (mismo mes del año anterior),2024-12
+Coatzacoalcos,2025-01,2025,1,42.78,38.35,47.21,36.0,49.56,Ingenuo estacional (mismo mes del año anterior),2024-12
+Coatzacoalcos,2025-02,2025,2,44.45,40.02,48.88,37.67,51.23,Ingenuo estacional (mismo mes del año anterior),2024-12
+Coatzacoalcos,2025-03,2025,3,51.15,46.72,55.58,44.37,57.93,Ingenuo estacional (mismo mes del año anterior),2024-12
+Coatzacoalcos,2025-04,2025,4,51.2,46.77,55.63,44.42,57.98,Ingenuo estacional (mismo mes del año anterior),2024-12
+Coatzacoalcos,2025-05,2025,5,49.04,44.61,53.47,42.26,55.82,Ingenuo estacional (mismo mes del año anterior),2024-12
+Coatzacoalcos,2025-06,2025,6,48.71,44.28,53.14,41.93,55.49,Ingenuo estacional (mismo mes del año anterior),2024-12
+Coatzacoalcos,2025-07,2025,7,49.45,45.02,53.87,42.66,56.23,Ingenuo estacional (mismo mes del año anterior),2024-12
+Coatzacoalcos,2025-08,2025,8,52.46,48.03,56.89,45.68,59.24,Ingenuo estacional (mismo mes del año anterior),2024-12
+Coatzacoalcos,2025-09,2025,9,51.59,47.16,56.02,44.81,58.37,Ingenuo estacional (mismo mes del año anterior),2024-12
+Coatzacoalcos,2025-10,2025,10,46.49,42.06,50.92,39.71,53.27,Ingenuo estacional (mismo mes del año anterior),2024-12
+Coatzacoalcos,2025-11,2025,11,46.54,42.11,50.97,39.76,53.32,Ingenuo estacional (mismo mes del año anterior),2024-12
+Coatzacoalcos,2025-12,2025,12,44.91,40.48,49.34,38.13,51.69,Ingenuo estacional (mismo mes del año anterior),2024-12
+Colima,2025-01,2025,1,36.32,29.27,43.37,25.54,47.1,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Colima,2025-02,2025,2,43.61,35.57,51.64,31.32,55.9,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Colima,2025-03,2025,3,42.65,34.16,51.15,29.67,55.64,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Colima,2025-04,2025,4,39.36,30.63,48.08,26.01,52.7,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Colima,2025-05,2025,5,38.93,30.08,47.78,25.4,52.46,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Colima,2025-06,2025,6,42.21,33.29,51.12,28.57,55.84,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Colima,2025-07,2025,7,45.42,36.47,54.37,31.73,59.1,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Colima,2025-08,2025,8,42.84,33.87,51.81,29.13,56.56,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Colima,2025-09,2025,9,39.54,30.56,48.51,25.81,53.26,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Colima,2025-10,2025,10,44.37,35.39,53.35,30.63,58.11,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Colima,2025-11,2025,11,49.8,40.81,58.78,36.06,63.54,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Colima,2025-12,2025,12,46.74,37.76,55.73,33.0,60.49,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Comitán de Domínguez,2025-01,2025,1,17.11,10.77,23.45,7.41,26.8,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Comitán de Domínguez,2025-02,2025,2,17.81,11.01,24.62,7.41,28.22,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Comitán de Domínguez,2025-03,2025,3,21.68,14.53,28.84,10.74,32.63,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Comitán de Domínguez,2025-04,2025,4,24.08,16.65,31.5,12.72,35.43,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Comitán de Domínguez,2025-05,2025,5,18.07,10.44,25.71,6.39,29.75,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Comitán de Domínguez,2025-06,2025,6,18.48,10.68,26.28,6.55,30.41,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Comitán de Domínguez,2025-07,2025,7,26.3,18.37,34.23,14.17,38.43,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Comitán de Domínguez,2025-08,2025,8,22.51,14.48,30.55,10.23,34.8,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Comitán de Domínguez,2025-09,2025,9,17.1,8.99,25.22,4.69,29.51,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Comitán de Domínguez,2025-10,2025,10,19.5,11.32,27.68,6.99,32.01,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Comitán de Domínguez,2025-11,2025,11,22.0,13.77,30.23,9.41,34.59,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Comitán de Domínguez,2025-12,2025,12,29.71,21.44,37.98,17.05,42.36,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Cozumel,2025-01,2025,1,59.88,56.04,63.72,54.0,65.76,Ingenuo estacional (mismo mes del año anterior),2024-12
+Cozumel,2025-02,2025,2,67.45,63.61,71.29,61.57,73.33,Ingenuo estacional (mismo mes del año anterior),2024-12
+Cozumel,2025-03,2025,3,63.55,59.71,67.39,57.67,69.43,Ingenuo estacional (mismo mes del año anterior),2024-12
+Cozumel,2025-04,2025,4,52.42,48.58,56.26,46.54,58.3,Ingenuo estacional (mismo mes del año anterior),2024-12
+Cozumel,2025-05,2025,5,47.19,43.35,51.03,41.31,53.07,Ingenuo estacional (mismo mes del año anterior),2024-12
+Cozumel,2025-06,2025,6,47.09,43.25,50.92,41.2,52.97,Ingenuo estacional (mismo mes del año anterior),2024-12
+Cozumel,2025-07,2025,7,43.87,40.03,47.71,37.99,49.75,Ingenuo estacional (mismo mes del año anterior),2024-12
+Cozumel,2025-08,2025,8,38.95,35.11,42.79,33.07,44.83,Ingenuo estacional (mismo mes del año anterior),2024-12
+Cozumel,2025-09,2025,9,36.8,32.96,40.64,30.92,42.68,Ingenuo estacional (mismo mes del año anterior),2024-12
+Cozumel,2025-10,2025,10,40.02,36.18,43.86,34.14,45.9,Ingenuo estacional (mismo mes del año anterior),2024-12
+Cozumel,2025-11,2025,11,51.41,47.57,55.25,45.53,57.29,Ingenuo estacional (mismo mes del año anterior),2024-12
+Cozumel,2025-12,2025,12,55.19,51.34,59.03,49.3,61.07,Ingenuo estacional (mismo mes del año anterior),2024-12
+Culiacán,2025-01,2025,1,18.98,10.5,27.47,6.0,31.96,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Culiacán,2025-02,2025,2,32.62,20.8,44.44,14.54,50.69,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Culiacán,2025-03,2025,3,31.25,17.7,44.81,10.53,51.98,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Culiacán,2025-04,2025,4,29.66,15.07,44.25,7.35,51.97,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Culiacán,2025-05,2025,5,35.48,20.24,50.72,12.17,58.78,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Culiacán,2025-06,2025,6,35.69,20.03,51.35,11.74,59.64,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Culiacán,2025-07,2025,7,39.7,23.77,55.63,15.33,64.06,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Culiacán,2025-08,2025,8,41.32,25.21,57.43,16.68,65.95,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Culiacán,2025-09,2025,9,39.45,23.22,55.68,14.63,64.27,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Culiacán,2025-10,2025,10,45.2,28.89,61.5,20.26,70.13,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Culiacán,2025-11,2025,11,51.13,34.78,67.49,26.12,76.15,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Culiacán,2025-12,2025,12,41.31,24.91,57.7,16.24,66.37,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Durango,2025-01,2025,1,38.86,30.36,47.36,25.86,51.86,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Durango,2025-02,2025,2,44.36,33.79,54.92,28.2,60.52,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Durango,2025-03,2025,3,50.07,39.21,60.93,33.47,66.68,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Durango,2025-04,2025,4,53.22,42.31,64.13,36.53,69.91,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Durango,2025-05,2025,5,49.48,38.56,60.4,32.77,66.18,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Durango,2025-06,2025,6,50.79,39.87,61.71,34.09,67.5,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Durango,2025-07,2025,7,64.75,53.82,75.67,48.04,81.45,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Durango,2025-08,2025,8,56.35,45.43,67.27,39.64,73.06,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Durango,2025-09,2025,9,48.24,37.32,59.17,31.54,64.95,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Durango,2025-10,2025,10,54.01,43.08,64.93,37.3,70.71,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Durango,2025-11,2025,11,49.73,38.81,60.65,33.02,66.43,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Durango,2025-12,2025,12,44.63,33.71,55.55,27.92,61.34,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+El Fuerte,2024-01,2024,1,20.56,6.63,34.48,0.0,41.88,Ingenuo estacional (mismo mes del año anterior),2023-12
+El Fuerte,2024-02,2024,2,24.38,10.46,38.31,3.06,45.71,Ingenuo estacional (mismo mes del año anterior),2023-12
+El Fuerte,2024-03,2024,3,29.8,15.87,43.73,8.47,51.12,Ingenuo estacional (mismo mes del año anterior),2023-12
+El Fuerte,2024-04,2024,4,30.08,16.15,44.01,8.76,51.41,Ingenuo estacional (mismo mes del año anterior),2023-12
+El Fuerte,2024-05,2024,5,14.41,0.48,28.33,0.0,35.73,Ingenuo estacional (mismo mes del año anterior),2023-12
+El Fuerte,2024-06,2024,6,15.19,1.27,29.12,0.0,36.52,Ingenuo estacional (mismo mes del año anterior),2023-12
+El Fuerte,2024-07,2024,7,24.5,10.57,38.42,3.17,45.82,Ingenuo estacional (mismo mes del año anterior),2023-12
+El Fuerte,2024-08,2024,8,12.56,0.0,26.48,0.0,33.88,Ingenuo estacional (mismo mes del año anterior),2023-12
+El Fuerte,2024-09,2024,9,22.01,8.08,35.94,0.68,43.33,Ingenuo estacional (mismo mes del año anterior),2023-12
+El Fuerte,2024-10,2024,10,30.66,16.74,44.59,9.34,51.99,Ingenuo estacional (mismo mes del año anterior),2023-12
+El Fuerte,2024-11,2024,11,23.48,9.55,37.4,2.15,44.8,Ingenuo estacional (mismo mes del año anterior),2023-12
+El Fuerte,2024-12,2024,12,21.79,7.86,35.71,0.46,43.11,Ingenuo estacional (mismo mes del año anterior),2023-12
+Guadalajara,2025-01,2025,1,43.3,40.22,46.39,38.58,48.03,Ingenuo estacional (mismo mes del año anterior),2024-12
+Guadalajara,2025-02,2025,2,52.83,49.75,55.92,48.11,57.56,Ingenuo estacional (mismo mes del año anterior),2024-12
+Guadalajara,2025-03,2025,3,54.58,51.49,57.66,49.85,59.3,Ingenuo estacional (mismo mes del año anterior),2024-12
+Guadalajara,2025-04,2025,4,54.04,50.96,57.12,49.32,58.76,Ingenuo estacional (mismo mes del año anterior),2024-12
+Guadalajara,2025-05,2025,5,53.2,50.12,56.28,48.48,57.92,Ingenuo estacional (mismo mes del año anterior),2024-12
+Guadalajara,2025-06,2025,6,53.13,50.04,56.21,48.4,57.85,Ingenuo estacional (mismo mes del año anterior),2024-12
+Guadalajara,2025-07,2025,7,56.24,53.16,59.33,51.52,60.97,Ingenuo estacional (mismo mes del año anterior),2024-12
+Guadalajara,2025-08,2025,8,52.32,49.23,55.4,47.59,57.04,Ingenuo estacional (mismo mes del año anterior),2024-12
+Guadalajara,2025-09,2025,9,50.35,47.27,53.44,45.63,55.08,Ingenuo estacional (mismo mes del año anterior),2024-12
+Guadalajara,2025-10,2025,10,54.35,51.27,57.44,49.63,59.08,Ingenuo estacional (mismo mes del año anterior),2024-12
+Guadalajara,2025-11,2025,11,61.1,58.02,64.19,56.38,65.83,Ingenuo estacional (mismo mes del año anterior),2024-12
+Guadalajara,2025-12,2025,12,48.57,45.49,51.66,43.85,53.3,Ingenuo estacional (mismo mes del año anterior),2024-12
+Guanajuato,2025-01,2025,1,22.55,15.76,29.34,12.16,32.93,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Guanajuato,2025-02,2025,2,27.38,19.82,34.94,15.82,38.95,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Guanajuato,2025-03,2025,3,30.81,22.66,38.96,18.35,43.27,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Guanajuato,2025-04,2025,4,30.2,21.59,38.81,17.03,43.37,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Guanajuato,2025-05,2025,5,25.09,16.11,34.06,11.36,38.81,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Guanajuato,2025-06,2025,6,26.59,17.32,35.86,12.41,40.76,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Guanajuato,2025-07,2025,7,33.95,24.44,43.46,19.41,48.5,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Guanajuato,2025-08,2025,8,31.87,22.17,41.57,17.03,46.71,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Guanajuato,2025-09,2025,9,31.07,21.2,40.93,15.98,46.15,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Guanajuato,2025-10,2025,10,41.67,31.68,51.67,26.38,56.96,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Guanajuato,2025-11,2025,11,42.7,32.6,52.81,27.25,58.16,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Guanajuato,2025-12,2025,12,32.52,22.32,42.71,16.93,48.11,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Hermosillo,2025-01,2025,1,47.43,39.24,55.63,34.9,59.97,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Hermosillo,2025-02,2025,2,54.78,44.33,65.22,38.8,70.75,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Hermosillo,2025-03,2025,3,58.3,46.59,70.01,40.39,76.21,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Hermosillo,2025-04,2025,4,52.57,40.06,65.07,33.44,71.69,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Hermosillo,2025-05,2025,5,56.43,43.4,69.45,36.51,76.34,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Hermosillo,2025-06,2025,6,51.27,37.9,64.63,30.82,71.71,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Hermosillo,2025-07,2025,7,50.76,37.16,64.35,29.96,71.55,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Hermosillo,2025-08,2025,8,50.16,36.41,63.91,29.13,71.2,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Hermosillo,2025-09,2025,9,50.25,36.39,64.11,29.05,71.45,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Hermosillo,2025-10,2025,10,59.75,45.82,73.69,38.45,81.06,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Hermosillo,2025-11,2025,11,60.63,46.65,74.61,39.25,82.01,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Hermosillo,2025-12,2025,12,47.56,33.55,61.58,26.13,69.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Irapuato,2025-01,2025,1,26.94,20.68,33.2,17.37,36.51,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Irapuato,2025-02,2025,2,31.03,23.73,38.32,19.87,42.18,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Irapuato,2025-03,2025,3,35.42,27.28,43.55,22.97,47.86,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Irapuato,2025-04,2025,4,32.14,23.3,40.98,18.62,45.66,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Irapuato,2025-05,2025,5,31.0,21.56,40.45,16.56,45.45,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Irapuato,2025-06,2025,6,31.99,22.02,41.96,16.74,47.24,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Irapuato,2025-07,2025,7,34.0,23.57,44.44,18.05,49.96,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Irapuato,2025-08,2025,8,32.92,22.07,43.76,16.33,49.5,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Irapuato,2025-09,2025,9,31.07,19.86,42.28,13.93,48.21,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Irapuato,2025-10,2025,10,32.08,20.54,43.61,14.43,49.72,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Irapuato,2025-11,2025,11,41.86,30.02,53.69,23.76,59.95,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Irapuato,2025-12,2025,12,29.79,17.7,41.89,11.29,48.29,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Isla Mujeres,2025-01,2025,1,60.83,52.36,69.29,47.88,73.77,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Isla Mujeres,2025-02,2025,2,67.32,56.57,78.06,50.88,83.75,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Isla Mujeres,2025-03,2025,3,60.49,48.43,72.55,42.04,78.94,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Isla Mujeres,2025-04,2025,4,52.57,39.68,65.46,32.85,72.29,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Isla Mujeres,2025-05,2025,5,46.66,33.23,60.1,26.12,67.21,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Isla Mujeres,2025-06,2025,6,45.94,32.14,59.74,24.84,67.05,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Isla Mujeres,2025-07,2025,7,51.39,37.35,65.44,29.91,72.87,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Isla Mujeres,2025-08,2025,8,48.94,34.73,63.16,27.21,70.68,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Isla Mujeres,2025-09,2025,9,37.65,23.32,51.98,15.74,59.56,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Isla Mujeres,2025-10,2025,10,41.46,27.05,55.86,19.43,63.49,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Isla Mujeres,2025-11,2025,11,52.31,37.85,66.77,30.19,74.42,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Isla Mujeres,2025-12,2025,12,56.85,42.35,71.34,34.68,79.02,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Ixtapa - Zihuatanejo,2025-01,2025,1,65.65,61.72,69.58,59.63,71.67,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ixtapa - Zihuatanejo,2025-02,2025,2,64.37,60.44,68.3,58.35,70.39,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ixtapa - Zihuatanejo,2025-03,2025,3,67.14,63.21,71.07,61.12,73.15,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ixtapa - Zihuatanejo,2025-04,2025,4,60.8,56.87,64.73,54.78,66.82,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ixtapa - Zihuatanejo,2025-05,2025,5,56.95,53.02,60.88,50.93,62.97,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ixtapa - Zihuatanejo,2025-06,2025,6,60.13,56.21,64.06,54.12,66.15,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ixtapa - Zihuatanejo,2025-07,2025,7,66.94,63.01,70.87,60.92,72.96,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ixtapa - Zihuatanejo,2025-08,2025,8,57.59,53.66,61.52,51.57,63.61,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ixtapa - Zihuatanejo,2025-09,2025,9,44.27,40.34,48.2,38.26,50.29,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ixtapa - Zihuatanejo,2025-10,2025,10,46.35,42.42,50.28,40.34,52.37,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ixtapa - Zihuatanejo,2025-11,2025,11,59.62,55.69,63.54,53.6,65.63,Ingenuo estacional (mismo mes del año anterior),2024-12
+Ixtapa - Zihuatanejo,2025-12,2025,12,70.87,66.94,74.8,64.85,76.88,Ingenuo estacional (mismo mes del año anterior),2024-12
+La Paz,2025-01,2025,1,64.99,59.27,70.71,56.23,73.75,Ingenuo estacional (mismo mes del año anterior),2024-12
+La Paz,2025-02,2025,2,75.38,69.66,81.1,66.62,84.14,Ingenuo estacional (mismo mes del año anterior),2024-12
+La Paz,2025-03,2025,3,77.82,72.1,83.54,69.06,86.58,Ingenuo estacional (mismo mes del año anterior),2024-12
+La Paz,2025-04,2025,4,63.15,57.42,68.87,54.38,71.91,Ingenuo estacional (mismo mes del año anterior),2024-12
+La Paz,2025-05,2025,5,65.44,59.72,71.16,56.68,74.2,Ingenuo estacional (mismo mes del año anterior),2024-12
+La Paz,2025-06,2025,6,63.99,58.27,69.71,55.23,72.75,Ingenuo estacional (mismo mes del año anterior),2024-12
+La Paz,2025-07,2025,7,70.51,64.79,76.23,61.75,79.27,Ingenuo estacional (mismo mes del año anterior),2024-12
+La Paz,2025-08,2025,8,64.09,58.37,69.82,55.33,72.86,Ingenuo estacional (mismo mes del año anterior),2024-12
+La Paz,2025-09,2025,9,51.67,45.94,57.39,42.9,60.43,Ingenuo estacional (mismo mes del año anterior),2024-12
+La Paz,2025-10,2025,10,69.39,63.66,75.11,60.62,78.15,Ingenuo estacional (mismo mes del año anterior),2024-12
+La Paz,2025-11,2025,11,68.74,63.02,74.46,59.98,77.5,Ingenuo estacional (mismo mes del año anterior),2024-12
+La Paz,2025-12,2025,12,61.56,55.84,67.28,52.8,70.32,Ingenuo estacional (mismo mes del año anterior),2024-12
+León,2025-01,2025,1,39.57,34.31,44.83,31.52,47.63,Ingenuo estacional (mismo mes del año anterior),2024-12
+León,2025-02,2025,2,46.97,41.71,52.23,38.91,55.02,Ingenuo estacional (mismo mes del año anterior),2024-12
+León,2025-03,2025,3,42.6,37.34,47.86,34.55,50.66,Ingenuo estacional (mismo mes del año anterior),2024-12
+León,2025-04,2025,4,40.43,35.17,45.69,32.37,48.48,Ingenuo estacional (mismo mes del año anterior),2024-12
+León,2025-05,2025,5,37.69,32.43,42.95,29.63,45.74,Ingenuo estacional (mismo mes del año anterior),2024-12
+León,2025-06,2025,6,46.11,40.85,51.37,38.05,54.16,Ingenuo estacional (mismo mes del año anterior),2024-12
+León,2025-07,2025,7,55.94,50.68,61.2,47.88,63.99,Ingenuo estacional (mismo mes del año anterior),2024-12
+León,2025-08,2025,8,46.43,41.17,51.69,38.38,54.49,Ingenuo estacional (mismo mes del año anterior),2024-12
+León,2025-09,2025,9,55.0,49.74,60.26,46.95,63.06,Ingenuo estacional (mismo mes del año anterior),2024-12
+León,2025-10,2025,10,44.54,39.28,49.8,36.49,52.6,Ingenuo estacional (mismo mes del año anterior),2024-12
+León,2025-11,2025,11,55.31,50.05,60.57,47.26,63.37,Ingenuo estacional (mismo mes del año anterior),2024-12
+León,2025-12,2025,12,35.33,30.07,40.59,27.27,43.38,Ingenuo estacional (mismo mes del año anterior),2024-12
+Loreto,2025-01,2025,1,39.09,28.98,49.19,23.63,54.54,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Loreto,2025-02,2025,2,56.64,44.91,68.37,38.7,74.58,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Loreto,2025-03,2025,3,59.5,46.89,72.12,40.22,78.79,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Loreto,2025-04,2025,4,47.95,34.81,61.08,27.86,68.03,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Loreto,2025-05,2025,5,38.02,24.57,51.48,17.44,58.6,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Loreto,2025-06,2025,6,35.74,22.08,49.39,14.86,56.61,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Loreto,2025-07,2025,7,49.78,36.01,63.56,28.72,70.85,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Loreto,2025-08,2025,8,42.5,28.65,56.35,21.32,63.68,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Loreto,2025-09,2025,9,31.97,18.08,45.87,10.72,53.23,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Loreto,2025-10,2025,10,39.14,25.21,53.07,17.84,60.44,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Loreto,2025-11,2025,11,45.44,31.49,59.39,24.11,66.77,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Loreto,2025-12,2025,12,40.53,26.58,54.49,19.19,61.88,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Los Cabos,2025-01,2025,1,76.19,72.74,79.63,70.91,81.46,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Cabos,2025-02,2025,2,82.19,78.75,85.63,76.92,87.46,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Cabos,2025-03,2025,3,80.94,77.5,84.39,75.67,86.22,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Cabos,2025-04,2025,4,75.19,71.75,78.64,69.92,80.46,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Cabos,2025-05,2025,5,69.62,66.17,73.06,64.35,74.89,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Cabos,2025-06,2025,6,77.86,74.41,81.3,72.58,83.13,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Cabos,2025-07,2025,7,76.26,72.82,79.71,70.99,81.54,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Cabos,2025-08,2025,8,59.65,56.21,63.09,54.38,64.92,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Cabos,2025-09,2025,9,52.28,48.84,55.72,47.01,57.55,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Cabos,2025-10,2025,10,71.39,67.95,74.83,66.12,76.66,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Cabos,2025-11,2025,11,78.98,75.53,82.42,73.7,84.25,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Cabos,2025-12,2025,12,78.28,74.83,81.72,73.0,83.55,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Mochis,2025-01,2025,1,55.97,47.56,64.38,43.09,68.85,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Mochis,2025-02,2025,2,67.25,58.84,75.66,54.37,80.13,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Mochis,2025-03,2025,3,66.51,58.1,74.92,53.63,79.39,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Mochis,2025-04,2025,4,72.86,64.45,81.27,59.98,85.73,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Mochis,2025-05,2025,5,62.69,54.28,71.1,49.81,75.57,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Mochis,2025-06,2025,6,55.22,46.81,63.63,42.35,68.1,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Mochis,2025-07,2025,7,59.77,51.36,68.18,46.9,72.65,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Mochis,2025-08,2025,8,53.03,44.62,61.44,40.15,65.91,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Mochis,2025-09,2025,9,47.52,39.11,55.93,34.64,60.4,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Mochis,2025-10,2025,10,66.02,57.61,74.43,53.15,78.9,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Mochis,2025-11,2025,11,75.33,66.92,83.74,62.45,88.21,Ingenuo estacional (mismo mes del año anterior),2024-12
+Los Mochis,2025-12,2025,12,58.98,50.57,67.39,46.1,71.86,Ingenuo estacional (mismo mes del año anterior),2024-12
+Manzanillo,2025-01,2025,1,48.23,45.41,51.04,43.91,52.54,Ingenuo estacional (mismo mes del año anterior),2024-12
+Manzanillo,2025-02,2025,2,52.35,49.53,55.16,48.04,56.66,Ingenuo estacional (mismo mes del año anterior),2024-12
+Manzanillo,2025-03,2025,3,56.95,54.14,59.77,52.64,61.26,Ingenuo estacional (mismo mes del año anterior),2024-12
+Manzanillo,2025-04,2025,4,58.8,55.98,61.62,54.49,63.11,Ingenuo estacional (mismo mes del año anterior),2024-12
+Manzanillo,2025-05,2025,5,56.79,53.97,59.6,52.48,61.1,Ingenuo estacional (mismo mes del año anterior),2024-12
+Manzanillo,2025-06,2025,6,59.66,56.84,62.48,55.35,63.97,Ingenuo estacional (mismo mes del año anterior),2024-12
+Manzanillo,2025-07,2025,7,61.35,58.54,64.17,57.04,65.66,Ingenuo estacional (mismo mes del año anterior),2024-12
+Manzanillo,2025-08,2025,8,53.3,50.49,56.12,48.99,57.62,Ingenuo estacional (mismo mes del año anterior),2024-12
+Manzanillo,2025-09,2025,9,45.02,42.21,47.84,40.71,49.34,Ingenuo estacional (mismo mes del año anterior),2024-12
+Manzanillo,2025-10,2025,10,49.28,46.47,52.1,44.97,53.6,Ingenuo estacional (mismo mes del año anterior),2024-12
+Manzanillo,2025-11,2025,11,55.65,52.83,58.46,51.34,59.96,Ingenuo estacional (mismo mes del año anterior),2024-12
+Manzanillo,2025-12,2025,12,59.32,56.5,62.14,55.01,63.63,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mazatlán,2025-01,2025,1,54.73,44.94,64.52,39.74,69.73,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mazatlán,2025-02,2025,2,61.33,51.54,71.12,46.33,76.32,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mazatlán,2025-03,2025,3,69.17,59.37,78.96,54.17,84.16,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mazatlán,2025-04,2025,4,68.11,58.32,77.9,53.12,83.11,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mazatlán,2025-05,2025,5,66.45,56.65,76.24,51.45,81.44,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mazatlán,2025-06,2025,6,72.4,62.61,82.19,57.4,87.39,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mazatlán,2025-07,2025,7,78.56,68.77,88.35,63.57,93.55,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mazatlán,2025-08,2025,8,72.3,62.51,82.1,57.31,87.3,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mazatlán,2025-09,2025,9,50.31,40.52,60.11,35.32,65.31,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mazatlán,2025-10,2025,10,44.27,34.48,54.06,29.27,59.26,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mazatlán,2025-11,2025,11,48.59,38.8,58.38,33.59,63.58,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mazatlán,2025-12,2025,12,46.85,37.05,56.64,31.85,61.84,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mexicali,2025-01,2025,1,47.05,39.76,54.34,35.9,58.21,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Mexicali,2025-02,2025,2,57.66,49.07,66.25,44.52,70.8,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Mexicali,2025-03,2025,3,61.38,52.16,70.59,47.28,75.47,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Mexicali,2025-04,2025,4,59.15,49.6,68.7,44.55,73.75,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Mexicali,2025-05,2025,5,59.04,49.32,68.77,44.17,73.92,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Mexicali,2025-06,2025,6,58.59,48.76,68.42,43.56,73.63,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Mexicali,2025-07,2025,7,55.26,45.37,65.14,40.14,70.37,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Mexicali,2025-08,2025,8,54.8,44.88,64.71,39.63,69.96,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Mexicali,2025-09,2025,9,59.41,49.48,69.34,44.22,74.6,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Mexicali,2025-10,2025,10,66.19,56.25,76.13,50.98,81.4,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Mexicali,2025-11,2025,11,67.3,57.35,77.25,52.08,82.52,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Mexicali,2025-12,2025,12,56.07,46.12,66.03,40.85,71.29,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Monterrey,2025-01,2025,1,56.36,52.08,60.63,49.81,62.91,Ingenuo estacional (mismo mes del año anterior),2024-12
+Monterrey,2025-02,2025,2,64.04,59.77,68.32,57.5,70.59,Ingenuo estacional (mismo mes del año anterior),2024-12
+Monterrey,2025-03,2025,3,66.22,61.94,70.49,59.67,72.77,Ingenuo estacional (mismo mes del año anterior),2024-12
+Monterrey,2025-04,2025,4,64.88,60.6,69.15,58.33,71.43,Ingenuo estacional (mismo mes del año anterior),2024-12
+Monterrey,2025-05,2025,5,63.5,59.22,67.77,56.95,70.04,Ingenuo estacional (mismo mes del año anterior),2024-12
+Monterrey,2025-06,2025,6,59.43,55.15,63.71,52.88,65.98,Ingenuo estacional (mismo mes del año anterior),2024-12
+Monterrey,2025-07,2025,7,65.22,60.94,69.49,58.67,71.76,Ingenuo estacional (mismo mes del año anterior),2024-12
+Monterrey,2025-08,2025,8,65.7,61.43,69.98,59.15,72.25,Ingenuo estacional (mismo mes del año anterior),2024-12
+Monterrey,2025-09,2025,9,62.4,58.13,66.68,55.85,68.95,Ingenuo estacional (mismo mes del año anterior),2024-12
+Monterrey,2025-10,2025,10,68.57,64.3,72.85,62.03,75.12,Ingenuo estacional (mismo mes del año anterior),2024-12
+Monterrey,2025-11,2025,11,73.08,68.81,77.36,66.54,79.63,Ingenuo estacional (mismo mes del año anterior),2024-12
+Monterrey,2025-12,2025,12,57.7,53.42,61.97,51.15,64.24,Ingenuo estacional (mismo mes del año anterior),2024-12
+Morelia,2025-01,2025,1,38.66,31.33,45.98,27.45,49.86,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Morelia,2025-02,2025,2,46.46,36.26,56.66,30.86,62.06,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Morelia,2025-03,2025,3,49.0,37.6,60.4,31.57,66.44,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Morelia,2025-04,2025,4,45.32,33.33,57.31,26.98,63.66,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Morelia,2025-05,2025,5,45.6,33.3,57.89,26.79,64.4,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Morelia,2025-06,2025,6,45.71,33.26,58.17,26.66,64.76,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Morelia,2025-07,2025,7,51.58,39.04,64.11,32.4,70.75,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Morelia,2025-08,2025,8,50.98,38.4,63.57,31.74,70.23,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Morelia,2025-09,2025,9,48.1,35.49,60.71,28.82,67.38,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Morelia,2025-10,2025,10,55.47,42.85,68.09,36.17,74.77,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Morelia,2025-11,2025,11,59.03,46.4,71.66,39.72,78.34,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Morelia,2025-12,2025,12,52.77,40.14,65.4,33.45,72.08,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Mérida,2025-01,2025,1,54.45,50.18,58.71,47.92,60.97,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mérida,2025-02,2025,2,61.07,56.81,65.33,54.54,67.6,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mérida,2025-03,2025,3,66.42,62.16,70.68,59.89,72.95,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mérida,2025-04,2025,4,60.28,56.02,64.54,53.75,66.81,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mérida,2025-05,2025,5,50.58,46.32,54.84,44.05,57.11,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mérida,2025-06,2025,6,50.5,46.24,54.77,43.98,57.03,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mérida,2025-07,2025,7,54.42,50.16,58.68,47.89,60.94,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mérida,2025-08,2025,8,56.06,51.8,60.33,49.54,62.59,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mérida,2025-09,2025,9,48.77,44.51,53.03,42.25,55.3,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mérida,2025-10,2025,10,55.4,51.14,59.67,48.88,61.93,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mérida,2025-11,2025,11,64.83,60.57,69.09,58.3,71.35,Ingenuo estacional (mismo mes del año anterior),2024-12
+Mérida,2025-12,2025,12,57.41,53.15,61.67,50.88,63.94,Ingenuo estacional (mismo mes del año anterior),2024-12
+Nuevo Nayarit,2025-01,2025,1,85.56,82.21,88.9,80.44,90.67,Ingenuo estacional (mismo mes del año anterior),2024-12
+Nuevo Nayarit,2025-02,2025,2,88.24,84.9,91.58,83.13,93.36,Ingenuo estacional (mismo mes del año anterior),2024-12
+Nuevo Nayarit,2025-03,2025,3,85.98,82.64,89.32,80.87,91.1,Ingenuo estacional (mismo mes del año anterior),2024-12
+Nuevo Nayarit,2025-04,2025,4,79.61,76.27,82.95,74.5,84.73,Ingenuo estacional (mismo mes del año anterior),2024-12
+Nuevo Nayarit,2025-05,2025,5,69.15,65.81,72.49,64.04,74.27,Ingenuo estacional (mismo mes del año anterior),2024-12
+Nuevo Nayarit,2025-06,2025,6,75.97,72.62,79.31,70.85,81.08,Ingenuo estacional (mismo mes del año anterior),2024-12
+Nuevo Nayarit,2025-07,2025,7,76.44,73.1,79.78,71.32,81.55,Ingenuo estacional (mismo mes del año anterior),2024-12
+Nuevo Nayarit,2025-08,2025,8,66.19,62.85,69.53,61.08,71.31,Ingenuo estacional (mismo mes del año anterior),2024-12
+Nuevo Nayarit,2025-09,2025,9,51.8,48.46,55.14,46.69,56.92,Ingenuo estacional (mismo mes del año anterior),2024-12
+Nuevo Nayarit,2025-10,2025,10,68.82,65.48,72.16,63.71,73.94,Ingenuo estacional (mismo mes del año anterior),2024-12
+Nuevo Nayarit,2025-11,2025,11,79.89,76.55,83.23,74.77,85.0,Ingenuo estacional (mismo mes del año anterior),2024-12
+Nuevo Nayarit,2025-12,2025,12,82.75,79.41,86.09,77.63,87.87,Ingenuo estacional (mismo mes del año anterior),2024-12
+Oaxaca,2025-01,2025,1,50.05,47.5,52.6,46.15,53.95,Ingenuo estacional (mismo mes del año anterior),2024-12
+Oaxaca,2025-02,2025,2,57.22,54.67,59.76,53.31,61.12,Ingenuo estacional (mismo mes del año anterior),2024-12
+Oaxaca,2025-03,2025,3,59.78,57.23,62.33,55.88,63.68,Ingenuo estacional (mismo mes del año anterior),2024-12
+Oaxaca,2025-04,2025,4,54.23,51.69,56.78,50.33,58.13,Ingenuo estacional (mismo mes del año anterior),2024-12
+Oaxaca,2025-05,2025,5,48.65,46.1,51.2,44.75,52.55,Ingenuo estacional (mismo mes del año anterior),2024-12
+Oaxaca,2025-06,2025,6,46.73,44.19,49.28,42.83,50.63,Ingenuo estacional (mismo mes del año anterior),2024-12
+Oaxaca,2025-07,2025,7,64.07,61.52,66.61,60.17,67.97,Ingenuo estacional (mismo mes del año anterior),2024-12
+Oaxaca,2025-08,2025,8,57.52,54.97,60.07,53.62,61.42,Ingenuo estacional (mismo mes del año anterior),2024-12
+Oaxaca,2025-09,2025,9,48.99,46.45,51.54,45.09,52.89,Ingenuo estacional (mismo mes del año anterior),2024-12
+Oaxaca,2025-10,2025,10,56.67,54.13,59.22,52.77,60.57,Ingenuo estacional (mismo mes del año anterior),2024-12
+Oaxaca,2025-11,2025,11,63.62,61.07,66.17,59.72,67.52,Ingenuo estacional (mismo mes del año anterior),2024-12
+Oaxaca,2025-12,2025,12,57.51,54.97,60.06,53.61,61.41,Ingenuo estacional (mismo mes del año anterior),2024-12
+Pachuca,2025-01,2025,1,52.3,43.89,60.71,39.43,65.18,Ingenuo estacional (mismo mes del año anterior),2024-12
+Pachuca,2025-02,2025,2,55.71,47.3,64.12,42.83,68.58,Ingenuo estacional (mismo mes del año anterior),2024-12
+Pachuca,2025-03,2025,3,62.13,53.72,70.54,49.25,75.01,Ingenuo estacional (mismo mes del año anterior),2024-12
+Pachuca,2025-04,2025,4,58.29,49.88,66.7,45.41,71.17,Ingenuo estacional (mismo mes del año anterior),2024-12
+Pachuca,2025-05,2025,5,53.54,45.13,61.95,40.66,66.42,Ingenuo estacional (mismo mes del año anterior),2024-12
+Pachuca,2025-06,2025,6,59.0,50.59,67.41,46.12,71.87,Ingenuo estacional (mismo mes del año anterior),2024-12
+Pachuca,2025-07,2025,7,55.95,47.55,64.36,43.08,68.83,Ingenuo estacional (mismo mes del año anterior),2024-12
+Pachuca,2025-08,2025,8,56.99,48.58,65.4,44.11,69.87,Ingenuo estacional (mismo mes del año anterior),2024-12
+Pachuca,2025-09,2025,9,56.97,48.56,65.38,44.09,69.85,Ingenuo estacional (mismo mes del año anterior),2024-12
+Pachuca,2025-10,2025,10,67.33,58.92,75.74,54.46,80.21,Ingenuo estacional (mismo mes del año anterior),2024-12
+Pachuca,2025-11,2025,11,71.56,63.15,79.97,58.68,84.43,Ingenuo estacional (mismo mes del año anterior),2024-12
+Pachuca,2025-12,2025,12,69.94,61.53,78.35,57.06,82.82,Ingenuo estacional (mismo mes del año anterior),2024-12
+Palenque,2025-01,2025,1,33.27,28.79,37.75,26.41,40.13,Ingenuo estacional (mismo mes del año anterior),2024-12
+Palenque,2025-02,2025,2,39.8,35.32,44.28,32.94,46.66,Ingenuo estacional (mismo mes del año anterior),2024-12
+Palenque,2025-03,2025,3,46.53,42.05,51.01,39.67,53.39,Ingenuo estacional (mismo mes del año anterior),2024-12
+Palenque,2025-04,2025,4,36.46,31.98,40.94,29.6,43.32,Ingenuo estacional (mismo mes del año anterior),2024-12
+Palenque,2025-05,2025,5,31.27,26.79,35.75,24.41,38.13,Ingenuo estacional (mismo mes del año anterior),2024-12
+Palenque,2025-06,2025,6,28.32,23.84,32.8,21.46,35.18,Ingenuo estacional (mismo mes del año anterior),2024-12
+Palenque,2025-07,2025,7,42.02,37.54,46.5,35.16,48.88,Ingenuo estacional (mismo mes del año anterior),2024-12
+Palenque,2025-08,2025,8,40.72,36.24,45.2,33.86,47.58,Ingenuo estacional (mismo mes del año anterior),2024-12
+Palenque,2025-09,2025,9,31.91,27.43,36.39,25.05,38.77,Ingenuo estacional (mismo mes del año anterior),2024-12
+Palenque,2025-10,2025,10,30.38,25.9,34.86,23.52,37.24,Ingenuo estacional (mismo mes del año anterior),2024-12
+Palenque,2025-11,2025,11,39.41,34.92,43.89,32.55,46.27,Ingenuo estacional (mismo mes del año anterior),2024-12
+Palenque,2025-12,2025,12,40.95,36.47,45.43,34.09,47.81,Ingenuo estacional (mismo mes del año anterior),2024-12
+Piedras Negras,2025-01,2025,1,47.73,40.33,55.13,36.41,59.05,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Piedras Negras,2025-02,2025,2,55.39,46.35,64.42,41.56,69.21,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Piedras Negras,2025-03,2025,3,57.84,47.89,67.79,42.62,73.06,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Piedras Negras,2025-04,2025,4,55.1,44.59,65.61,39.03,71.17,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Piedras Negras,2025-05,2025,5,57.21,46.35,68.07,40.6,73.82,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Piedras Negras,2025-06,2025,6,56.99,45.9,68.07,40.03,73.94,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Piedras Negras,2025-07,2025,7,56.28,45.05,67.51,39.1,73.46,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Piedras Negras,2025-08,2025,8,55.54,44.21,66.87,38.22,72.87,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Piedras Negras,2025-09,2025,9,55.61,44.22,67.0,38.19,73.03,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Piedras Negras,2025-10,2025,10,55.04,43.6,66.47,37.55,72.52,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Piedras Negras,2025-11,2025,11,54.65,43.19,66.11,37.13,72.17,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Piedras Negras,2025-12,2025,12,48.63,37.16,60.11,31.09,66.18,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Playas de Rosarito,2025-01,2025,1,21.42,15.26,27.58,12.0,30.84,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Playas de Rosarito,2025-02,2025,2,27.19,20.0,34.37,16.19,38.18,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Playas de Rosarito,2025-03,2025,3,36.16,28.42,43.89,24.33,47.98,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Playas de Rosarito,2025-04,2025,4,35.95,27.9,43.99,23.64,48.25,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Playas de Rosarito,2025-05,2025,5,34.01,25.78,42.24,21.43,46.6,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Playas de Rosarito,2025-06,2025,6,38.47,30.13,46.8,25.71,51.22,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Playas de Rosarito,2025-07,2025,7,52.74,44.34,61.15,39.89,65.6,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Playas de Rosarito,2025-08,2025,8,47.41,38.97,55.86,34.5,60.33,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Playas de Rosarito,2025-09,2025,9,37.56,29.09,46.03,24.61,50.51,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Playas de Rosarito,2025-10,2025,10,32.01,23.53,40.5,19.04,44.99,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Playas de Rosarito,2025-11,2025,11,29.67,21.18,38.16,16.68,42.66,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Playas de Rosarito,2025-12,2025,12,23.15,14.65,31.65,10.15,36.15,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Puebla,2025-01,2025,1,49.07,46.29,51.85,44.82,53.32,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puebla,2025-02,2025,2,55.31,52.53,58.09,51.05,59.56,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puebla,2025-03,2025,3,60.24,57.47,63.02,55.99,64.5,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puebla,2025-04,2025,4,57.47,54.69,60.25,53.22,61.72,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puebla,2025-05,2025,5,60.3,57.53,63.08,56.05,64.56,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puebla,2025-06,2025,6,56.26,53.49,59.04,52.01,60.52,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puebla,2025-07,2025,7,62.15,59.37,64.93,57.9,66.4,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puebla,2025-08,2025,8,60.72,57.94,63.5,56.47,64.97,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puebla,2025-09,2025,9,59.81,57.03,62.59,55.56,64.06,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puebla,2025-10,2025,10,61.5,58.72,64.28,57.25,65.75,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puebla,2025-11,2025,11,64.61,61.83,67.39,60.36,68.86,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puebla,2025-12,2025,12,62.03,59.26,64.81,57.78,66.29,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Escondido,2025-01,2025,1,47.29,40.16,54.42,36.37,58.21,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Escondido,2025-02,2025,2,53.13,46.0,60.26,42.21,64.04,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Escondido,2025-03,2025,3,57.41,50.28,64.54,46.49,68.33,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Escondido,2025-04,2025,4,51.74,44.61,58.87,40.83,62.66,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Escondido,2025-05,2025,5,42.57,35.44,49.7,31.65,53.48,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Escondido,2025-06,2025,6,41.2,34.07,48.32,30.28,52.11,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Escondido,2025-07,2025,7,52.52,45.39,59.64,41.6,63.43,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Escondido,2025-08,2025,8,46.06,38.93,53.19,35.14,56.98,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Escondido,2025-09,2025,9,29.15,22.02,36.28,18.24,40.07,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Escondido,2025-10,2025,10,31.04,23.91,38.17,20.13,41.96,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Escondido,2025-11,2025,11,47.51,40.38,54.63,36.59,58.42,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Escondido,2025-12,2025,12,50.72,43.59,57.85,39.8,61.64,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Vallarta,2025-01,2025,1,78.94,76.13,81.74,74.65,83.23,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Vallarta,2025-02,2025,2,85.61,82.81,88.41,81.32,89.9,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Vallarta,2025-03,2025,3,80.0,77.2,82.81,75.71,84.3,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Vallarta,2025-04,2025,4,72.59,69.78,75.39,68.29,76.88,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Vallarta,2025-05,2025,5,64.25,61.44,67.05,59.96,68.54,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Vallarta,2025-06,2025,6,65.59,62.79,68.4,61.3,69.89,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Vallarta,2025-07,2025,7,70.28,67.48,73.09,65.99,74.57,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Vallarta,2025-08,2025,8,60.34,57.54,63.15,56.05,64.64,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Vallarta,2025-09,2025,9,51.35,48.55,54.16,47.06,55.65,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Vallarta,2025-10,2025,10,61.94,59.14,64.74,57.65,66.23,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Vallarta,2025-11,2025,11,79.19,76.39,81.99,74.9,83.48,Ingenuo estacional (mismo mes del año anterior),2024-12
+Puerto Vallarta,2025-12,2025,12,79.8,77.0,82.6,75.51,84.09,Ingenuo estacional (mismo mes del año anterior),2024-12
+Querétaro,2025-01,2025,1,49.25,46.86,51.64,45.58,52.92,Ingenuo estacional (mismo mes del año anterior),2024-12
+Querétaro,2025-02,2025,2,58.71,56.32,61.11,55.05,62.38,Ingenuo estacional (mismo mes del año anterior),2024-12
+Querétaro,2025-03,2025,3,65.12,62.73,67.52,61.46,68.79,Ingenuo estacional (mismo mes del año anterior),2024-12
+Querétaro,2025-04,2025,4,59.65,57.26,62.04,55.98,63.32,Ingenuo estacional (mismo mes del año anterior),2024-12
+Querétaro,2025-05,2025,5,59.7,57.31,62.1,56.04,63.37,Ingenuo estacional (mismo mes del año anterior),2024-12
+Querétaro,2025-06,2025,6,58.15,55.76,60.54,54.48,61.82,Ingenuo estacional (mismo mes del año anterior),2024-12
+Querétaro,2025-07,2025,7,62.49,60.09,64.88,58.82,66.15,Ingenuo estacional (mismo mes del año anterior),2024-12
+Querétaro,2025-08,2025,8,60.26,57.87,62.66,56.6,63.93,Ingenuo estacional (mismo mes del año anterior),2024-12
+Querétaro,2025-09,2025,9,60.9,58.51,63.3,57.24,64.57,Ingenuo estacional (mismo mes del año anterior),2024-12
+Querétaro,2025-10,2025,10,62.82,60.42,65.21,59.15,66.48,Ingenuo estacional (mismo mes del año anterior),2024-12
+Querétaro,2025-11,2025,11,69.31,66.91,71.7,65.64,72.97,Ingenuo estacional (mismo mes del año anterior),2024-12
+Querétaro,2025-12,2025,12,56.38,53.99,58.77,52.72,60.05,Ingenuo estacional (mismo mes del año anterior),2024-12
+Riviera Maya,2025-01,2025,1,80.79,72.39,89.19,67.94,93.64,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Riviera Maya,2025-02,2025,2,83.36,69.24,97.48,61.77,100.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Riviera Maya,2025-03,2025,3,79.38,61.99,96.77,52.78,100.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Riviera Maya,2025-04,2025,4,73.51,53.87,93.16,43.46,100.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Riviera Maya,2025-05,2025,5,71.76,50.45,93.07,39.17,100.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Riviera Maya,2025-06,2025,6,72.18,49.61,94.75,37.67,100.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Riviera Maya,2025-07,2025,7,76.3,52.76,99.84,40.3,100.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Riviera Maya,2025-08,2025,8,70.03,45.72,94.33,32.86,100.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Riviera Maya,2025-09,2025,9,59.61,34.7,84.51,21.52,97.7,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Riviera Maya,2025-10,2025,10,64.97,39.59,90.36,26.15,100.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Riviera Maya,2025-11,2025,11,76.63,50.87,100.0,37.23,100.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Riviera Maya,2025-12,2025,12,77.67,51.6,100.0,37.8,100.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Salamanca,2025-01,2025,1,24.41,19.02,29.79,16.17,32.64,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Salamanca,2025-02,2025,2,27.45,21.04,33.85,17.65,37.24,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Salamanca,2025-03,2025,3,32.17,25.03,39.31,21.25,43.09,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Salamanca,2025-04,2025,4,30.02,22.31,37.73,18.23,41.81,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Salamanca,2025-05,2025,5,28.82,20.66,36.98,16.34,41.3,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Salamanca,2025-06,2025,6,28.28,19.76,36.79,15.25,41.3,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Salamanca,2025-07,2025,7,32.29,23.48,41.11,18.82,45.77,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Salamanca,2025-08,2025,8,32.29,23.23,41.34,18.44,46.13,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Salamanca,2025-09,2025,9,30.99,21.74,40.25,16.85,45.14,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Salamanca,2025-10,2025,10,34.27,24.85,43.68,19.87,48.67,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Salamanca,2025-11,2025,11,38.73,29.17,48.28,24.12,53.33,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Salamanca,2025-12,2025,12,32.22,22.55,41.88,17.43,47.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Cristóbal de las Casas,2025-01,2025,1,26.54,18.61,34.46,14.4,38.67,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Cristóbal de las Casas,2025-02,2025,2,25.38,17.46,33.3,13.25,37.51,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Cristóbal de las Casas,2025-03,2025,3,30.75,22.82,38.67,18.61,42.88,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Cristóbal de las Casas,2025-04,2025,4,26.06,18.13,33.98,13.92,38.19,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Cristóbal de las Casas,2025-05,2025,5,24.87,16.95,32.79,12.74,37.0,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Cristóbal de las Casas,2025-06,2025,6,20.26,12.34,28.18,8.13,32.39,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Cristóbal de las Casas,2025-07,2025,7,28.25,20.33,36.17,16.12,40.38,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Cristóbal de las Casas,2025-08,2025,8,26.19,18.26,34.11,14.05,38.32,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Cristóbal de las Casas,2025-09,2025,9,20.15,12.23,28.08,8.02,32.29,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Cristóbal de las Casas,2025-10,2025,10,21.81,13.88,29.73,9.67,33.94,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Cristóbal de las Casas,2025-11,2025,11,29.38,21.45,37.3,17.24,41.51,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Cristóbal de las Casas,2025-12,2025,12,28.05,20.12,35.97,15.91,40.18,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Felipe,2025-01,2025,1,14.4,4.64,24.16,0.0,29.33,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Felipe,2025-02,2025,2,19.35,8.95,29.76,3.44,35.27,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Felipe,2025-03,2025,3,35.73,24.95,46.51,19.24,52.22,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Felipe,2025-04,2025,4,40.4,29.4,51.41,23.57,57.24,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Felipe,2025-05,2025,5,31.83,20.69,42.97,14.79,48.87,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Felipe,2025-06,2025,6,28.7,17.48,39.93,11.53,45.87,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Felipe,2025-07,2025,7,33.23,21.95,44.51,15.98,50.48,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Felipe,2025-08,2025,8,24.37,13.06,35.68,7.08,41.67,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Felipe,2025-09,2025,9,27.41,16.08,38.74,10.08,44.74,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Felipe,2025-10,2025,10,26.84,15.5,38.18,9.5,44.18,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Felipe,2025-11,2025,11,23.71,12.36,35.05,6.35,41.06,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Felipe,2025-12,2025,12,17.8,6.45,29.15,0.44,35.16,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Juan de los Lagos,2025-01,2025,1,44.81,35.16,54.46,30.03,59.59,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan de los Lagos,2025-02,2025,2,38.28,28.63,47.94,23.51,53.06,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan de los Lagos,2025-03,2025,3,37.22,27.57,46.87,22.44,52.0,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan de los Lagos,2025-04,2025,4,30.77,21.12,40.43,16.0,45.55,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan de los Lagos,2025-05,2025,5,33.78,24.13,43.44,19.01,48.56,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan de los Lagos,2025-06,2025,6,33.06,23.41,42.71,18.28,47.84,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan de los Lagos,2025-07,2025,7,33.22,23.57,42.87,18.44,48.0,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan de los Lagos,2025-08,2025,8,45.19,35.54,54.84,30.41,59.97,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan de los Lagos,2025-09,2025,9,25.24,15.59,34.89,10.46,40.02,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan de los Lagos,2025-10,2025,10,30.83,21.18,40.49,16.06,45.61,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan de los Lagos,2025-11,2025,11,34.27,24.62,43.92,19.49,49.05,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan de los Lagos,2025-12,2025,12,33.25,23.6,42.9,18.47,48.03,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan del Río,2025-01,2025,1,43.92,36.01,51.83,31.81,56.03,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan del Río,2025-02,2025,2,46.52,38.61,54.44,34.41,58.64,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan del Río,2025-03,2025,3,62.01,54.1,69.92,49.9,74.12,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan del Río,2025-04,2025,4,53.73,45.82,61.64,41.62,65.84,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan del Río,2025-05,2025,5,49.71,41.8,57.62,37.6,61.82,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan del Río,2025-06,2025,6,46.5,38.59,54.41,34.38,58.61,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan del Río,2025-07,2025,7,59.73,51.82,67.64,47.62,71.85,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan del Río,2025-08,2025,8,59.31,51.4,67.22,47.2,71.43,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan del Río,2025-09,2025,9,61.56,53.65,69.47,49.45,73.67,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan del Río,2025-10,2025,10,54.88,46.97,62.79,42.77,67.0,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan del Río,2025-11,2025,11,68.46,60.55,76.37,56.35,80.57,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Juan del Río,2025-12,2025,12,59.8,51.89,67.72,47.69,71.92,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Luis Potosí,2025-01,2025,1,41.45,35.02,47.88,31.61,51.28,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Luis Potosí,2025-02,2025,2,46.77,38.22,55.33,33.69,59.86,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Luis Potosí,2025-03,2025,3,51.16,41.1,61.23,35.77,66.56,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Luis Potosí,2025-04,2025,4,48.83,37.59,60.07,31.63,66.03,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Luis Potosí,2025-05,2025,5,48.23,36.02,60.43,29.57,66.89,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Luis Potosí,2025-06,2025,6,49.7,36.7,62.69,29.82,69.58,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Luis Potosí,2025-07,2025,7,55.01,41.33,68.68,34.1,75.92,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Luis Potosí,2025-08,2025,8,51.62,37.37,65.87,29.83,73.41,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Luis Potosí,2025-09,2025,9,47.4,32.66,62.15,24.86,69.95,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Luis Potosí,2025-10,2025,10,52.35,37.18,67.53,29.14,75.56,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Luis Potosí,2025-11,2025,11,54.87,39.32,70.41,31.09,78.64,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Luis Potosí,2025-12,2025,12,47.16,31.29,63.04,22.89,71.44,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+San Miguel de Allende,2025-01,2025,1,28.46,23.23,33.68,20.46,36.45,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Miguel de Allende,2025-02,2025,2,44.24,39.02,49.46,36.25,52.24,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Miguel de Allende,2025-03,2025,3,46.23,41.0,51.45,38.23,54.22,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Miguel de Allende,2025-04,2025,4,40.09,34.86,45.31,32.09,48.08,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Miguel de Allende,2025-05,2025,5,41.06,35.84,46.28,33.06,49.05,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Miguel de Allende,2025-06,2025,6,31.93,26.71,37.15,23.93,39.93,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Miguel de Allende,2025-07,2025,7,33.42,28.2,38.65,25.43,41.42,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Miguel de Allende,2025-08,2025,8,36.92,31.7,42.14,28.92,44.92,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Miguel de Allende,2025-09,2025,9,39.1,33.88,44.32,31.1,47.1,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Miguel de Allende,2025-10,2025,10,45.31,40.08,50.53,37.31,53.3,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Miguel de Allende,2025-11,2025,11,46.91,41.68,52.13,38.91,54.9,Ingenuo estacional (mismo mes del año anterior),2024-12
+San Miguel de Allende,2025-12,2025,12,35.53,30.31,40.75,27.53,43.53,Ingenuo estacional (mismo mes del año anterior),2024-12
+Taxco,2025-01,2025,1,26.61,19.65,33.58,15.96,37.27,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Taxco,2025-02,2025,2,25.21,17.29,33.12,13.1,37.32,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Taxco,2025-03,2025,3,26.36,17.78,34.94,13.23,39.48,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Taxco,2025-04,2025,4,28.44,19.37,37.52,14.56,42.32,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Taxco,2025-05,2025,5,22.72,13.28,32.17,8.27,37.17,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Taxco,2025-06,2025,6,20.88,11.15,30.61,6.0,35.76,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Taxco,2025-07,2025,7,32.48,22.53,42.43,17.26,47.7,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Taxco,2025-08,2025,8,28.16,18.04,38.28,12.68,43.64,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Taxco,2025-09,2025,9,24.49,14.23,34.74,8.81,40.17,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Taxco,2025-10,2025,10,24.99,14.63,35.35,9.15,40.83,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Taxco,2025-11,2025,11,33.33,22.89,43.77,17.36,49.29,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Taxco,2025-12,2025,12,36.92,26.42,47.42,20.85,52.99,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tecate,2025-01,2025,1,62.59,45.67,79.51,36.68,88.5,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tecate,2025-02,2025,2,69.48,52.55,86.4,43.56,95.39,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tecate,2025-03,2025,3,70.53,53.61,87.45,44.62,96.44,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tecate,2025-04,2025,4,67.39,50.47,84.31,41.48,93.3,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tecate,2025-05,2025,5,74.58,57.66,91.51,48.67,100.0,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tecate,2025-06,2025,6,72.84,55.92,89.76,46.93,98.75,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tecate,2025-07,2025,7,73.59,56.67,90.51,47.68,99.5,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tecate,2025-08,2025,8,71.25,54.33,88.17,45.34,97.16,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tecate,2025-09,2025,9,63.03,46.11,79.95,37.12,88.94,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tecate,2025-10,2025,10,57.61,40.69,74.54,31.7,83.53,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tecate,2025-11,2025,11,62.06,45.14,78.98,36.15,87.97,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tecate,2025-12,2025,12,57.12,40.2,74.05,31.21,83.04,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tequisquiapan,2025-01,2025,1,23.89,16.78,30.99,13.01,34.77,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tequisquiapan,2025-02,2025,2,33.14,26.04,40.24,22.26,44.02,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tequisquiapan,2025-03,2025,3,46.94,39.83,54.04,36.06,57.81,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tequisquiapan,2025-04,2025,4,42.31,35.2,49.41,31.43,53.19,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tequisquiapan,2025-05,2025,5,37.69,30.58,44.79,26.81,48.56,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tequisquiapan,2025-06,2025,6,32.3,25.19,39.4,21.42,43.17,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tequisquiapan,2025-07,2025,7,41.75,34.65,48.86,30.87,52.63,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tequisquiapan,2025-08,2025,8,44.47,37.37,51.57,33.59,55.35,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tequisquiapan,2025-09,2025,9,28.31,21.2,35.41,17.43,39.19,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tequisquiapan,2025-10,2025,10,22.88,15.78,29.98,12.0,33.76,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tequisquiapan,2025-11,2025,11,30.13,23.03,37.24,19.25,41.01,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tequisquiapan,2025-12,2025,12,37.56,30.45,44.66,26.68,48.44,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tijuana,2025-01,2025,1,56.68,50.55,62.81,47.29,66.07,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tijuana,2025-02,2025,2,61.45,55.32,67.58,52.06,70.84,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tijuana,2025-03,2025,3,63.15,57.02,69.28,53.76,72.54,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tijuana,2025-04,2025,4,67.17,61.04,73.31,57.79,76.56,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tijuana,2025-05,2025,5,66.48,60.35,72.61,57.09,75.87,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tijuana,2025-06,2025,6,67.13,61.0,73.26,57.74,76.52,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tijuana,2025-07,2025,7,65.5,59.37,71.63,56.11,74.89,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tijuana,2025-08,2025,8,70.34,64.2,76.47,60.95,79.72,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tijuana,2025-09,2025,9,66.83,60.7,72.96,57.44,76.22,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tijuana,2025-10,2025,10,65.53,59.39,71.66,56.14,74.91,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tijuana,2025-11,2025,11,68.16,62.02,74.29,58.77,77.54,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tijuana,2025-12,2025,12,56.7,50.57,62.83,47.31,66.09,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tlaxcala,2025-01,2025,1,22.61,16.01,29.21,12.52,32.71,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tlaxcala,2025-02,2025,2,27.13,19.86,34.4,16.01,38.25,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tlaxcala,2025-03,2025,3,32.21,24.4,40.01,20.27,44.14,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tlaxcala,2025-04,2025,4,29.91,21.68,38.14,17.33,42.5,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tlaxcala,2025-05,2025,5,29.02,20.44,37.6,15.89,42.14,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tlaxcala,2025-06,2025,6,28.67,19.79,37.54,15.1,42.24,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tlaxcala,2025-07,2025,7,35.41,26.3,44.53,21.47,49.35,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tlaxcala,2025-08,2025,8,31.51,22.19,40.83,17.26,45.76,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tlaxcala,2025-09,2025,9,29.53,20.04,39.02,15.01,44.04,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tlaxcala,2025-10,2025,10,33.7,24.07,43.34,18.97,48.44,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tlaxcala,2025-11,2025,11,39.01,29.25,48.77,24.08,53.93,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tlaxcala,2025-12,2025,12,30.13,20.27,40.0,15.05,45.22,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Toluca,2025-01,2025,1,34.29,27.24,41.34,23.51,45.07,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Toluca,2025-02,2025,2,40.65,31.74,49.56,27.02,54.28,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Toluca,2025-03,2025,3,42.06,31.93,52.19,26.57,57.55,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Toluca,2025-04,2025,4,40.4,29.4,51.39,23.57,57.22,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Toluca,2025-05,2025,5,40.85,29.2,52.49,23.04,58.65,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Toluca,2025-06,2025,6,39.72,27.59,51.85,21.16,58.27,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Toluca,2025-07,2025,7,39.54,27.03,52.05,20.41,58.67,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Toluca,2025-08,2025,8,39.47,26.67,52.27,19.9,59.04,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Toluca,2025-09,2025,9,37.15,24.13,50.17,17.23,57.07,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Toluca,2025-10,2025,10,44.29,31.09,57.49,24.1,64.47,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Toluca,2025-11,2025,11,46.69,33.35,60.02,26.29,67.09,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Toluca,2025-12,2025,12,36.43,22.99,49.88,15.87,57.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tonalá Puerto Arista,2025-01,2025,1,28.91,22.57,35.25,19.21,38.6,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tonalá Puerto Arista,2025-02,2025,2,26.51,19.66,33.37,16.03,37.0,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tonalá Puerto Arista,2025-03,2025,3,31.52,24.3,38.73,20.48,42.55,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tonalá Puerto Arista,2025-04,2025,4,31.89,24.42,39.36,20.47,43.31,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tonalá Puerto Arista,2025-05,2025,5,22.28,14.63,29.94,10.58,33.99,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tonalá Puerto Arista,2025-06,2025,6,20.39,12.6,28.17,8.48,32.3,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tonalá Puerto Arista,2025-07,2025,7,28.14,20.25,36.02,16.08,40.2,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tonalá Puerto Arista,2025-08,2025,8,26.75,18.79,34.71,14.58,38.92,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tonalá Puerto Arista,2025-09,2025,9,20.45,12.44,28.46,8.2,32.71,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tonalá Puerto Arista,2025-10,2025,10,21.79,13.74,29.84,9.47,34.1,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tonalá Puerto Arista,2025-11,2025,11,24.31,16.22,32.39,11.95,36.67,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tonalá Puerto Arista,2025-12,2025,12,34.94,26.83,43.04,22.54,47.33,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Tuxtla Gutiérrez,2025-01,2025,1,36.6,31.63,41.57,29.0,44.21,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tuxtla Gutiérrez,2025-02,2025,2,41.83,36.86,46.8,34.22,49.43,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tuxtla Gutiérrez,2025-03,2025,3,44.86,39.89,49.83,37.25,52.46,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tuxtla Gutiérrez,2025-04,2025,4,41.41,36.45,46.38,33.81,49.02,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tuxtla Gutiérrez,2025-05,2025,5,46.26,41.29,51.22,38.65,53.86,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tuxtla Gutiérrez,2025-06,2025,6,46.63,41.66,51.59,39.02,54.23,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tuxtla Gutiérrez,2025-07,2025,7,46.51,41.54,51.48,38.91,54.12,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tuxtla Gutiérrez,2025-08,2025,8,44.95,39.99,49.92,37.35,52.56,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tuxtla Gutiérrez,2025-09,2025,9,42.76,37.79,47.72,35.15,50.36,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tuxtla Gutiérrez,2025-10,2025,10,44.2,39.24,49.17,36.6,51.81,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tuxtla Gutiérrez,2025-11,2025,11,53.76,48.79,58.72,46.15,61.36,Ingenuo estacional (mismo mes del año anterior),2024-12
+Tuxtla Gutiérrez,2025-12,2025,12,48.65,43.68,53.61,41.04,56.25,Ingenuo estacional (mismo mes del año anterior),2024-12
+Valle de Bravo,2025-01,2025,1,15.94,11.93,19.95,9.81,22.07,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Valle de Bravo,2025-02,2025,2,20.23,16.2,24.25,14.07,26.38,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Valle de Bravo,2025-03,2025,3,21.34,17.3,25.38,15.16,27.52,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Valle de Bravo,2025-04,2025,4,21.1,17.04,25.15,14.89,27.3,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Valle de Bravo,2025-05,2025,5,15.23,11.15,19.3,9.0,21.46,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Valle de Bravo,2025-06,2025,6,15.48,11.39,19.56,9.22,21.73,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Valle de Bravo,2025-07,2025,7,19.15,15.05,23.26,12.88,25.43,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Valle de Bravo,2025-08,2025,8,17.37,13.26,21.49,11.08,23.67,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Valle de Bravo,2025-09,2025,9,18.39,14.27,22.52,12.08,24.71,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Valle de Bravo,2025-10,2025,10,20.04,15.89,24.18,13.7,26.37,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Valle de Bravo,2025-11,2025,11,22.97,18.82,27.12,16.62,29.32,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Valle de Bravo,2025-12,2025,12,20.5,16.33,24.66,14.13,26.86,"SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",2024-12
+Veracruz-Boca del Río,2025-01,2025,1,44.39,38.52,50.27,35.4,53.39,Ingenuo estacional (mismo mes del año anterior),2024-12
+Veracruz-Boca del Río,2025-02,2025,2,49.33,43.46,55.21,40.34,58.33,Ingenuo estacional (mismo mes del año anterior),2024-12
+Veracruz-Boca del Río,2025-03,2025,3,58.96,53.09,64.84,49.97,67.96,Ingenuo estacional (mismo mes del año anterior),2024-12
+Veracruz-Boca del Río,2025-04,2025,4,53.93,48.05,59.8,44.93,62.93,Ingenuo estacional (mismo mes del año anterior),2024-12
+Veracruz-Boca del Río,2025-05,2025,5,54.91,49.04,60.79,45.91,63.91,Ingenuo estacional (mismo mes del año anterior),2024-12
+Veracruz-Boca del Río,2025-06,2025,6,54.84,48.96,60.71,45.84,63.83,Ingenuo estacional (mismo mes del año anterior),2024-12
+Veracruz-Boca del Río,2025-07,2025,7,64.28,58.41,70.16,55.29,73.28,Ingenuo estacional (mismo mes del año anterior),2024-12
+Veracruz-Boca del Río,2025-08,2025,8,61.8,55.93,67.68,52.8,70.8,Ingenuo estacional (mismo mes del año anterior),2024-12
+Veracruz-Boca del Río,2025-09,2025,9,46.75,40.87,52.62,37.75,55.75,Ingenuo estacional (mismo mes del año anterior),2024-12
+Veracruz-Boca del Río,2025-10,2025,10,47.69,41.82,53.57,38.7,56.69,Ingenuo estacional (mismo mes del año anterior),2024-12
+Veracruz-Boca del Río,2025-11,2025,11,41.9,36.02,47.77,32.9,50.89,Ingenuo estacional (mismo mes del año anterior),2024-12
+Veracruz-Boca del Río,2025-12,2025,12,46.49,40.62,52.37,37.5,55.49,Ingenuo estacional (mismo mes del año anterior),2024-12
+Villahermosa,2025-01,2025,1,52.39,44.8,59.98,40.77,64.02,Ingenuo estacional (mismo mes del año anterior),2024-12
+Villahermosa,2025-02,2025,2,57.36,49.77,64.95,45.74,68.98,Ingenuo estacional (mismo mes del año anterior),2024-12
+Villahermosa,2025-03,2025,3,56.56,48.97,64.16,44.94,68.19,Ingenuo estacional (mismo mes del año anterior),2024-12
+Villahermosa,2025-04,2025,4,59.26,51.66,66.85,47.63,70.88,Ingenuo estacional (mismo mes del año anterior),2024-12
+Villahermosa,2025-05,2025,5,63.77,56.18,71.36,52.15,75.39,Ingenuo estacional (mismo mes del año anterior),2024-12
+Villahermosa,2025-06,2025,6,58.9,51.31,66.49,47.28,70.52,Ingenuo estacional (mismo mes del año anterior),2024-12
+Villahermosa,2025-07,2025,7,63.01,55.42,70.6,51.39,74.63,Ingenuo estacional (mismo mes del año anterior),2024-12
+Villahermosa,2025-08,2025,8,58.73,51.14,66.32,47.11,70.36,Ingenuo estacional (mismo mes del año anterior),2024-12
+Villahermosa,2025-09,2025,9,54.38,46.79,61.97,42.76,66.01,Ingenuo estacional (mismo mes del año anterior),2024-12
+Villahermosa,2025-10,2025,10,50.66,43.07,58.25,39.04,62.28,Ingenuo estacional (mismo mes del año anterior),2024-12
+Villahermosa,2025-11,2025,11,51.45,43.86,59.04,39.83,63.07,Ingenuo estacional (mismo mes del año anterior),2024-12
+Villahermosa,2025-12,2025,12,44.58,36.99,52.17,32.96,56.2,Ingenuo estacional (mismo mes del año anterior),2024-12
+Xalapa,2025-01,2025,1,39.62,36.47,42.76,34.79,44.44,Ingenuo estacional (mismo mes del año anterior),2024-12
+Xalapa,2025-02,2025,2,43.82,40.67,46.97,39.0,48.64,Ingenuo estacional (mismo mes del año anterior),2024-12
+Xalapa,2025-03,2025,3,47.6,44.45,50.75,42.78,52.42,Ingenuo estacional (mismo mes del año anterior),2024-12
+Xalapa,2025-04,2025,4,51.21,48.06,54.36,46.39,56.03,Ingenuo estacional (mismo mes del año anterior),2024-12
+Xalapa,2025-05,2025,5,47.04,43.89,50.19,42.22,51.86,Ingenuo estacional (mismo mes del año anterior),2024-12
+Xalapa,2025-06,2025,6,52.18,49.03,55.33,47.36,57.0,Ingenuo estacional (mismo mes del año anterior),2024-12
+Xalapa,2025-07,2025,7,51.26,48.11,54.41,46.44,56.08,Ingenuo estacional (mismo mes del año anterior),2024-12
+Xalapa,2025-08,2025,8,50.59,47.44,53.74,45.77,55.41,Ingenuo estacional (mismo mes del año anterior),2024-12
+Xalapa,2025-09,2025,9,51.5,48.35,54.65,46.68,56.32,Ingenuo estacional (mismo mes del año anterior),2024-12
+Xalapa,2025-10,2025,10,54.23,51.08,57.38,49.41,59.05,Ingenuo estacional (mismo mes del año anterior),2024-12
+Xalapa,2025-11,2025,11,55.98,52.83,59.13,51.16,60.8,Ingenuo estacional (mismo mes del año anterior),2024-12
+Xalapa,2025-12,2025,12,49.95,46.8,53.1,45.13,54.77,Ingenuo estacional (mismo mes del año anterior),2024-12
+Zacatecas,2025-01,2025,1,24.55,20.38,28.73,18.16,30.94,Ingenuo estacional (mismo mes del año anterior),2024-12
+Zacatecas,2025-02,2025,2,27.03,22.86,31.2,20.64,33.42,Ingenuo estacional (mismo mes del año anterior),2024-12
+Zacatecas,2025-03,2025,3,34.74,30.57,38.91,28.35,41.13,Ingenuo estacional (mismo mes del año anterior),2024-12
+Zacatecas,2025-04,2025,4,26.93,22.76,31.1,20.54,33.32,Ingenuo estacional (mismo mes del año anterior),2024-12
+Zacatecas,2025-05,2025,5,30.36,26.19,34.54,23.97,36.75,Ingenuo estacional (mismo mes del año anterior),2024-12
+Zacatecas,2025-06,2025,6,37.11,32.94,41.28,30.72,43.5,Ingenuo estacional (mismo mes del año anterior),2024-12
+Zacatecas,2025-07,2025,7,35.4,31.23,39.57,29.01,41.79,Ingenuo estacional (mismo mes del año anterior),2024-12
+Zacatecas,2025-08,2025,8,35.72,31.55,39.9,29.33,42.11,Ingenuo estacional (mismo mes del año anterior),2024-12
+Zacatecas,2025-09,2025,9,37.02,32.85,41.19,30.63,43.41,Ingenuo estacional (mismo mes del año anterior),2024-12
+Zacatecas,2025-10,2025,10,31.72,27.55,35.89,25.33,38.11,Ingenuo estacional (mismo mes del año anterior),2024-12
+Zacatecas,2025-11,2025,11,33.55,29.37,37.72,27.16,39.93,Ingenuo estacional (mismo mes del año anterior),2024-12
+Zacatecas,2025-12,2025,12,36.17,32.0,40.34,29.78,42.56,Ingenuo estacional (mismo mes del año anterior),2024-12

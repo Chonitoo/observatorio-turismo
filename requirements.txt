@@ -17,3 +17,4 @@ pyogrio==0.13.0
 folium==1.0.0
 mapclassify==2.11.0
 frictionless==5.21.0
+statsmodels==0.15.0

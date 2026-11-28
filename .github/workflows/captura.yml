@@ -42,6 +42,9 @@ jobs:
       - name: Pipeline Plata y Oro (limpieza + Puerta de Calidad)
         run: python -m src.pipeline.ejecutar
 
+      - name: Pronóstico de ocupación a 12 meses (validado contra el último año)
+        run: python -m src.pronostico
+
       - name: Publicar dataset curado y validarlo (Frictionless)
         run: |
           python -m src.publicar

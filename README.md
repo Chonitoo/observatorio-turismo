@@ -18,17 +18,16 @@ import pandas as pd
 pd.read_csv("https://raw.githubusercontent.com/Chonitoo/observatorio-turismo/main/dataset/ocupacion_destino_mes.csv")
 ```
 
-## Dashboard
+## Dashboard (sistema de planeación)
 
-Tablero para el cliente (hoteleros y Secretaría de Turismo), con diseño profesional y en lenguaje simple. Tiene cinco
-pestañas:
-- **Resumen:** indicadores, lo bueno, lo preocupante y la oportunidad.
-- **Planeador de temporadas:** calendario de 12 meses con la acción recomendada y descarga del plan.
-- **Competencia.**
-- **Mapa de hospedaje.**
-- **Confiabilidad.**
+Sistema para hoteleros y la Secretaría de Turismo:
+- **Primera vista:** encabezado animado con los indicadores clave.
+- **🔮 Pronóstico** a 12 meses: SARIMAX o método ingenuo, elegido por validación.
+- **🏨 Mi hotel:** comparación por categoría, ingreso esperado y personal necesario.
+- **Simulador** "¿qué pasa si…?" de tarifas y promociones.
+- **Temporadas**, **Competencia**, **Mapa** y **Confiabilidad**.
 
-Funciona con cualquiera de los 64 destinos. Guía de uso: [docs/GUIA_TABLERO.md](docs/GUIA_TABLERO.md).
+Guía: [docs/GUIA_TABLERO.md](docs/GUIA_TABLERO.md).
 
 ```bash
 python -m venv .venv

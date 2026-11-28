@@ -1,0 +1,778 @@
+{
+  "fecha_utc": "2026-11-28T00:36:55Z",
+  "destinos": 64,
+  "horizonte_meses": 12,
+  "destinos_con_sarimax": 26,
+  "mae_mediano_publicado_pts": 3.51,
+  "mae_mediano_ingenuo_pts": 3.91,
+  "por_destino": {
+    "Acapulco": {
+      "modelo": {
+        "mae": 3.53,
+        "mape": 11.33
+      },
+      "ingenuo": {
+        "mae": 19.34,
+        "mape": 56.98
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Aguascalientes": {
+      "modelo": {
+        "mae": 2.92,
+        "mape": 5.68
+      },
+      "ingenuo": {
+        "mae": 2.27,
+        "mape": 4.54
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Bahías de Huatulco": {
+      "modelo": {
+        "mae": 7.32,
+        "mape": 11.08
+      },
+      "ingenuo": {
+        "mae": 2.83,
+        "mape": 4.2
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Campeche": {
+      "modelo": {
+        "mae": 6.19,
+        "mape": 11.87
+      },
+      "ingenuo": {
+        "mae": 3.85,
+        "mape": 7.41
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Cancún": {
+      "modelo": {
+        "mae": 1.87,
+        "mape": 2.5
+      },
+      "ingenuo": {
+        "mae": 2.74,
+        "mape": 3.86
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Celaya": {
+      "modelo": {
+        "mae": 2.22,
+        "mape": 6.38
+      },
+      "ingenuo": {
+        "mae": 3.27,
+        "mape": 9.3
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Chihuahua": {
+      "modelo": {
+        "mae": 5.56,
+        "mape": 8.87
+      },
+      "ingenuo": {
+        "mae": 3.76,
+        "mape": 6.19
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Ciudad Juárez": {
+      "modelo": {
+        "mae": 3.6,
+        "mape": 5.41
+      },
+      "ingenuo": {
+        "mae": 4.23,
+        "mape": 6.66
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Ciudad de México": {
+      "modelo": {
+        "mae": 3.44,
+        "mape": 5.72
+      },
+      "ingenuo": {
+        "mae": 2.94,
+        "mape": 5.1
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Coatzacoalcos": {
+      "modelo": {
+        "mae": 5.48,
+        "mape": 11.17
+      },
+      "ingenuo": {
+        "mae": 3.46,
+        "mape": 7.26
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Colima": {
+      "modelo": {
+        "mae": 3.18,
+        "mape": 6.97
+      },
+      "ingenuo": {
+        "mae": 3.94,
+        "mape": 8.54
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Comitán de Domínguez": {
+      "modelo": {
+        "mae": 2.9,
+        "mape": 12.79
+      },
+      "ingenuo": {
+        "mae": 3.64,
+        "mape": 16.16
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Cozumel": {
+      "modelo": {
+        "mae": 3.6,
+        "mape": 7.63
+      },
+      "ingenuo": {
+        "mae": 3.0,
+        "mape": 6.07
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Culiacán": {
+      "modelo": {
+        "mae": 9.37,
+        "mape": 33.93
+      },
+      "ingenuo": {
+        "mae": 14.78,
+        "mape": 48.63
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Durango": {
+      "modelo": {
+        "mae": 2.69,
+        "mape": 5.36
+      },
+      "ingenuo": {
+        "mae": 3.07,
+        "mape": 6.03
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "El Fuerte": {
+      "modelo": {
+        "mae": 17.74,
+        "mape": 89.04
+      },
+      "ingenuo": {
+        "mae": 10.88,
+        "mape": 56.25
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 96
+    },
+    "Guadalajara": {
+      "modelo": {
+        "mae": 2.9,
+        "mape": 5.42
+      },
+      "ingenuo": {
+        "mae": 2.41,
+        "mape": 4.54
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Guanajuato": {
+      "modelo": {
+        "mae": 2.84,
+        "mape": 9.34
+      },
+      "ingenuo": {
+        "mae": 3.16,
+        "mape": 10.32
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Hermosillo": {
+      "modelo": {
+        "mae": 4.48,
+        "mape": 7.67
+      },
+      "ingenuo": {
+        "mae": 5.16,
+        "mape": 9.73
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Irapuato": {
+      "modelo": {
+        "mae": 2.97,
+        "mape": 8.01
+      },
+      "ingenuo": {
+        "mae": 3.83,
+        "mape": 11.1
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Isla Mujeres": {
+      "modelo": {
+        "mae": 7.13,
+        "mape": 16.91
+      },
+      "ingenuo": {
+        "mae": 8.05,
+        "mape": 17.84
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Ixtapa - Zihuatanejo": {
+      "modelo": {
+        "mae": 4.69,
+        "mape": 7.75
+      },
+      "ingenuo": {
+        "mae": 3.07,
+        "mape": 5.13
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "La Paz": {
+      "modelo": {
+        "mae": 8.43,
+        "mape": 12.51
+      },
+      "ingenuo": {
+        "mae": 4.47,
+        "mape": 7.16
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "León": {
+      "modelo": {
+        "mae": 4.2,
+        "mape": 8.52
+      },
+      "ingenuo": {
+        "mae": 4.11,
+        "mape": 8.41
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Loreto": {
+      "modelo": {
+        "mae": 5.85,
+        "mape": 12.83
+      },
+      "ingenuo": {
+        "mae": 6.63,
+        "mape": 15.2
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Los Cabos": {
+      "modelo": {
+        "mae": 5.36,
+        "mape": 7.14
+      },
+      "ingenuo": {
+        "mae": 2.69,
+        "mape": 3.84
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Los Mochis": {
+      "modelo": {
+        "mae": 10.02,
+        "mape": 15.19
+      },
+      "ingenuo": {
+        "mae": 6.57,
+        "mape": 10.69
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Manzanillo": {
+      "modelo": {
+        "mae": 6.84,
+        "mape": 12.47
+      },
+      "ingenuo": {
+        "mae": 2.2,
+        "mape": 4.01
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Mazatlán": {
+      "modelo": {
+        "mae": 7.91,
+        "mape": 14.37
+      },
+      "ingenuo": {
+        "mae": 7.65,
+        "mape": 14.92
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Mexicali": {
+      "modelo": {
+        "mae": 3.64,
+        "mape": 6.52
+      },
+      "ingenuo": {
+        "mae": 7.93,
+        "mape": 13.88
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Monterrey": {
+      "modelo": {
+        "mae": 4.87,
+        "mape": 7.59
+      },
+      "ingenuo": {
+        "mae": 3.34,
+        "mape": 5.37
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Morelia": {
+      "modelo": {
+        "mae": 2.64,
+        "mape": 5.12
+      },
+      "ingenuo": {
+        "mae": 4.4,
+        "mape": 8.7
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Mérida": {
+      "modelo": {
+        "mae": 4.03,
+        "mape": 7.01
+      },
+      "ingenuo": {
+        "mae": 3.33,
+        "mape": 5.91
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Nuevo Nayarit": {
+      "modelo": {
+        "mae": 4.52,
+        "mape": 5.82
+      },
+      "ingenuo": {
+        "mae": 2.61,
+        "mape": 3.59
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Oaxaca": {
+      "modelo": {
+        "mae": 6.86,
+        "mape": 12.37
+      },
+      "ingenuo": {
+        "mae": 1.99,
+        "mape": 3.61
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Pachuca": {
+      "modelo": {
+        "mae": 9.12,
+        "mape": 14.82
+      },
+      "ingenuo": {
+        "mae": 6.57,
+        "mape": 10.61
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Palenque": {
+      "modelo": {
+        "mae": 3.52,
+        "mape": 9.57
+      },
+      "ingenuo": {
+        "mae": 3.5,
+        "mape": 9.4
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Piedras Negras": {
+      "modelo": {
+        "mae": 7.87,
+        "mape": 13.58
+      },
+      "ingenuo": {
+        "mae": 9.62,
+        "mape": 18.0
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Playas de Rosarito": {
+      "modelo": {
+        "mae": 4.03,
+        "mape": 10.18
+      },
+      "ingenuo": {
+        "mae": 4.77,
+        "mape": 13.18
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Puebla": {
+      "modelo": {
+        "mae": 4.14,
+        "mape": 6.93
+      },
+      "ingenuo": {
+        "mae": 2.17,
+        "mape": 3.9
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Puerto Escondido": {
+      "modelo": {
+        "mae": 8.07,
+        "mape": 17.24
+      },
+      "ingenuo": {
+        "mae": 5.57,
+        "mape": 11.44
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Puerto Vallarta": {
+      "modelo": {
+        "mae": 2.95,
+        "mape": 4.09
+      },
+      "ingenuo": {
+        "mae": 2.19,
+        "mape": 3.07
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Querétaro": {
+      "modelo": {
+        "mae": 3.53,
+        "mape": 5.7
+      },
+      "ingenuo": {
+        "mae": 1.87,
+        "mape": 3.1
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Riviera Maya": {
+      "modelo": {
+        "mae": 2.57,
+        "mape": 3.4
+      },
+      "ingenuo": {
+        "mae": 2.81,
+        "mape": 3.78
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Salamanca": {
+      "modelo": {
+        "mae": 4.28,
+        "mape": 11.45
+      },
+      "ingenuo": {
+        "mae": 6.18,
+        "mape": 16.68
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "San Cristóbal de las Casas": {
+      "modelo": {
+        "mae": 7.04,
+        "mape": 27.57
+      },
+      "ingenuo": {
+        "mae": 6.19,
+        "mape": 23.84
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "San Felipe": {
+      "modelo": {
+        "mae": 5.94,
+        "mape": 18.98
+      },
+      "ingenuo": {
+        "mae": 10.2,
+        "mape": 39.48
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "San Juan de los Lagos": {
+      "modelo": {
+        "mae": 8.88,
+        "mape": 27.71
+      },
+      "ingenuo": {
+        "mae": 7.54,
+        "mape": 20.8
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "San Juan del Río": {
+      "modelo": {
+        "mae": 7.69,
+        "mape": 13.01
+      },
+      "ingenuo": {
+        "mae": 6.18,
+        "mape": 10.69
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "San Luis Potosí": {
+      "modelo": {
+        "mae": 1.59,
+        "mape": 3.1
+      },
+      "ingenuo": {
+        "mae": 2.92,
+        "mape": 5.41
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "San Miguel de Allende": {
+      "modelo": {
+        "mae": 4.26,
+        "mape": 10.42
+      },
+      "ingenuo": {
+        "mae": 4.08,
+        "mape": 10.5
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Taxco": {
+      "modelo": {
+        "mae": 6.4,
+        "mape": 31.36
+      },
+      "ingenuo": {
+        "mae": 8.37,
+        "mape": 42.25
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Tecate": {
+      "modelo": {
+        "mae": 16.42,
+        "mape": 24.03
+      },
+      "ingenuo": {
+        "mae": 13.22,
+        "mape": 19.28
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Tequisquiapan": {
+      "modelo": {
+        "mae": 8.23,
+        "mape": 21.59
+      },
+      "ingenuo": {
+        "mae": 5.55,
+        "mape": 14.74
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Tijuana": {
+      "modelo": {
+        "mae": 5.84,
+        "mape": 9.12
+      },
+      "ingenuo": {
+        "mae": 4.79,
+        "mape": 7.42
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Tlaxcala": {
+      "modelo": {
+        "mae": 2.29,
+        "mape": 7.18
+      },
+      "ingenuo": {
+        "mae": 2.52,
+        "mape": 8.37
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Toluca": {
+      "modelo": {
+        "mae": 2.85,
+        "mape": 6.59
+      },
+      "ingenuo": {
+        "mae": 4.79,
+        "mape": 11.55
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Tonalá Puerto Arista": {
+      "modelo": {
+        "mae": 4.48,
+        "mape": 13.23
+      },
+      "ingenuo": {
+        "mae": 7.47,
+        "mape": 23.29
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Tuxtla Gutiérrez": {
+      "modelo": {
+        "mae": 7.56,
+        "mape": 16.28
+      },
+      "ingenuo": {
+        "mae": 3.88,
+        "mape": 8.5
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Valle de Bravo": {
+      "modelo": {
+        "mae": 2.87,
+        "mape": 15.22
+      },
+      "ingenuo": {
+        "mae": 3.14,
+        "mape": 16.83
+      },
+      "metodo_publicado": "SARIMAX(1,0,1)(0,1,1)12 + intervención COVID",
+      "meses_entrenamiento": 108
+    },
+    "Veracruz-Boca del Río": {
+      "modelo": {
+        "mae": 7.07,
+        "mape": 12.95
+      },
+      "ingenuo": {
+        "mae": 4.59,
+        "mape": 9.23
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Villahermosa": {
+      "modelo": {
+        "mae": 6.18,
+        "mape": 10.68
+      },
+      "ingenuo": {
+        "mae": 5.93,
+        "mape": 10.96
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Xalapa": {
+      "modelo": {
+        "mae": 6.96,
+        "mape": 13.9
+      },
+      "ingenuo": {
+        "mae": 2.46,
+        "mape": 5.01
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    },
+    "Zacatecas": {
+      "modelo": {
+        "mae": 3.62,
+        "mape": 11.21
+      },
+      "ingenuo": {
+        "mae": 3.26,
+        "mape": 9.77
+      },
+      "metodo_publicado": "Ingenuo estacional (mismo mes del año anterior)",
+      "meses_entrenamiento": 108
+    }
+  }
+}
